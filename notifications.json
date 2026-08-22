@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "updatedAt": 1787410145010,
+  "notifications": [
+    {
+      "id": "93e01f99-10c4-4453-8c6e-68db4dd207a9",
+      "title": "🎉 Welcome to Kvizo 1.4.0",
+      "body": "Dark mode fixed, backup/restore added, and now announcements reach you right here. Enjoy!",
+      "createdAt": 1786265818791
+    }
+  ]
+}
