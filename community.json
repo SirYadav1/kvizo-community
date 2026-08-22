@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "updatedAt": 1787410144754,
+  "quizzes": [
+    {
+      "id": "b2354c73-8b9b-4907-91dc-c4e897f0b809",
+      "title": "General Knowledge Blitz",
+      "category": "General Knowledge",
+      "difficulty": "Easy",
+      "tags": "trivia,gk,science,geography",
+      "description": "10 quick general-knowledge questions for a fast quiz blitz.",
+      "timeLimitSeconds": 120,
+      "createdAt": 1786121098027,
+      "updatedAt": 1786121098027,
+      "questions": [
+        {
+          "questionText": "What is the capital of France?",
+          "optionA": "Berlin",
+          "optionB": "Madrid",
+          "optionC": "Paris",
+          "optionD": "Rome",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "How many continents are there on Earth?",
+          "optionA": "5",
+          "optionB": "6",
+          "optionC": "7",
+          "optionD": "8",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "Which planet is known as the Red Planet?",
+          "optionA": "Venus",
+          "optionB": "Mars",
+          "optionC": "Jupiter",
+          "optionD": "Saturn",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "What is the largest ocean on Earth?",
+          "optionA": "Atlantic Ocean",
+          "optionB": "Indian Ocean",
+          "optionC": "Arctic Ocean",
+          "optionD": "Pacific Ocean",
+          "correctOption": "d"
+        },
+        {
+          "questionText": "Who painted the Mona Lisa?",
+          "optionA": "Vincent van Gogh",
+          "optionB": "Pablo Picasso",
+          "optionC": "Leonardo da Vinci",
+          "optionD": "Claude Monet",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "What is the chemical symbol for water?",
+          "optionA": "H2O",
+          "optionB": "CO2",
+          "optionC": "O2",
+          "optionD": "NaCl",
+          "correctOption": "a"
+        },
+        {
+          "questionText": "Which country is known as the Land of the Rising Sun?",
+          "optionA": "China",
+          "optionB": "South Korea",
+          "optionC": "Japan",
+          "optionD": "Thailand",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "How many sides does a hexagon have?",
+          "optionA": "5",
+          "optionB": "6",
+          "optionC": "7",
+          "optionD": "8",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which is the fastest land animal?",
+          "optionA": "Lion",
+          "optionB": "Cheetah",
+          "optionC": "Horse",
+          "optionD": "Greyhound",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "What is the tallest mountain in the world?",
+          "optionA": "K2",
+          "optionB": "Kangchenjunga",
+          "optionC": "Mount Everest",
+          "optionD": "Makalu",
+          "correctOption": "c"
+        }
+      ]
+    },
+    {
+      "id": "5a266b0c-c296-4323-adc1-b4d824233150",
+      "title": "Computer Fundamentals Basics",
+      "category": "Technology",
+      "difficulty": "Easy",
+      "tags": "computer basics hardware software",
+      "description": "10 quick questions to test basic computer knowledge.",
+      "timeLimitSeconds": 300,
+      "createdAt": 1786264286141,
+      "updatedAt": 1786264286141,
+      "questions": [
+        {
+          "questionText": "Which of these is the brain of the computer?",
+          "optionA": "Monitor",
+          "optionB": "CPU",
+          "optionC": "Keyboard",
+          "optionD": "Speaker",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "What does RAM stand for?",
+          "optionA": "Random Access Memory",
+          "optionB": "Read And Memorize",
+          "optionC": "Rapid Application Module",
+          "optionD": "Run Access Memory",
+          "correctOption": "a"
+        },
+        {
+          "questionText": "Which device is used to point and click on the screen?",
+          "optionA": "Printer",
+          "optionB": "Scanner",
+          "optionC": "Mouse",
+          "optionD": "Joystick",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "Which one is an example of system software?",
+          "optionA": "Microsoft Word",
+          "optionB": "Operating System",
+          "optionC": "Google Chrome",
+          "optionD": "Adobe Photoshop",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which key is used to delete the character to the left of the cursor?",
+          "optionA": "Delete",
+          "optionB": "Backspace",
+          "optionC": "Shift",
+          "optionD": "Tab",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "1 KB (Kilobyte) is equal to how many bytes?",
+          "optionA": "1000 bytes",
+          "optionB": "1024 bytes",
+          "optionC": "512 bytes",
+          "optionD": "2048 bytes",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which of these is NOT an operating system?",
+          "optionA": "Windows",
+          "optionB": "Linux",
+          "optionC": "Android",
+          "optionD": "Intel",
+          "correctOption": "d"
+        },
+        {
+          "questionText": "Which part of the computer is known as the temporary storage?",
+          "optionA": "Hard Disk",
+          "optionB": "RAM",
+          "optionC": "DVD",
+          "optionD": "ROM",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which shortcut is used to copy a selected item on Windows?",
+          "optionA": "Ctrl + X",
+          "optionB": "Ctrl + V",
+          "optionC": "Ctrl + C",
+          "optionD": "Ctrl + Z",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "Which device is used to print documents on paper?",
+          "optionA": "Monitor",
+          "optionB": "Printer",
+          "optionC": "Modem",
+          "optionD": "Webcam",
+          "correctOption": "b"
+        }
+      ]
+    }
+  ]
+}
