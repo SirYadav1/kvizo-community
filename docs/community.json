@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "key_id": "kvizo-pub-2024-01",
+  "issued_at": "2026-08-22T13:01:32Z",
+  "expires_at": "2027-08-22T13:01:32Z",
+  "quizzes": [
+    {
+      "id": "comm-001",
+      "title": "World Geography Challenge",
+      "category": "Geography",
+      "difficulty": "Medium",
+      "questions": [
+        {"question": "Which is the longest river in the world?", "options": ["Amazon", "Nile", "Mississippi", "Yangtze"], "correct_index": 1, "explanation": "The Nile River is approximately 6,650 km long."},
+        {"question": "What is the smallest country in the world?", "options": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"], "correct_index": 1, "explanation": "Vatican City is only 0.44 sq km."},
+        {"question": "Mount Everest is located on the border of which two countries?", "options": ["India-China", "Nepal-China", "Nepal-India", "Tibet-India"], "correct_index": 1, "explanation": "Everest sits on the Nepal-China border."},
+        {"question": "Which desert is the largest hot desert in the world?", "options": ["Gobi", "Kalahari", "Sahara", "Arabian"], "correct_index": 2, "explanation": "Sahara covers approximately 9.2 million sq km."},
+        {"question": "What is the capital of Australia?", "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"], "correct_index": 2, "explanation": "Canberra was chosen as the capital in 1913."}
+      ],
+      "author": "Kvizo Team",
+      "created_at": "2026-08-22T12:00:00Z"
+    },
+    {
+      "id": "comm-002",
+      "title": "Science Fun Quiz",
+      "category": "Science",
+      "difficulty": "Easy",
+      "questions": [
+        {"question": "What planet is known as the Red Planet?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "correct_index": 1, "explanation": "Mars appears red due to iron oxide on its surface."},
+        {"question": "What is the chemical symbol for water?", "options": ["HO", "H2O", "OH2", "H3O"], "correct_index": 1, "explanation": "H2O means 2 hydrogen atoms and 1 oxygen atom."},
+        {"question": "How many bones are in the adult human body?", "options": ["186", "206", "216", "256"], "correct_index": 1, "explanation": "Adults have 206 bones."},
+        {"question": "What gas do plants absorb from the atmosphere?", "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], "correct_index": 2, "explanation": "Plants use CO2 for photosynthesis."},
+        {"question": "What is the speed of light?", "options": ["300,000 km/s", "150,000 km/s", "500,000 km/s", "100,000 km/s"], "correct_index": 0, "explanation": "Light travels at approximately 299,792 km/s."}
+      ],
+      "author": "Kvizo Team",
+      "created_at": "2026-08-22T12:00:00Z"
+    },
+    {
+      "id": "comm-003",
+      "title": "Indian History Quiz",
+      "category": "History",
+      "difficulty": "Hard",
+      "questions": [
+        {"question": "Who was the first Emperor of the Maurya Dynasty?", "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Bimbisara"], "correct_index": 1, "explanation": "Chandragupta Maurya founded the Maurya Empire in 322 BC."},
+        {"question": "In which year did the Jallianwala Bagh massacre occur?", "options": ["1917", "1918", "1919", "1920"], "correct_index": 2, "explanation": "It occurred on April 13, 1919 in Amritsar."},
+        {"question": "Who wrote the Indian national anthem?", "options": ["Bankim Chandra", "Rabindranath Tagore", "Muhammad Iqbal", "Sarojini Naidu"], "correct_index": 1, "explanation": "Jana Gana Mana was written by Rabindranath Tagore."},
+        {"question": "Which Mughal emperor built the Taj Mahal?", "options": ["Akbar", "Shah Jahan", "Aurangzeb", "Jahangir"], "correct_index": 1, "explanation": "Shah Jahan built it in memory of his wife Mumtaz Mahal."},
+        {"question": "What was the ancient name of Patna?", "options": ["Varanasi", "Pataliputra", "Indraprastha", "Taxila"], "correct_index": 1, "explanation": "Pataliputra was the capital of the Maurya Empire."}
+      ],
+      "author": "Kvizo Team",
+      "created_at": "2026-08-22T12:00:00Z"
+    }
+  ]
+}
