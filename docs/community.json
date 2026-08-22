@@ -1,97 +1,116 @@
 {
-  "version": 1,
-  "updatedAt": 1787410144754,
+  "schema_version": 1,
+  "key_id": "kvizo-pub-2026-08",
+  "issued_at": "2026-08-22T15:29:59Z",
+  "expires_at": "2026-09-21T15:29:59Z",
   "quizzes": [
     {
       "id": "b2354c73-8b9b-4907-91dc-c4e897f0b809",
       "title": "General Knowledge Blitz",
       "category": "General Knowledge",
       "difficulty": "Easy",
-      "tags": "trivia,gk,science,geography",
-      "description": "10 quick general-knowledge questions for a fast quiz blitz.",
-      "timeLimitSeconds": 120,
-      "createdAt": 1786121098027,
-      "updatedAt": 1786121098027,
+      "author": "Kvizo Team",
+      "created_at": "2026-08-07T16:44:58Z",
       "questions": [
         {
-          "questionText": "What is the capital of France?",
-          "optionA": "Berlin",
-          "optionB": "Madrid",
-          "optionC": "Paris",
-          "optionD": "Rome",
-          "correctOption": "c"
+          "question": "What is the capital of France?",
+          "options": [
+            "Berlin",
+            "Madrid",
+            "Paris",
+            "Rome"
+          ],
+          "correct_index": 2
         },
         {
-          "questionText": "How many continents are there on Earth?",
-          "optionA": "5",
-          "optionB": "6",
-          "optionC": "7",
-          "optionD": "8",
-          "correctOption": "c"
+          "question": "How many continents are there on Earth?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correct_index": 2
         },
         {
-          "questionText": "Which planet is known as the Red Planet?",
-          "optionA": "Venus",
-          "optionB": "Mars",
-          "optionC": "Jupiter",
-          "optionD": "Saturn",
-          "correctOption": "b"
+          "question": "Which planet is known as the Red Planet?",
+          "options": [
+            "Venus",
+            "Mars",
+            "Jupiter",
+            "Saturn"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "What is the largest ocean on Earth?",
-          "optionA": "Atlantic Ocean",
-          "optionB": "Indian Ocean",
-          "optionC": "Arctic Ocean",
-          "optionD": "Pacific Ocean",
-          "correctOption": "d"
+          "question": "What is the largest ocean on Earth?",
+          "options": [
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Arctic Ocean",
+            "Pacific Ocean"
+          ],
+          "correct_index": 3
         },
         {
-          "questionText": "Who painted the Mona Lisa?",
-          "optionA": "Vincent van Gogh",
-          "optionB": "Pablo Picasso",
-          "optionC": "Leonardo da Vinci",
-          "optionD": "Claude Monet",
-          "correctOption": "c"
+          "question": "Who painted the Mona Lisa?",
+          "options": [
+            "Vincent van Gogh",
+            "Pablo Picasso",
+            "Leonardo da Vinci",
+            "Claude Monet"
+          ],
+          "correct_index": 2
         },
         {
-          "questionText": "What is the chemical symbol for water?",
-          "optionA": "H2O",
-          "optionB": "CO2",
-          "optionC": "O2",
-          "optionD": "NaCl",
-          "correctOption": "a"
+          "question": "What is the chemical symbol for water?",
+          "options": [
+            "H2O",
+            "CO2",
+            "O2",
+            "NaCl"
+          ],
+          "correct_index": 0
         },
         {
-          "questionText": "Which country is known as the Land of the Rising Sun?",
-          "optionA": "China",
-          "optionB": "South Korea",
-          "optionC": "Japan",
-          "optionD": "Thailand",
-          "correctOption": "c"
+          "question": "Which country is known as the Land of the Rising Sun?",
+          "options": [
+            "China",
+            "South Korea",
+            "Japan",
+            "Thailand"
+          ],
+          "correct_index": 2
         },
         {
-          "questionText": "How many sides does a hexagon have?",
-          "optionA": "5",
-          "optionB": "6",
-          "optionC": "7",
-          "optionD": "8",
-          "correctOption": "b"
+          "question": "How many sides does a hexagon have?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "Which is the fastest land animal?",
-          "optionA": "Lion",
-          "optionB": "Cheetah",
-          "optionC": "Horse",
-          "optionD": "Greyhound",
-          "correctOption": "b"
+          "question": "Which is the fastest land animal?",
+          "options": [
+            "Lion",
+            "Cheetah",
+            "Horse",
+            "Greyhound"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "What is the tallest mountain in the world?",
-          "optionA": "K2",
-          "optionB": "Kangchenjunga",
-          "optionC": "Mount Everest",
-          "optionD": "Makalu",
-          "correctOption": "c"
+          "question": "What is the tallest mountain in the world?",
+          "options": [
+            "K2",
+            "Kangchenjunga",
+            "Mount Everest",
+            "Makalu"
+          ],
+          "correct_index": 2
         }
       ]
     },
@@ -100,91 +119,108 @@
       "title": "Computer Fundamentals Basics",
       "category": "Technology",
       "difficulty": "Easy",
-      "tags": "computer basics hardware software",
-      "description": "10 quick questions to test basic computer knowledge.",
-      "timeLimitSeconds": 300,
-      "createdAt": 1786264286141,
-      "updatedAt": 1786264286141,
+      "author": "Kvizo Team",
+      "created_at": "2026-08-09T08:31:26Z",
       "questions": [
         {
-          "questionText": "Which of these is the brain of the computer?",
-          "optionA": "Monitor",
-          "optionB": "CPU",
-          "optionC": "Keyboard",
-          "optionD": "Speaker",
-          "correctOption": "b"
+          "question": "Which of these is the brain of the computer?",
+          "options": [
+            "Monitor",
+            "CPU",
+            "Keyboard",
+            "Speaker"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "What does RAM stand for?",
-          "optionA": "Random Access Memory",
-          "optionB": "Read And Memorize",
-          "optionC": "Rapid Application Module",
-          "optionD": "Run Access Memory",
-          "correctOption": "a"
+          "question": "What does RAM stand for?",
+          "options": [
+            "Random Access Memory",
+            "Read And Memorize",
+            "Rapid Application Module",
+            "Run Access Memory"
+          ],
+          "correct_index": 0
         },
         {
-          "questionText": "Which device is used to point and click on the screen?",
-          "optionA": "Printer",
-          "optionB": "Scanner",
-          "optionC": "Mouse",
-          "optionD": "Joystick",
-          "correctOption": "c"
+          "question": "Which device is used to point and click on the screen?",
+          "options": [
+            "Printer",
+            "Scanner",
+            "Mouse",
+            "Joystick"
+          ],
+          "correct_index": 2
         },
         {
-          "questionText": "Which one is an example of system software?",
-          "optionA": "Microsoft Word",
-          "optionB": "Operating System",
-          "optionC": "Google Chrome",
-          "optionD": "Adobe Photoshop",
-          "correctOption": "b"
+          "question": "Which one is an example of system software?",
+          "options": [
+            "Microsoft Word",
+            "Operating System",
+            "Google Chrome",
+            "Adobe Photoshop"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "Which key is used to delete the character to the left of the cursor?",
-          "optionA": "Delete",
-          "optionB": "Backspace",
-          "optionC": "Shift",
-          "optionD": "Tab",
-          "correctOption": "b"
+          "question": "Which key is used to delete the character to the left of the cursor?",
+          "options": [
+            "Delete",
+            "Backspace",
+            "Shift",
+            "Tab"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "1 KB (Kilobyte) is equal to how many bytes?",
-          "optionA": "1000 bytes",
-          "optionB": "1024 bytes",
-          "optionC": "512 bytes",
-          "optionD": "2048 bytes",
-          "correctOption": "b"
+          "question": "1 KB (Kilobyte) is equal to how many bytes?",
+          "options": [
+            "1000 bytes",
+            "1024 bytes",
+            "512 bytes",
+            "2048 bytes"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "Which of these is NOT an operating system?",
-          "optionA": "Windows",
-          "optionB": "Linux",
-          "optionC": "Android",
-          "optionD": "Intel",
-          "correctOption": "d"
+          "question": "Which of these is NOT an operating system?",
+          "options": [
+            "Windows",
+            "Linux",
+            "Android",
+            "Intel"
+          ],
+          "correct_index": 3
         },
         {
-          "questionText": "Which part of the computer is known as the temporary storage?",
-          "optionA": "Hard Disk",
-          "optionB": "RAM",
-          "optionC": "DVD",
-          "optionD": "ROM",
-          "correctOption": "b"
+          "question": "Which part of the computer is known as the temporary storage?",
+          "options": [
+            "Hard Disk",
+            "RAM",
+            "DVD",
+            "ROM"
+          ],
+          "correct_index": 1
         },
         {
-          "questionText": "Which shortcut is used to copy a selected item on Windows?",
-          "optionA": "Ctrl + X",
-          "optionB": "Ctrl + V",
-          "optionC": "Ctrl + C",
-          "optionD": "Ctrl + Z",
-          "correctOption": "c"
+          "question": "Which shortcut is used to copy a selected item on Windows?",
+          "options": [
+            "Ctrl + X",
+            "Ctrl + V",
+            "Ctrl + C",
+            "Ctrl + Z"
+          ],
+          "correct_index": 2
         },
         {
-          "questionText": "Which device is used to print documents on paper?",
-          "optionA": "Monitor",
-          "optionB": "Printer",
-          "optionC": "Modem",
-          "optionD": "Webcam",
-          "correctOption": "b"
+          "question": "Which device is used to print documents on paper?",
+          "options": [
+            "Monitor",
+            "Printer",
+            "Modem",
+            "Webcam"
+          ],
+          "correct_index": 1
         }
       ]
     }
