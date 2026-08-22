@@ -1,53 +1,192 @@
 {
-  "schema_version": 1,
-  "key_id": "kvizo-pub-2024-01",
-  "issued_at": "2026-08-22T13:01:32Z",
-  "expires_at": "2027-08-22T13:01:32Z",
+  "version": 1,
+  "updatedAt": 1787410144754,
   "quizzes": [
     {
-      "id": "comm-001",
-      "title": "World Geography Challenge",
-      "category": "Geography",
-      "difficulty": "Medium",
-      "questions": [
-        {"question": "Which is the longest river in the world?", "options": ["Amazon", "Nile", "Mississippi", "Yangtze"], "correct_index": 1, "explanation": "The Nile River is approximately 6,650 km long."},
-        {"question": "What is the smallest country in the world?", "options": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"], "correct_index": 1, "explanation": "Vatican City is only 0.44 sq km."},
-        {"question": "Mount Everest is located on the border of which two countries?", "options": ["India-China", "Nepal-China", "Nepal-India", "Tibet-India"], "correct_index": 1, "explanation": "Everest sits on the Nepal-China border."},
-        {"question": "Which desert is the largest hot desert in the world?", "options": ["Gobi", "Kalahari", "Sahara", "Arabian"], "correct_index": 2, "explanation": "Sahara covers approximately 9.2 million sq km."},
-        {"question": "What is the capital of Australia?", "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"], "correct_index": 2, "explanation": "Canberra was chosen as the capital in 1913."}
-      ],
-      "author": "Kvizo Team",
-      "created_at": "2026-08-22T12:00:00Z"
-    },
-    {
-      "id": "comm-002",
-      "title": "Science Fun Quiz",
-      "category": "Science",
+      "id": "b2354c73-8b9b-4907-91dc-c4e897f0b809",
+      "title": "General Knowledge Blitz",
+      "category": "General Knowledge",
       "difficulty": "Easy",
+      "tags": "trivia,gk,science,geography",
+      "description": "10 quick general-knowledge questions for a fast quiz blitz.",
+      "timeLimitSeconds": 120,
+      "createdAt": 1786121098027,
+      "updatedAt": 1786121098027,
       "questions": [
-        {"question": "What planet is known as the Red Planet?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "correct_index": 1, "explanation": "Mars appears red due to iron oxide on its surface."},
-        {"question": "What is the chemical symbol for water?", "options": ["HO", "H2O", "OH2", "H3O"], "correct_index": 1, "explanation": "H2O means 2 hydrogen atoms and 1 oxygen atom."},
-        {"question": "How many bones are in the adult human body?", "options": ["186", "206", "216", "256"], "correct_index": 1, "explanation": "Adults have 206 bones."},
-        {"question": "What gas do plants absorb from the atmosphere?", "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], "correct_index": 2, "explanation": "Plants use CO2 for photosynthesis."},
-        {"question": "What is the speed of light?", "options": ["300,000 km/s", "150,000 km/s", "500,000 km/s", "100,000 km/s"], "correct_index": 0, "explanation": "Light travels at approximately 299,792 km/s."}
-      ],
-      "author": "Kvizo Team",
-      "created_at": "2026-08-22T12:00:00Z"
+        {
+          "questionText": "What is the capital of France?",
+          "optionA": "Berlin",
+          "optionB": "Madrid",
+          "optionC": "Paris",
+          "optionD": "Rome",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "How many continents are there on Earth?",
+          "optionA": "5",
+          "optionB": "6",
+          "optionC": "7",
+          "optionD": "8",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "Which planet is known as the Red Planet?",
+          "optionA": "Venus",
+          "optionB": "Mars",
+          "optionC": "Jupiter",
+          "optionD": "Saturn",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "What is the largest ocean on Earth?",
+          "optionA": "Atlantic Ocean",
+          "optionB": "Indian Ocean",
+          "optionC": "Arctic Ocean",
+          "optionD": "Pacific Ocean",
+          "correctOption": "d"
+        },
+        {
+          "questionText": "Who painted the Mona Lisa?",
+          "optionA": "Vincent van Gogh",
+          "optionB": "Pablo Picasso",
+          "optionC": "Leonardo da Vinci",
+          "optionD": "Claude Monet",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "What is the chemical symbol for water?",
+          "optionA": "H2O",
+          "optionB": "CO2",
+          "optionC": "O2",
+          "optionD": "NaCl",
+          "correctOption": "a"
+        },
+        {
+          "questionText": "Which country is known as the Land of the Rising Sun?",
+          "optionA": "China",
+          "optionB": "South Korea",
+          "optionC": "Japan",
+          "optionD": "Thailand",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "How many sides does a hexagon have?",
+          "optionA": "5",
+          "optionB": "6",
+          "optionC": "7",
+          "optionD": "8",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which is the fastest land animal?",
+          "optionA": "Lion",
+          "optionB": "Cheetah",
+          "optionC": "Horse",
+          "optionD": "Greyhound",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "What is the tallest mountain in the world?",
+          "optionA": "K2",
+          "optionB": "Kangchenjunga",
+          "optionC": "Mount Everest",
+          "optionD": "Makalu",
+          "correctOption": "c"
+        }
+      ]
     },
     {
-      "id": "comm-003",
-      "title": "Indian History Quiz",
-      "category": "History",
-      "difficulty": "Hard",
+      "id": "5a266b0c-c296-4323-adc1-b4d824233150",
+      "title": "Computer Fundamentals Basics",
+      "category": "Technology",
+      "difficulty": "Easy",
+      "tags": "computer basics hardware software",
+      "description": "10 quick questions to test basic computer knowledge.",
+      "timeLimitSeconds": 300,
+      "createdAt": 1786264286141,
+      "updatedAt": 1786264286141,
       "questions": [
-        {"question": "Who was the first Emperor of the Maurya Dynasty?", "options": ["Ashoka", "Chandragupta Maurya", "Bindusara", "Bimbisara"], "correct_index": 1, "explanation": "Chandragupta Maurya founded the Maurya Empire in 322 BC."},
-        {"question": "In which year did the Jallianwala Bagh massacre occur?", "options": ["1917", "1918", "1919", "1920"], "correct_index": 2, "explanation": "It occurred on April 13, 1919 in Amritsar."},
-        {"question": "Who wrote the Indian national anthem?", "options": ["Bankim Chandra", "Rabindranath Tagore", "Muhammad Iqbal", "Sarojini Naidu"], "correct_index": 1, "explanation": "Jana Gana Mana was written by Rabindranath Tagore."},
-        {"question": "Which Mughal emperor built the Taj Mahal?", "options": ["Akbar", "Shah Jahan", "Aurangzeb", "Jahangir"], "correct_index": 1, "explanation": "Shah Jahan built it in memory of his wife Mumtaz Mahal."},
-        {"question": "What was the ancient name of Patna?", "options": ["Varanasi", "Pataliputra", "Indraprastha", "Taxila"], "correct_index": 1, "explanation": "Pataliputra was the capital of the Maurya Empire."}
-      ],
-      "author": "Kvizo Team",
-      "created_at": "2026-08-22T12:00:00Z"
+        {
+          "questionText": "Which of these is the brain of the computer?",
+          "optionA": "Monitor",
+          "optionB": "CPU",
+          "optionC": "Keyboard",
+          "optionD": "Speaker",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "What does RAM stand for?",
+          "optionA": "Random Access Memory",
+          "optionB": "Read And Memorize",
+          "optionC": "Rapid Application Module",
+          "optionD": "Run Access Memory",
+          "correctOption": "a"
+        },
+        {
+          "questionText": "Which device is used to point and click on the screen?",
+          "optionA": "Printer",
+          "optionB": "Scanner",
+          "optionC": "Mouse",
+          "optionD": "Joystick",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "Which one is an example of system software?",
+          "optionA": "Microsoft Word",
+          "optionB": "Operating System",
+          "optionC": "Google Chrome",
+          "optionD": "Adobe Photoshop",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which key is used to delete the character to the left of the cursor?",
+          "optionA": "Delete",
+          "optionB": "Backspace",
+          "optionC": "Shift",
+          "optionD": "Tab",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "1 KB (Kilobyte) is equal to how many bytes?",
+          "optionA": "1000 bytes",
+          "optionB": "1024 bytes",
+          "optionC": "512 bytes",
+          "optionD": "2048 bytes",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which of these is NOT an operating system?",
+          "optionA": "Windows",
+          "optionB": "Linux",
+          "optionC": "Android",
+          "optionD": "Intel",
+          "correctOption": "d"
+        },
+        {
+          "questionText": "Which part of the computer is known as the temporary storage?",
+          "optionA": "Hard Disk",
+          "optionB": "RAM",
+          "optionC": "DVD",
+          "optionD": "ROM",
+          "correctOption": "b"
+        },
+        {
+          "questionText": "Which shortcut is used to copy a selected item on Windows?",
+          "optionA": "Ctrl + X",
+          "optionB": "Ctrl + V",
+          "optionC": "Ctrl + C",
+          "optionD": "Ctrl + Z",
+          "correctOption": "c"
+        },
+        {
+          "questionText": "Which device is used to print documents on paper?",
+          "optionA": "Monitor",
+          "optionB": "Printer",
+          "optionC": "Modem",
+          "optionD": "Webcam",
+          "correctOption": "b"
+        }
+      ]
     }
   ]
 }
