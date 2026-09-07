@@ -1,226 +1,461 @@
 {
   "schema_version": 1,
-  "key_id": "kvizo-pub-2026-08",
-  "issued_at": "2026-08-22T15:29:59Z",
-  "expires_at": "2026-09-21T15:29:59Z",
+  "key_id": "kvizo-pub-2026-09",
+  "issued_at": "2026-09-07T04:00:00Z",
   "quizzes": [
     {
-      "id": "b2354c73-8b9b-4907-91dc-c4e897f0b809",
-      "title": "General Knowledge Blitz",
-      "category": "General Knowledge",
-      "difficulty": "Easy",
-      "author": "Kvizo Team",
-      "created_at": "2026-08-07T16:44:58Z",
+      "id": "cpp-expert-001",
+      "title": "C++ Expert Challenge",
+      "category": "Programming",
+      "difficulty": "Expert",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
       "questions": [
         {
-          "question": "What is the capital of France?",
+          "question": "In C++20, which feature allows compile-time string manipulation?",
           "options": [
-            "Berlin",
-            "Madrid",
-            "Paris",
-            "Rome"
+            "constexpr if",
+            "consteval",
+            "constexpr virtual",
+            "constinit"
           ],
-          "correct_index": 2
+          "correct_index": 1,
+          "explanation": "consteval forces a function to always produce a compile-time result, enabling compile-time string manipulation."
         },
         {
-          "question": "How many continents are there on Earth?",
+          "question": "What is the time complexity of std::sort on average?",
           "options": [
-            "5",
-            "6",
-            "7",
-            "8"
+            "O(n)",
+            "O(n log n)",
+            "O(n²)",
+            "O(log n)"
           ],
-          "correct_index": 2
+          "correct_index": 1,
+          "explanation": "std::sort uses Introsort which has O(n log n) average and worst-case complexity."
         },
         {
-          "question": "Which planet is known as the Red Planet?",
+          "question": "Which smart pointer owns a uniquely owned resource in C++?",
           "options": [
-            "Venus",
-            "Mars",
-            "Jupiter",
-            "Saturn"
+            "std::shared_ptr",
+            "std::unique_ptr",
+            "std::weak_ptr",
+            "std::auto_ptr"
           ],
-          "correct_index": 1
+          "correct_index": 1,
+          "explanation": "std::unique_ptr provides exclusive ownership of a dynamically allocated object."
         },
         {
-          "question": "What is the largest ocean on Earth?",
+          "question": "What does RAII stand for in C++?",
           "options": [
-            "Atlantic Ocean",
-            "Indian Ocean",
-            "Arctic Ocean",
-            "Pacific Ocean"
+            "Resource Allocation Is Initialization",
+            "Runtime Access Interface",
+            "Resource Allocation Inheritance",
+            "Reliable Array Indexing"
           ],
-          "correct_index": 3
+          "correct_index": 0,
+          "explanation": "RAII binds resource lifetime to object lifetime — acquisition in constructor, release in destructor."
         },
         {
-          "question": "Who painted the Mona Lisa?",
+          "question": "In C++11, what does noexcept indicate?",
           "options": [
-            "Vincent van Gogh",
-            "Pablo Picasso",
-            "Leonardo da Vinci",
-            "Claude Monet"
+            "The function will never throw",
+            "The function may throw but is optimized",
+            "The function should be inlined",
+            "The function returns void"
           ],
-          "correct_index": 2
+          "correct_index": 0,
+          "explanation": "noexcept specifies that a function will not throw exceptions; if it does, std::terminate is called."
         },
         {
-          "question": "What is the chemical symbol for water?",
+          "question": "Which virtual function feature enables runtime polymorphism in C++?",
           "options": [
-            "H2O",
-            "CO2",
-            "O2",
-            "NaCl"
+            "virtual destructor",
+            "vtable",
+            "abstract class",
+            "pure virtual function"
           ],
-          "correct_index": 0
-        },
-        {
-          "question": "Which country is known as the Land of the Rising Sun?",
-          "options": [
-            "China",
-            "South Korea",
-            "Japan",
-            "Thailand"
-          ],
-          "correct_index": 2
-        },
-        {
-          "question": "How many sides does a hexagon have?",
-          "options": [
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "correct_index": 1
-        },
-        {
-          "question": "Which is the fastest land animal?",
-          "options": [
-            "Lion",
-            "Cheetah",
-            "Horse",
-            "Greyhound"
-          ],
-          "correct_index": 1
-        },
-        {
-          "question": "What is the tallest mountain in the world?",
-          "options": [
-            "K2",
-            "Kangchenjunga",
-            "Mount Everest",
-            "Makalu"
-          ],
-          "correct_index": 2
+          "correct_index": 1,
+          "explanation": "The vtable (virtual table) holds function pointers for dynamic dispatch of virtual functions."
         }
       ]
     },
     {
-      "id": "5a266b0c-c296-4323-adc1-b4d824233150",
-      "title": "Computer Fundamentals Basics",
-      "category": "Technology",
-      "difficulty": "Easy",
-      "author": "Kvizo Team",
-      "created_at": "2026-08-09T08:31:26Z",
+      "id": "science-quantum-002",
+      "title": "Quantum Physics Basics",
+      "category": "Science",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
       "questions": [
         {
-          "question": "Which of these is the brain of the computer?",
+          "question": "What is the unit of quantum of energy?",
           "options": [
-            "Monitor",
-            "CPU",
-            "Keyboard",
-            "Speaker"
+            "Joule",
+            "Electron-volt",
+            "Planck's constant",
+            "Photon"
           ],
-          "correct_index": 1
+          "correct_index": 1,
+          "explanation": "The electron-volt (eV) is the energy gained by one electron accelerating through 1 volt potential difference."
         },
         {
-          "question": "What does RAM stand for?",
+          "question": "Heisenberg's Uncertainty Principle states that ___ cannot both be known precisely.",
           "options": [
-            "Random Access Memory",
-            "Read And Memorize",
-            "Rapid Application Module",
-            "Run Access Memory"
+            "position and momentum",
+            "energy and time",
+            "mass and velocity",
+            "spin and charge"
           ],
-          "correct_index": 0
+          "correct_index": 0,
+          "explanation": "Δx·Δp ≥ ℏ/2 — position and momentum cannot both be precisely determined simultaneously."
         },
         {
-          "question": "Which device is used to point and click on the screen?",
+          "question": "What is quantum entanglement?",
           "options": [
-            "Printer",
-            "Scanner",
-            "Mouse",
-            "Joystick"
+            "Particles share the same quantum state",
+            "A particle splits into two",
+            "Particles lose energy",
+            "Particles stop interacting"
           ],
-          "correct_index": 2
+          "correct_index": 0,
+          "explanation": "Entanglement creates correlations between particles such that measuring one instantly determines the other's state."
         },
         {
-          "question": "Which one is an example of system software?",
+          "question": "Schrödinger's equation describes the evolution of ___.",
           "options": [
-            "Microsoft Word",
-            "Operating System",
-            "Google Chrome",
-            "Adobe Photoshop"
+            "A classical trajectory",
+            "The wave function",
+            "A particle's spin",
+            "Electromagnetic fields"
           ],
-          "correct_index": 1
+          "correct_index": 1,
+          "explanation": "The time-dependent Schrödinger equation governs how the quantum wave function evolves over time."
         },
         {
-          "question": "Which key is used to delete the character to the left of the cursor?",
+          "question": "Which principle explains electron orbital shapes?",
           "options": [
-            "Delete",
-            "Backspace",
-            "Shift",
-            "Tab"
+            "Pauli exclusion principle",
+            "Heisenberg principle",
+            "Bohr's correspondence",
+            "Newton's laws"
           ],
-          "correct_index": 1
+          "correct_index": 0,
+          "explanation": "The Pauli exclusion principle prevents two electrons from occupying the same quantum state, defining orbital structure."
         },
         {
-          "question": "1 KB (Kilobyte) is equal to how many bytes?",
+          "question": "What is a qubit?",
           "options": [
-            "1000 bytes",
-            "1024 bytes",
-            "512 bytes",
-            "2048 bytes"
+            "A quantum bit",
+            "A quantum byte",
+            "A quantum gate",
+            "A quantum algorithm"
           ],
-          "correct_index": 1
+          "correct_index": 0,
+          "explanation": "A qubit (quantum bit) is the fundamental unit of quantum information, existing in superposition of |0⟩ and |1⟩."
+        }
+      ]
+    },
+    {
+      "id": "history-india-003",
+      "title": "Indian History Deep Dive",
+      "category": "History",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "In which year did the Battle of Plassey take place?",
+          "options": [
+            "1757",
+            "1764",
+            "1752",
+            "1761"
+          ],
+          "correct_index": 0,
+          "explanation": "The Battle of Plassey was fought on 23 June 1757 and established British East India Company's rule."
         },
         {
-          "question": "Which of these is NOT an operating system?",
+          "question": "Who led the Quit India Movement of 1942?",
           "options": [
-            "Windows",
-            "Linux",
-            "Android",
-            "Intel"
+            "Subhas Chandra Bose",
+            "Mahatma Gandhi",
+            "Jawaharlal Nehru",
+            "Sardar Patel"
           ],
-          "correct_index": 3
+          "correct_index": 1,
+          "explanation": "Mahatma Gandhi launched the Quit India Movement on 8 August 1942 with the 'Do or Die' slogan."
         },
         {
-          "question": "Which part of the computer is known as the temporary storage?",
+          "question": "The Chola dynasty was known for its mastery in which field?",
           "options": [
-            "Hard Disk",
-            "RAM",
-            "DVD",
-            "ROM"
+            "Agriculture",
+            "Naval warfare and temple architecture",
+            "Mathematics only",
+            "Painting"
           ],
-          "correct_index": 1
+          "correct_index": 1,
+          "explanation": "The Chola dynasty excelled in naval warfare and built magnificent temples like Brihadeeswara."
         },
         {
-          "question": "Which shortcut is used to copy a selected item on Windows?",
+          "question": "In which year did India adopt its constitution?",
           "options": [
-            "Ctrl + X",
-            "Ctrl + V",
-            "Ctrl + C",
-            "Ctrl + Z"
+            "1947",
+            "1950",
+            "1952",
+            "1949"
           ],
-          "correct_index": 2
+          "correct_index": 1,
+          "explanation": "The Indian Constitution came into effect on 26 January 1950, making India a republic."
         },
         {
-          "question": "Which device is used to print documents on paper?",
+          "question": "Who was the first Governor-General of independent India?",
           "options": [
-            "Monitor",
-            "Printer",
-            "Modem",
-            "Webcam"
+            "Mahatma Gandhi",
+            "Jawaharlal Nehru",
+            "Lord Mountbatten",
+            "Rajendra Prasad"
           ],
-          "correct_index": 1
+          "correct_index": 2,
+          "explanation": "Lord Mountbatten served as the last Viceroy and first Governor-General of independent India."
+        },
+        {
+          "question": "The Indus Valley Civilization was contemporary with which ancient civilization?",
+          "options": [
+            "Egyptian",
+            "Mesopotamian",
+            "Chinese",
+            "Roman"
+          ],
+          "correct_index": 1,
+          "explanation": "The Indus Valley Civilization (c. 3300-1300 BCE) was contemporary with Mesopotamia and Egypt."
+        }
+      ]
+    },
+    {
+      "id": "sports-cricket-004",
+      "title": "Cricket World Cup Trivia",
+      "category": "Sports",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "Which country won the 2023 Cricket World Cup?",
+          "options": [
+            "Australia",
+            "India",
+            "England",
+            "New Zealand"
+          ],
+          "correct_index": 0,
+          "explanation": "Australia won the 2023 Cricket World Cup, beating India in the final at Ahmedabad."
+        },
+        {
+          "question": "Who holds the record for the highest individual Test score?",
+          "options": [
+            "Brian Lara",
+            "Matthew Hayden",
+            "Len Hutton",
+            "Virender Sehwag"
+          ],
+          "correct_index": 1,
+          "explanation": "Matthew Hayden scored 380 against Zimbabwe in 2003, the highest individual Test score."
+        },
+        {
+          "question": "How many overs are in a One Day International (ODI) match?",
+          "options": [
+            "40",
+            "50",
+            "60",
+            "45"
+          ],
+          "correct_index": 1,
+          "explanation": "An ODI match consists of 50 overs per side."
+        },
+        {
+          "question": "Which bowler has taken the most Test wickets in cricket history?",
+          "options": [
+            "Shane Warne",
+            "Muttiah Muralitharan",
+            "Sydney Barnes",
+            "Wasim Akram"
+          ],
+          "correct_index": 1,
+          "explanation": "Muttiah Muralitharan holds the record with 800 Test wickets."
+        },
+        {
+          "question": "What is the name of the cricket tournament played between England and Australia?",
+          "options": [
+            "The Ashes",
+            "The World Cup",
+            "The Tri-Series",
+            "The Champions Trophy"
+          ],
+          "correct_index": 0,
+          "explanation": "The Ashes is a Test cricket series played between England and Australia since 1882."
+        },
+        {
+          "question": "Which Indian cricketer scored a century in all international formats?",
+          "options": [
+            "Sachin Tendulkar",
+            "Rohit Sharma",
+            "Virat Kohli",
+            "Ricky Pont"
+          ],
+          "correct_index": 2,
+          "explanation": "Virat Kohli is the only Indian cricketer to score centuries in all three international formats."
+        }
+      ]
+    },
+    {
+      "id": "geography-asia-005",
+      "title": "Asian Geography Challenge",
+      "category": "Geography",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "Which is the longest river in Asia?",
+          "options": [
+            "Yangtze",
+            "Mekong",
+            "Ob",
+            "Yellow River"
+          ],
+          "correct_index": 0,
+          "explanation": "The Yangtze River at 6,300 km is the longest river in Asia and third-longest in the world."
+        },
+        {
+          "question": "Which country has the largest population in Asia?",
+          "options": [
+            "India",
+            "China",
+            "Indonesia",
+            "Pakistan"
+          ],
+          "correct_index": 1,
+          "explanation": "China has the largest population in Asia with over 1.4 billion people."
+        },
+        {
+          "question": "Mount Everest is located on the border of which countries?",
+          "options": [
+            "Nepal and Bhutan",
+            "Nepal and India",
+            "Nepal and China",
+            "India and China"
+          ],
+          "correct_index": 2,
+          "explanation": "Mount Everest sits on the border between Nepal and China (Tibet Autonomous Region)."
+        },
+        {
+          "question": "The Dead Sea borders which countries?",
+          "options": [
+            "Israel and Jordan",
+            "Israel and Egypt",
+            "Jordan and Iraq",
+            "Israel and Lebanon"
+          ],
+          "correct_index": 0,
+          "explanation": "The Dead Sea borders Israel and Jordan, known for its extremely high salinity."
+        },
+        {
+          "question": "Which is the smallest country in Southeast Asia by area?",
+          "options": [
+            "Singapore",
+            "Brunei",
+            "Timor-Leste",
+            "Laos"
+          ],
+          "correct_index": 0,
+          "explanation": "Singapore is the smallest country in Southeast Asia by land area at about 733 km²."
+        },
+        {
+          "question": "The Gobi Desert is located in which countries?",
+          "options": [
+            "China and Mongolia",
+            "China and India",
+            "Mongolia and Russia",
+            "China and Kazakhstan"
+          ],
+          "correct_index": 0,
+          "explanation": "The Gobi Desert spans northern China and southern Mongolia."
+        }
+      ]
+    },
+    {
+      "id": "math-advanced-006",
+      "title": "Advanced Mathematics Challenge",
+      "category": "Mathematics",
+      "difficulty": "Expert",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "What is the value of Euler's number e (approximately)?",
+          "options": [
+            "3.14159",
+            "2.71828",
+            "1.61803",
+            "2.30259"
+          ],
+          "correct_index": 1,
+          "explanation": "Euler's number e ≈ 2.71828 is the base of natural logarithms."
+        },
+        {
+          "question": "Which theorem states that every integer greater than 1 is either prime or can be expressed as a product of primes?",
+          "options": [
+            "Fermat's Little Theorem",
+            "Fundamental Theorem of Arithmetic",
+            "Euler's Theorem",
+            "Goldbach's Conjecture"
+          ],
+          "correct_index": 1,
+          "explanation": "The Fundamental Theorem of Arithmetic guarantees unique prime factorization for every integer > 1."
+        },
+        {
+          "question": "What is the derivative of e^x?",
+          "options": [
+            "x·e^(x-1)",
+            "e^x",
+            "e^(x+1)",
+            "ln(x)"
+          ],
+          "correct_index": 1,
+          "explanation": "The exponential function is its own derivative: d/dx(e^x) = e^x."
+        },
+        {
+          "question": "In group theory, what is an abelian group?",
+          "options": [
+            "A group with infinite elements",
+            "A group where operation is commutative",
+            "A group with no identity",
+            "A group of prime order"
+          ],
+          "correct_index": 1,
+          "explanation": "An abelian group has a commutative operation: a·b = b·a for all elements a, b."
+        },
+        {
+          "question": "What is the Riemann Hypothesis about?",
+          "options": [
+            "Distribution of prime numbers",
+            "Shape of curves",
+            "Solution of polynomials",
+            "Probability distributions"
+          ],
+          "correct_index": 0,
+          "explanation": "The Riemann Hypothesis concerns the distribution of zeros of the Riemann zeta function, deeply connected to prime numbers."
+        },
+        {
+          "question": "What does Gödel's Incompleteness Theorem prove?",
+          "options": [
+            "All mathematical statements are true",
+            "Any consistent formal system has true statements it cannot prove",
+            "Math is inconsistent",
+            "Proofs are unnecessary"
+          ],
+          "correct_index": 1,
+          "explanation": "Gödel proved that in any consistent formal system, there exist true statements that cannot be proved within that system."
         }
       ]
     }
