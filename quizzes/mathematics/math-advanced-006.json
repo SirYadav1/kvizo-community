@@ -1,0 +1,76 @@
+{
+  "id": "math-advanced-006",
+  "title": "Advanced Mathematics Challenge",
+  "category": "Mathematics",
+  "difficulty": "Expert",
+  "author": "kvizo-community",
+  "created_at": "2026-09-07T04:00:00Z",
+  "questions": [
+    {
+      "question": "What is the value of Euler's number e (approximately)?",
+      "options": [
+        "3.14159",
+        "2.71828",
+        "1.61803",
+        "2.30259"
+      ],
+      "correct_index": 1,
+      "explanation": "Euler's number e \u2248 2.71828 is the base of natural logarithms."
+    },
+    {
+      "question": "Which theorem states that every integer greater than 1 is either prime or can be expressed as a product of primes?",
+      "options": [
+        "Fermat's Little Theorem",
+        "Fundamental Theorem of Arithmetic",
+        "Euler's Theorem",
+        "Goldbach's Conjecture"
+      ],
+      "correct_index": 1,
+      "explanation": "The Fundamental Theorem of Arithmetic guarantees unique prime factorization for every integer > 1."
+    },
+    {
+      "question": "What is the derivative of e^x?",
+      "options": [
+        "x\u00b7e^(x-1)",
+        "e^x",
+        "e^(x+1)",
+        "ln(x)"
+      ],
+      "correct_index": 1,
+      "explanation": "The exponential function is its own derivative: d/dx(e^x) = e^x."
+    },
+    {
+      "question": "In group theory, what is an abelian group?",
+      "options": [
+        "A group with infinite elements",
+        "A group where operation is commutative",
+        "A group with no identity",
+        "A group of prime order"
+      ],
+      "correct_index": 1,
+      "explanation": "An abelian group has a commutative operation: a\u00b7b = b\u00b7a for all elements a, b."
+    },
+    {
+      "question": "What is the Riemann Hypothesis about?",
+      "options": [
+        "Distribution of prime numbers",
+        "Shape of curves",
+        "Solution of polynomials",
+        "Probability distributions"
+      ],
+      "correct_index": 0,
+      "explanation": "The Riemann Hypothesis concerns the distribution of zeros of the Riemann zeta function, deeply connected to prime numbers."
+    },
+    {
+      "question": "What does G\u00f6del's Incompleteness Theorem prove?",
+      "options": [
+        "All mathematical statements are true",
+        "Any consistent formal system has true statements it cannot prove",
+        "Math is inconsistent",
+        "Proofs are unnecessary"
+      ],
+      "correct_index": 1,
+      "explanation": "G\u00f6del proved that in any consistent formal system, there exist true statements that cannot be proved within that system."
+    }
+  ]
+}

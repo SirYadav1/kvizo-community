@@ -1,0 +1,76 @@
+{
+  "id": "geography-asia-005",
+  "title": "Asian Geography Challenge",
+  "category": "Geography",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-07T04:00:00Z",
+  "questions": [
+    {
+      "question": "Which is the longest river in Asia?",
+      "options": [
+        "Yangtze",
+        "Mekong",
+        "Ob",
+        "Yellow River"
+      ],
+      "correct_index": 0,
+      "explanation": "The Yangtze River at 6,300 km is the longest river in Asia and third-longest in the world."
+    },
+    {
+      "question": "Which country has the largest population in Asia?",
+      "options": [
+        "India",
+        "China",
+        "Indonesia",
+        "Pakistan"
+      ],
+      "correct_index": 1,
+      "explanation": "China has the largest population in Asia with over 1.4 billion people."
+    },
+    {
+      "question": "Mount Everest is located on the border of which countries?",
+      "options": [
+        "Nepal and Bhutan",
+        "Nepal and India",
+        "Nepal and China",
+        "India and China"
+      ],
+      "correct_index": 2,
+      "explanation": "Mount Everest sits on the border between Nepal and China (Tibet Autonomous Region)."
+    },
+    {
+      "question": "The Dead Sea borders which countries?",
+      "options": [
+        "Israel and Jordan",
+        "Israel and Egypt",
+        "Jordan and Iraq",
+        "Israel and Lebanon"
+      ],
+      "correct_index": 0,
+      "explanation": "The Dead Sea borders Israel and Jordan, known for its extremely high salinity."
+    },
+    {
+      "question": "Which is the smallest country in Southeast Asia by area?",
+      "options": [
+        "Singapore",
+        "Brunei",
+        "Timor-Leste",
+        "Laos"
+      ],
+      "correct_index": 0,
+      "explanation": "Singapore is the smallest country in Southeast Asia by land area at about 733 km\u00b2."
+    },
+    {
+      "question": "The Gobi Desert is located in which countries?",
+      "options": [
+        "China and Mongolia",
+        "China and India",
+        "Mongolia and Russia",
+        "China and Kazakhstan"
+      ],
+      "correct_index": 0,
+      "explanation": "The Gobi Desert spans northern China and southern Mongolia."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+name: Validate & Sign Quizzes
+
+on:
+  push:
+    paths: ["quizzes/**"]
+  pull_request:
+    paths: ["quizzes/**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install cryptography
+
+      - name: Validate quizzes + build manifest
+        env:
+          ED25519_PRIVATE_KEY_PEM: ${{ secrets.ED25519_PRIVATE_KEY_PEM }}
+        run: python3 build.py
+
+      - name: Commit manifest (only on push, not PR)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add manifest.json community.json community.json.sig .version
+          git diff --cached --quiet || git commit -m "chore: update manifest v$(cat .version) [skip ci]" && git push
