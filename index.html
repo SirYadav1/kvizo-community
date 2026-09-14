@@ -3,10 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kvizo Community</title>
+    <title>Kvizo — Community Quiz Platform</title>
+    <style>
+        :root {
+            --bg: #0f0f1a;
+            --surface: #1a1a2e;
+            --primary: #6c63ff;
+            --primary-light: #8b83ff;
+            --text: #e0e0e0;
+            --text-dim: #888;
+            --accent: #ff6584;
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --radius: 12px;
+            --font: 'Segoe UI', system-ui, sans-serif;
+        }
+        [data-theme="light"] {
+            --bg: #f5f5f5;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --text-dim: #666;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--surface);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span { color: var(--primary-light); }
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: var(--primary-light); }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-icon {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .hero h1 span { color: var(--primary); }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        .stat { text-align: center; }
+        .stat-number { font-size: 36px; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 14px; color: var(--text-dim); margin-top: 4px; }
+        .section { padding: 60px 0; }
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .section-subtitle { color: var(--text-dim); margin-bottom: 40px; }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .category-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        .category-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.15);
+        }
+        .category-icon { font-size: 40px; margin-bottom: 12px; }
+        .category-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .category-count { font-size: 14px; color: var(--text-dim); }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 4px;
+            margin-top: 8px;
+        }
+        .badge-easy { background: #dcfce7; color: #166534; }
+        .badge-medium { background: #fef3c7; color: #92400e; }
+        .badge-hard { background: #fee2e2; color: #991b1b; }
+        .badge-expert { background: #ede9fe; color: #5b21b6; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+        .feature-card h3 { margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-dim); }
+        .feature-icon { font-size: 32px; margin-bottom: 12px; }
+        .download-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--surface);
+            border-radius: var(--radius);
+        }
+        .download-section h2 { margin-bottom: 16px; }
+        .download-section p { color: var(--text-dim); margin-bottom: 30px; }
+        .qr-placeholder {
+            width: 200px; height: 200px;
+            background: white;
+            border-radius: var(--radius);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-dim);
+            font-size: 14px;
+            border-top: 1px solid var(--surface);
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .categories { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Kvizo Community Quizzes</h1>
-    <p>Signed community quiz data for the Kvizo app.</p>
+    <div class="container">
+        <header>
+            <div class="logo">kvizo<span>.</span>community</div>
+            <div class="header-actions">
+                <button class="btn-icon" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+                <a href="#categories" class="btn btn-outline">Explore</a>
+                <a href="#download" class="btn btn-primary">Download App</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Community <span>Quizzes</span> for Everyone</h1>
+            <p>Test your knowledge across 6 categories. Created by the community, verified by Ed25519 signatures.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" id="stat-quizzes">7</div>
+                    <div class="stat-label">Quizzes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Questions</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="categories">
+            <h2 class="section-title">Categories</h2>
+            <p class="section-subtitle">Pick a category and start quizzing</p>
+            <div class="categories" id="categories-list">
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <h2 class="section-title">App Features</h2>
+            <p class="section-subtitle">Everything you need to ace your quizzes</p>
+            <div class="features" id="features-list">
+            </div>
+        </section>
+
+        <section class="section" id="download">
+            <h2 class="section-title">Download Kvizo</h2>
+            <p class="section-subtitle">Get the app for free on Google Play</p>
+            <div class="download-section">
+                <div class="qr-placeholder">📱</div>
+                <h2>Available on Google Play</h2>
+                <p>Install the Kvizo app and start quizzing today</p>
+                <a href="https://play.google.com/store/apps/details?id=com.kvizo.app" class="btn btn-primary" style="font-size:16px; padding:14px 40px;">Get it on Google Play</a>
+                <br><br>
+                <a href="https://github.com/SirYadav1/kvizo/releases" class="btn btn-outline" style="font-size:16px; padding:14px 40px;">Download APK (GitHub)</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Kvizo Community &copy; 2026 | Built with ❤️ by the Kvizo community</p>
+            <p style="margin-top:8px;">Data signed with Ed25519 | <a href="https://github.com/SirYadav1/kvizo-community">Source Code</a></p>
+        </footer>
+    </div>
+    <script>
+        const categories = [
+            {name: 'Programming', icon: '💻', count: 2, slug: 'programming'},
+            {name: 'Science', icon: '🔬', count: 1, slug: 'science'},
+            {name: 'History', icon: '📜', count: 1, slug: 'history'},
+            {name: 'Sports', icon: '🏏', count: 1, slug: 'sports'},
+            {name: 'Geography', icon: '🌍', count: 1, slug: 'geography'},
+            {name: 'Mathematics', icon: '📐', count: 1, slug: 'mathematics'}
+        ];
+        const features = [
+            {icon: '⏱️', title: 'Timed Mode', desc: 'Race against the clock. Score drops as time runs out.'},
+            {icon: '⭐', title: 'XP & Levels', desc: 'Earn XP per quiz. Level up from Beginner to Quiz Master.'},
+            {icon: '🎖️', title: '80+ Badges', desc: 'Collect badges for streaks, perfect scores, and category mastery.'},
+            {icon: '🌙', title: 'Dark Mode', desc: 'Built-in dark theme. Easy on the eyes, hard on competitors.'},
+            {icon: '📊', title: 'Stats & Heatmap', desc: 'Track performance. See which topics need more practice.'},
+            {icon: '🔄', title: 'Backup & Restore', desc: 'Never lose progress. Export and import your data anytime.'},
+            {icon: '🔗', title: 'Share Codes', desc: 'Share quiz codes with friends. Challenge them directly.'},
+            {icon: '🌐', title: '5 Languages', desc: 'App available in Hindi, English, and more.'},
+            {icon: '✅', title: 'Ed25519 Signed', desc: 'All community quizzes are cryptographically verified.'}
+        ];
+        const difficultyColors = {easy: '#4ade80', medium: '#fbbf24', hard: '#ff6584', expert: '#8b5cf6'};
+        const diffLabels = {easy: 'Easy', medium: 'Medium', hard: 'Hard', expert: 'Expert'};
+        document.getElementById('categories-list').innerHTML = categories.map(c => `
+            <div class="category-card" onclick="window.location.href='#${c.slug}'">
+                <div class="category-icon">${c.icon}</div>
+                <div class="category-name">${c.name}</div>
+                <div class="category-count">${c.count} quiz${c.count > 1 ? 's' : ''} available</div>
+            </div>
+        `).join('');
+        document.getElementById('features-list').innerHTML = features.map(f => `
+            <div class="feature-card">
+                <div class="feature-icon">${f.icon}</div>
+                <h3>${f.title}</h3>
+                <p>${f.desc}</p>
+            </div>
+        `).join('');
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', next);
+            document.querySelector('.btn-icon').textContent = next === 'light' ? '☀️' : '🌙';
+            localStorage.setItem('kvizo-theme', next);
+        }
+        const savedTheme = localStorage.getItem('kvizo-theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelector('.btn-icon').textContent = savedTheme === 'light' ? '☀️' : '🌙';
+        }
+    </script>
 </body>
 </html>
