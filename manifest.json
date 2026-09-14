@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "version": 2,
   "key_id": "kvizo-community-v1",
-  "issued_at": "2026-09-14T10:43:01Z",
-  "total_quizzes": 6,
+  "issued_at": "2026-09-14T16:11:43Z",
+  "total_quizzes": 7,
   "quizzes": [
     {
       "id": "geography-asia-005",
@@ -43,6 +43,16 @@
       "questions_count": 6,
       "file": "quizzes/programming/cpp-expert-001.json",
       "sha256": "99b0562684ef425278fdcee28bc62a51bb48baadf0b73b72848aeea55267ad44"
+    },
+    {
+      "id": "cpp-polymorphism-001",
+      "title": "C++ Polymorphism",
+      "category": "Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 1,
+      "file": "quizzes/programming/cpp-polymorphism-001.json",
+      "sha256": "d216f4c0ede1c03ecc79999bd43dc72844f593243982209280a1199eeffa6b31"
     },
     {
       "id": "science-quantum-002",
