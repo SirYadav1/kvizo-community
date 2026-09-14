@@ -8,6 +8,7 @@ Kvizo Community Builder
 """
 import json, hashlib, os, sys, time
 from pathlib import Path
+from keyutil import load_private_key
 
 try:
     from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
@@ -112,7 +113,7 @@ def main():
     # Sign
     private_key = os.environ.get("ED25519_PRIVATE_KEY_PEM")
     if private_key:
-        key = serialization.load_pem_private_key(private_key.encode(), password=None)
+        key = load_private_key(private_key)
         sig = key.sign(json.dumps(manifest, indent=2).encode())
         SIG_FILE.write_bytes(sig)
         print(f"signed with embedded key")
