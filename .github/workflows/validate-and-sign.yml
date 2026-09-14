@@ -28,7 +28,7 @@ jobs:
         run: python3 build.py
 
       - name: Commit manifest (only on push, not PR)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/master')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
