@@ -1,0 +1,76 @@
+{
+  "id": "cpp-expert-001",
+  "title": "C++ Expert Challenge",
+  "category": "Programming",
+  "difficulty": "Expert",
+  "author": "kvizo-community",
+  "created_at": "2026-09-07T04:00:00Z",
+  "questions": [
+    {
+      "question": "In C++20, which feature allows compile-time string manipulation?",
+      "options": [
+        "constexpr if",
+        "consteval",
+        "constexpr virtual",
+        "constinit"
+      ],
+      "correct_index": 1,
+      "explanation": "consteval forces a function to always produce a compile-time result, enabling compile-time string manipulation."
+    },
+    {
+      "question": "What is the time complexity of std::sort on average?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n\u00b2)",
+        "O(log n)"
+      ],
+      "correct_index": 1,
+      "explanation": "std::sort uses Introsort which has O(n log n) average and worst-case complexity."
+    },
+    {
+      "question": "Which smart pointer owns a uniquely owned resource in C++?",
+      "options": [
+        "std::shared_ptr",
+        "std::unique_ptr",
+        "std::weak_ptr",
+        "std::auto_ptr"
+      ],
+      "correct_index": 1,
+      "explanation": "std::unique_ptr provides exclusive ownership of a dynamically allocated object."
+    },
+    {
+      "question": "What does RAII stand for in C++?",
+      "options": [
+        "Resource Allocation Is Initialization",
+        "Runtime Access Interface",
+        "Resource Allocation Inheritance",
+        "Reliable Array Indexing"
+      ],
+      "correct_index": 0,
+      "explanation": "RAII binds resource lifetime to object lifetime \u2014 acquisition in constructor, release in destructor."
+    },
+    {
+      "question": "In C++11, what does noexcept indicate?",
+      "options": [
+        "The function will never throw",
+        "The function may throw but is optimized",
+        "The function should be inlined",
+        "The function returns void"
+      ],
+      "correct_index": 0,
+      "explanation": "noexcept specifies that a function will not throw exceptions; if it does, std::terminate is called."
+    },
+    {
+      "question": "Which virtual function feature enables runtime polymorphism in C++?",
+      "options": [
+        "virtual destructor",
+        "vtable",
+        "abstract class",
+        "pure virtual function"
+      ],
+      "correct_index": 1,
+      "explanation": "The vtable (virtual table) holds function pointers for dynamic dispatch of virtual functions."
+    }
+  ]
+}

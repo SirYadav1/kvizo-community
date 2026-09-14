@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "key_id": "kvizo-community-v1",
+  "issued_at": "2026-09-14T10:43:01Z",
+  "total_quizzes": 6,
+  "quizzes": [
+    {
+      "id": "geography-asia-005",
+      "title": "Asian Geography Challenge",
+      "category": "Geography",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 6,
+      "file": "quizzes/geography/geography-asia-005.json",
+      "sha256": "53865fbae803a64f099d69b6fd5fa99c5883d0895e1e38562d74b2b1fe8ffae6"
+    },
+    {
+      "id": "history-india-003",
+      "title": "Indian History Deep Dive",
+      "category": "History",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 6,
+      "file": "quizzes/history/history-india-003.json",
+      "sha256": "0820f8c6e93bdd4677c3fe2a4dbafb1ee99d639743a24409cb5cca77353ed553"
+    },
+    {
+      "id": "math-advanced-006",
+      "title": "Advanced Mathematics Challenge",
+      "category": "Mathematics",
+      "difficulty": "Expert",
+      "author": "kvizo-community",
+      "questions_count": 6,
+      "file": "quizzes/mathematics/math-advanced-006.json",
+      "sha256": "3c6b2f04b77519c12e6a6c54dc8d28c67fe865b0880fa184e344d4988896c2d9"
+    },
+    {
+      "id": "cpp-expert-001",
+      "title": "C++ Expert Challenge",
+      "category": "Programming",
+      "difficulty": "Expert",
+      "author": "kvizo-community",
+      "questions_count": 6,
+      "file": "quizzes/programming/cpp-expert-001.json",
+      "sha256": "99b0562684ef425278fdcee28bc62a51bb48baadf0b73b72848aeea55267ad44"
+    },
+    {
+      "id": "science-quantum-002",
+      "title": "Quantum Physics Basics",
+      "category": "Science",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 6,
+      "file": "quizzes/science/science-quantum-002.json",
+      "sha256": "0a554ac6ede1cbfc7797b5e40202a4aa71931c6b4bdbc81c23d88cad93600cb7"
+    },
+    {
+      "id": "sports-cricket-004",
+      "title": "Cricket World Cup Trivia",
+      "category": "Sports",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 6,
+      "file": "quizzes/sports/sports-cricket-004.json",
+      "sha256": "c4db3e400ef8bb9f13e479fb3e6ba4dbd39d9aea8dd108b7a042dcedebfd09fb"
+    }
+  ]
+}
