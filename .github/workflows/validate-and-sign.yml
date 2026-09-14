@@ -5,6 +5,7 @@ on:
     paths: ["quizzes/**"]
   pull_request:
     paths: ["quizzes/**"]
+  workflow_dispatch:
 
 jobs:
   validate:
