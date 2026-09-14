@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "key_id": "kvizo-community",
+  "issued_at": "2026-09-14T09:00:00Z",
+  "quizzes": [
+    {
+      "id": "cpp-expert-001",
+      "title": "C++ Expert Challenge",
+      "category": "Programming",
+      "difficulty": "Expert",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "In C++20, which feature allows compile-time string manipulation?",
+          "options": [
+            "constexpr if",
+            "consteval",
+            "constexpr virtual",
+            "constinit"
+          ],
+          "correct_index": 1,
+          "explanation": "consteval forces a function to always produce a compile-time result."
+        }
+      ]
+    },
+    {
+      "id": "science-quantum-002",
+      "title": "Quantum Physics Basics",
+      "category": "Science",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "What is the unit of quantum information?",
+          "options": [
+            "Bit",
+            "Qubit",
+            "Byte",
+            "Quantum"
+          ],
+          "correct_index": 1,
+          "explanation": "A qubit is the quantum analog of a classical bit."
+        }
+      ]
+    },
+    {
+      "id": "history-india-003",
+      "title": "Indian History Deep Dive",
+      "category": "History",
+      "difficulty": "Hard",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "Which year did India get independence?",
+          "options": [
+            "1945",
+            "1947",
+            "1950",
+            "1952"
+          ],
+          "correct_index": 1,
+          "explanation": "India gained independence from British rule in 1947."
+        }
+      ]
+    },
+    {
+      "id": "sports-cricket-004",
+      "title": "Cricket World Cup Trivia",
+      "category": "Sports",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "How many teams play in a Cricket World Cup?",
+          "options": [
+            "8",
+            "10",
+            "12",
+            "16"
+          ],
+          "correct_index": 2,
+          "explanation": "12 teams compete in the ICC Cricket World Cup."
+        }
+      ]
+    },
+    {
+      "id": "geography-asia-005",
+      "title": "Asian Geography Challenge",
+      "category": "Geography",
+      "difficulty": "Hard",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "Which is the largest country in Asia by area?",
+          "options": [
+            "China",
+            "India",
+            "Russia",
+            "Kazakhstan"
+          ],
+          "correct_index": 2,
+          "explanation": "Russia is the largest country in Asia by area."
+        }
+      ]
+    },
+    {
+      "id": "math-advanced-006",
+      "title": "Advanced Mathematics Challenge",
+      "category": "Mathematics",
+      "difficulty": "Expert",
+      "author": "kvizo-community",
+      "created_at": "2026-09-07T04:00:00Z",
+      "questions": [
+        {
+          "question": "What is the value of Euler's number e?",
+          "options": [
+            "2.718",
+            "3.141",
+            "1.618",
+            "2.714"
+          ],
+          "correct_index": 0,
+          "explanation": "Euler's number e \u2248 2.71828."
+        }
+      ]
+    }
+  ]
+}
