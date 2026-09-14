@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "total_quizzes": 7,
+  "categories": [
+    "programming",
+    "science",
+    "history",
+    "sports",
+    "geography",
+    "mathematics"
+  ],
+  "quizzes": [
+    {
+      "id": "cpp-expert-001",
+      "cat": "programming",
+      "hash": "bbab7adc6546b36759ba46f1a6d643ae2090135a84ea2f6d85349e5e1d48f1ba"
+    },
+    {
+      "id": "science-quantum-002",
+      "cat": "science",
+      "hash": "085ceea1cd3332e73e53fba3963b00ac6d84da33e3cf771e1fe7dcc958797678"
+    },
+    {
+      "id": "history-india-003",
+      "cat": "history",
+      "hash": "6d6b204d591b5872f21fe79c7cbf5eaf39d2e93963f38c3c96550592f8a8153c"
+    },
+    {
+      "id": "sports-cricket-004",
+      "cat": "sports",
+      "hash": "559cdeb21d8b43e16f7a2def8f83a21100e08d81adf6023f660bef89a763a302"
+    },
+    {
+      "id": "geography-asia-005",
+      "cat": "geography",
+      "hash": "6d7473459bc3e8b6db2356899649f9d9fc7c0609eb8a9ff90cda7fa3c5285d95"
+    },
+    {
+      "id": "math-advanced-006",
+      "cat": "mathematics",
+      "hash": "7a6384a02637a8ab19f6bda4f369381954ae206eaf1af37b7ecd621d1e662137"
+    },
+    {
+      "id": "cpp-polymorphism-001",
+      "cat": "programming",
+      "hash": "2f32cd0e0907c527db9cde5e04b2575712e1d90dd197351983ba2cc103348cf8"
+    }
+  ],
+  "_integrity": {
+    "sha256": "d6fcdc7e3df060390d6d6e1f1fdfc9f92e3f12c516043dc37aeeb255049e37cb"
+  },
+  "signature": "pFcUEnJi+sM7b668s7gbl5gcIVQOb6LW9Ey+E2BH9ul6thuHrP3ZIvwY7Dgu6l5Nl/kR3W0hpW+8HRuDdsfwDA==",
+  "public_key": "eUqiUCvIQCKu+23Z4tLA5pRUWqW30tsOnrdhCJMFpbE="
+}

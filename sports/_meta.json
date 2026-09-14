@@ -1,0 +1,13 @@
+{
+  "name": "Sports",
+  "count": 1,
+  "quizzes": [
+    {
+      "id": "sports-cricket-004",
+      "title": "Cricket World Cup Trivia",
+      "difficulty": "Medium"
+    }
+  ],
+  "updated_at": "2026-09-14T05:45:00Z",
+  "source": "kvizo-community"
+}
