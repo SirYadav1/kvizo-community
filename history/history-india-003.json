@@ -1,0 +1,79 @@
+{
+  "id": "history-india-003",
+  "title": "Indian History Deep Dive",
+  "category": "History",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-07T04:00:00Z",
+  "questions": [
+    {
+      "question": "In which year did the Battle of Plassey take place?",
+      "options": [
+        "1757",
+        "1764",
+        "1752",
+        "1761"
+      ],
+      "correct_index": 0,
+      "explanation": "The Battle of Plassey was fought on 23 June 1757 and established British East India Company's rule."
+    },
+    {
+      "question": "Who led the Quit India Movement of 1942?",
+      "options": [
+        "Subhas Chandra Bose",
+        "Mahatma Gandhi",
+        "Jawaharlal Nehru",
+        "Sardar Patel"
+      ],
+      "correct_index": 1,
+      "explanation": "Mahatma Gandhi launched the Quit India Movement on 8 August 1942 with the 'Do or Die' slogan."
+    },
+    {
+      "question": "The Chola dynasty was known for its mastery in which field?",
+      "options": [
+        "Agriculture",
+        "Naval warfare and temple architecture",
+        "Mathematics only",
+        "Painting"
+      ],
+      "correct_index": 1,
+      "explanation": "The Chola dynasty excelled in naval warfare and built magnificent temples like Brihadeeswara."
+    },
+    {
+      "question": "In which year did India adopt its constitution?",
+      "options": [
+        "1947",
+        "1950",
+        "1952",
+        "1949"
+      ],
+      "correct_index": 1,
+      "explanation": "The Indian Constitution came into effect on 26 January 1950, making India a republic."
+    },
+    {
+      "question": "Who was the first Governor-General of independent India?",
+      "options": [
+        "Mahatma Gandhi",
+        "Jawaharlal Nehru",
+        "Lord Mountbatten",
+        "Rajendra Prasad"
+      ],
+      "correct_index": 2,
+      "explanation": "Lord Mountbatten served as the last Viceroy and first Governor-General of independent India."
+    },
+    {
+      "question": "The Indus Valley Civilization was contemporary with which ancient civilization?",
+      "options": [
+        "Egyptian",
+        "Mesopotamian",
+        "Chinese",
+        "Roman"
+      ],
+      "correct_index": 1,
+      "explanation": "The Indus Valley Civilization (c. 3300-1300 BCE) was contemporary with Mesopotamia and Egypt."
+    }
+  ],
+  "_integrity": {
+    "sha256": "fd595c1b1c78463d7fff00c817a81c0753e13abe6850c355b50285969e5d4c76"
+  }
+}

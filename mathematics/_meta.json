@@ -1,0 +1,13 @@
+{
+  "name": "Mathematics",
+  "count": 1,
+  "quizzes": [
+    {
+      "id": "math-advanced-006",
+      "title": "Advanced Mathematics Challenge",
+      "difficulty": "Expert"
+    }
+  ],
+  "updated_at": "2026-09-14T05:45:00Z",
+  "source": "kvizo-community"
+}

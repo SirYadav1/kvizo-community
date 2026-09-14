@@ -1,0 +1,51 @@
+{
+  "categories": {
+    "Programming": [
+      {
+        "id": "cpp-expert-001",
+        "title": "C++ Expert Challenge",
+        "difficulty": "Expert"
+      },
+      {
+        "id": "cpp-polymorphism-001",
+        "title": "C++ Polymorphism",
+        "difficulty": "Medium"
+      }
+    ],
+    "Science": [
+      {
+        "id": "science-quantum-002",
+        "title": "Quantum Physics Basics",
+        "difficulty": "Medium"
+      }
+    ],
+    "History": [
+      {
+        "id": "history-india-003",
+        "title": "Indian History Deep Dive",
+        "difficulty": "Medium"
+      }
+    ],
+    "Sports": [
+      {
+        "id": "sports-cricket-004",
+        "title": "Cricket World Cup Trivia",
+        "difficulty": "Medium"
+      }
+    ],
+    "Geography": [
+      {
+        "id": "geography-asia-005",
+        "title": "Asian Geography Challenge",
+        "difficulty": "Medium"
+      }
+    ],
+    "Mathematics": [
+      {
+        "id": "math-advanced-006",
+        "title": "Advanced Mathematics Challenge",
+        "difficulty": "Expert"
+      }
+    ]
+  }
+}
