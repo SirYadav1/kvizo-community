@@ -1,0 +1,10 @@
+{
+  "notifications": [
+    {
+      "id": "v2.1.0-release",
+      "title": "Kvizo v2.1.0 Available",
+      "body": "New update with Cloudflare Worker API, smoother performance, and About section.",
+      "createdAt": 1757923200000
+    }
+  ]
+}
