@@ -125,13 +125,6 @@ def main():
     SIG_FILE.write_bytes(sig_community)
     print(f"signed manifest.json + community.json ({len(sig_manifest)} bytes)")
 
-        pub = key.public_key().public_bytes(
-            serialization.Encoding.PEM,
-            serialization.PublicFormat.SubjectPublicKeyInfo
-        )
-        print(f"ephemeral key (NOT for production):")
-        print(pub.decode())
-        print("set ED25519_PRIVATE_KEY_PEM for production signing")
 
     print(f"✅ {len(quizzes_data)} quizzes | version {version} | issued {now}")
     print(f"   manifest.json + community.json + .sig written")
