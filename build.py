@@ -114,14 +114,17 @@ def main():
     private_key = os.environ.get("ED25519_PRIVATE_KEY_PEM")
     if private_key:
         key = load_private_key(private_key)
-        sig = key.sign(json.dumps(manifest, indent=2).encode())
-        SIG_FILE.write_bytes(sig)
-        print(f"signed with embedded key")
     else:
-        # Generate ephemeral key (signing happens in GitHub Action)
         key = Ed25519PrivateKey.generate()
-        sig = key.sign(json.dumps(manifest, indent=2).encode())
-        SIG_FILE.write_bytes(sig)
+
+    # Sign manifest.json
+    sig_manifest = key.sign(json.dumps(manifest, indent=2).encode())
+    (ROOT / "manifest.json.sig").write_bytes(sig_manifest)
+    # Also sign community.json (legacy app verification)
+    sig_community = key.sign(open(COMMUNITY_FILE, "rb").read())
+    SIG_FILE.write_bytes(sig_community)
+    print(f"signed manifest.json + community.json ({len(sig_manifest)} bytes)")
+
         pub = key.public_key().public_bytes(
             serialization.Encoding.PEM,
             serialization.PublicFormat.SubjectPublicKeyInfo
