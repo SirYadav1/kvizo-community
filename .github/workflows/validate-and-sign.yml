@@ -32,5 +32,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
-          git add manifest.json community.json community.json.sig .version
+          git add manifest.json manifest.json.sig community.json community.json.sig .version
           git diff --cached --quiet || git commit -m "chore: update manifest v$(cat .version) [skip ci]" && git push
