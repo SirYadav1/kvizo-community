@@ -1,0 +1,5 @@
+# Signed files are verified byte-for-byte by the app (SHA-256 + Ed25519 over raw bytes).
+# Any normalization (CRLF, encoding, filters) would invalidate every signature.
+* -text -eol
+*.json diff=json
+*.sig binary

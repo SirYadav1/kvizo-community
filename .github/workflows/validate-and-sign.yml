@@ -1,0 +1,72 @@
+name: Validate & Sign Quizzes
+
+# Quizzes you push are the ONLY way content enters the app.
+# This workflow validates every quiz, rebuilds the manifest + legacy bundle and
+# signs them with the Ed25519 key in the ED25519_PRIVATE_KEY secret.
+# Without that key nobody - not even a leaked repo collaborator - can publish
+# a bundle the app accepts.
+
+on:
+  push:
+    paths:
+      - "quizzes/**"
+      - "build.py"
+      - ".github/workflows/validate-and-sign.yml"
+  pull_request:
+    paths:
+      - "quizzes/**"
+      - "build.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sign-quizzes
+  cancel-in-progress: false
+
+jobs:
+  validate-and-sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install cryptography
+
+      # Always validate, even for PRs. No secret is exposed to PR builds.
+      - name: Validate quizzes
+        run: python3 build.py --check
+
+      - name: Check that committed signatures still match
+        if: github.event_name == 'pull_request'
+        run: |
+          if [ -f manifest.json ]; then python3 build.py --verify-only; fi
+
+      - name: Sign (push to master only)
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        env:
+          ED25519_PRIVATE_KEY: ${{ secrets.ED25519_PRIVATE_KEY }}
+        run: |
+          if [ -z "$ED25519_PRIVATE_KEY" ]; then
+            echo "::error::secret ED25519_PRIVATE_KEY is missing - cannot sign. Add it in repo Settings > Secrets."
+            exit 1
+          fi
+          python3 build.py
+
+      - name: Commit signed output
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        run: |
+          git config user.name "kvizo-signer"
+          git config user.email "actions@users.noreply.github.com"
+          git add manifest.json manifest.json.sig community.json community.json.sig public_key.hex
+          if git diff --cached --quiet; then
+            echo "nothing to commit - already signed"
+          else
+            git commit -m "chore: sign community bundle ($(date -u +%Y-%m-%dT%H:%MZ)) [skip ci]"
+            git push
+          fi

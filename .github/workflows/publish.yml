@@ -1,0 +1,87 @@
+name: Publish Quiz
+
+# The "easy way": open this from the GitHub mobile app or browser, paste your
+# questions, hit Run workflow. Validation + signing + commit happen here, so you
+# never need a laptop, a token, or a deploy step.
+#
+# After it finishes (~30s) the quiz is live in the app: new content appears
+# within the Pages cache window (max ~10 minutes).
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "Unique quiz id (lowercase, dashes) e.g. c-basics-002"
+        required: true
+      title:
+        description: "Quiz title"
+        required: true
+      category:
+        description: "Category"
+        required: true
+        default: "Programming"
+      difficulty:
+        description: "Difficulty"
+        required: true
+        type: choice
+        default: "Medium"
+        options: ["Easy", "Medium", "Hard", "Expert"]
+      author:
+        description: "Author name shown in the app"
+        required: false
+        default: "SirYadav1"
+      questions:
+        description: "Questions in Kvizo TXT format (1. question / a) b) options / Answer: b / Explain: optional)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install cryptography
+
+      - name: Write the quiz file
+        env:
+          Q_ID: ${{ inputs.id }}
+          Q_TITLE: ${{ inputs.title }}
+          Q_CATEGORY: ${{ inputs.category }}
+          Q_DIFFICULTY: ${{ inputs.difficulty }}
+          Q_AUTHOR: ${{ inputs.author }}
+          Q_TEXT: ${{ inputs.questions }}
+        run: |
+          python3 add_quiz.py \
+            --id "$Q_ID" \
+            --title "$Q_TITLE" \
+            --category "$Q_CATEGORY" \
+            --difficulty "$Q_DIFFICULTY" \
+            --author "$Q_AUTHOR" \
+            --questions-text "$Q_TEXT"
+
+      - name: Sign the bundle
+        env:
+          ED25519_PRIVATE_KEY: ${{ secrets.ED25519_PRIVATE_KEY }}
+        run: |
+          if [ -z "$ED25519_PRIVATE_KEY" ]; then
+            echo "::error::Add the ED25519_PRIVATE_KEY secret first (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+          python3 build.py
+
+      - name: Commit
+        run: |
+          git config user.name "kvizo-signer"
+          git config user.email "actions@users.noreply.github.com"
+          git add quizzes manifest.json manifest.json.sig community.json community.json.sig public_key.hex
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git commit -m "publish: ${{ inputs.id }} - ${{ inputs.title }} [skip ci]"
+          git push
