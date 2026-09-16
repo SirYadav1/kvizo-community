@@ -10,7 +10,15 @@
 # so the broad rule comes first and the exact paths come after it.
 
 /*
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=1800
+
+# The page itself is small and changes with every site tweak: keep it short-lived so
+# nobody keeps seeing an old layout (assets are versioned with ?v=).
+/
+  Cache-Control: public, max-age=60, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=60, must-revalidate
 
 # Landing-page artwork and the fonts: a long cache is safe, the filenames change
 # whenever the artwork does.
