@@ -61,8 +61,11 @@ jobs:
       - name: Commit signed output
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
         run: |
-          git config user.name "kvizo-signer"
-          git config user.email "actions@users.noreply.github.com"
+          # Commit as the repository owner, not as a bot account: a signed bundle is
+          # routine maintenance, and committing it as "kvizo-signer" put a second
+          # contributor on the repo for every quiz that was ever published.
+          git config user.name "𝐒𝐮𝐧𝐝𝐫𝐚𝐦 𝐘𝐚𝐝𝐚𝐯"
+          git config user.email "sundramy807@gmail.com"
           git add manifest.json manifest.json.sig community.json community.json.sig public_key.hex
           if git diff --cached --quiet; then
             echo "nothing to commit - already signed"

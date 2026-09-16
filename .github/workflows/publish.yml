@@ -79,8 +79,10 @@ jobs:
 
       - name: Commit
         run: |
-          git config user.name "kvizo-signer"
-          git config user.email "actions@users.noreply.github.com"
+          # Same identity as the signing workflow: everything on this repo is owned by
+          # one person, so no bot account shows up as a contributor.
+          git config user.name "𝐒𝐮𝐧𝐝𝐫𝐚𝐦 𝐘𝐚𝐝𝐚𝐯"
+          git config user.email "sundramy807@gmail.com"
           git add quizzes manifest.json manifest.json.sig community.json community.json.sig public_key.hex
           git diff --cached --quiet && { echo "nothing changed"; exit 0; }
           git commit -m "publish: ${{ inputs.id }} - ${{ inputs.title }} [skip ci]"
