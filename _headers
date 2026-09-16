@@ -1,12 +1,26 @@
-# Cache rules for the host serving kvizo.indev.in (Netlify reads this file from the
-# publish directory, see netlify.toml).
+# Cache rules for the host serving the Kvizo site (kvizo-appp.netlify.app; Netlify
+# reads this file from the publish directory, see netlify.toml).
 #
-# The same origin serves two very different things: the landing page, which can
-# be cached for a while, and the signed community data, which the app may refetch
-# at any time. Cached JSON would be fine today (it is still verified on the app
-# side), but a long TTL makes a freshly published quiz look missing, so the data
-# files are kept short and revalidated while the site itself stays cached.
+# The same origin serves two very different things: the landing page, which can be
+# cached for a while, and the signed community data, which the app may refetch at any
+# time. A long TTL on the data files makes a freshly published quiz look missing.
+#
+# Netlify applies the LAST matching rule (verified against the live site: with the
+# catch-all written last, /community.json was answered with the catch-all's 3600),
+# so the broad rule comes first and the exact paths come after it.
 
+/*
+  Cache-Control: public, max-age=3600
+
+# Landing-page artwork and the fonts: a long cache is safe, the filenames change
+# whenever the artwork does.
+/assets/img/*
+  Cache-Control: public, max-age=604800
+
+/assets/fonts/*
+  Cache-Control: public, max-age=604800
+
+# Signed community data: short TTL so a newly published quiz shows up quickly.
 /community.json
   Cache-Control: public, max-age=60, must-revalidate
 
@@ -19,8 +33,8 @@
 /manifest.json.sig
   Cache-Control: public, max-age=60, must-revalidate
 
-/quizzes/*
+/public_key.hex
   Cache-Control: public, max-age=60, must-revalidate
 
-/*
-  Cache-Control: public, max-age=3600
+/quizzes/*
+  Cache-Control: public, max-age=60, must-revalidate

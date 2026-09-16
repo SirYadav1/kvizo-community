@@ -1,4 +1,4 @@
-# Netlify config for the Kvizo site + signed community data (kvizo.indev.in).
+# Netlify config for the Kvizo site + signed community data (kvizo-appp.netlify.app).
 #
 # There is nothing to compile. This "build" only collects the files that are meant
 # to be public into a publish directory, so the tooling in this repo (build.py,

@@ -4,17 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kvizo — Forge knowledge. Earn XP. Play anywhere.</title>
-<meta name="description" content="Kvizo is an offline-first Android quiz app built with Kotlin and Jetpack Compose. Create quizzes, earn XP, keep streaks, unlock 81 badges and import community quizzes. No account, no server.">
+<meta name="description" content="Kvizo is an offline-first Android quiz app built with Kotlin and Jetpack Compose. Create quizzes, earn XP, keep streaks, unlock 81 badges and import signature-verified community quizzes. No account, no server. Latest release: 2.0.1.">
 <meta name="theme-color" content="#7C3AED">
 <link rel="canonical" href="https://kvizo-appp.netlify.app/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kvizo-appp.netlify.app/">
 <meta property="og:title" content="Kvizo — Forge knowledge. Earn XP. Play anywhere.">
-<meta property="og:description" content="Offline-first Android quiz app. Custom quizzes, XP and levels, 81 badges, streaks, community quizzes. No account needed.">
+<meta property="og:description" content="Offline-first Android quiz app. Custom quizzes, XP and levels, 81 badges, streaks and signature-verified community quizzes. No account needed. Latest release: 2.0.1 (16 Sep 2026).">
+<meta property="og:site_name" content="Kvizo">
+<meta property="og:image" content="https://kvizo-appp.netlify.app/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kvizo logo — Forge knowledge. Earn XP. Play anywhere.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kvizo-appp.netlify.app/assets/img/og-card.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Ccircle cx='54' cy='54' r='38' fill='%23FFFFFF'/%3E%3Cpath d='M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z' fill='%236C4DF6'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/logo-512.png">
+<link rel="apple-touch-icon" href="assets/img/logo-512.png">
 <link rel="preload" href="assets/fonts/space_grotesk.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -62,13 +69,8 @@
 <header class="nav-wrap">
   <nav class="nav glass" aria-label="Main">
     <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 108 108">
-          <circle cx="54" cy="54" r="38" fill="#fff"/>
-          <path d="M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z" fill="#6C4DF6"/>
-          <path d="M30 30 L32 36 L38 38 L32 40 L30 46 L28 40 L22 38 L28 36 Z" fill="#FFB300"/>
-          <path d="M78 68 L79.5 72 L83.5 73.5 L79.5 75 L78 79 L76.5 75 L72.5 73.5 L76.5 72 Z" fill="#FF6EC7"/>
-        </svg>
+      <span class="brand-mark brand-mark--img" aria-hidden="true">
+        <img src="assets/img/logo.png" alt="" width="34" height="37" decoding="async">
       </span>
       <span class="brand-name">Kvizo</span>
     </a>
@@ -129,6 +131,7 @@
 
   <section class="hero">
     <div class="hero-copy">
+      <img class="hero-logo reveal" src="assets/img/logo.png" alt="Kvizo" width="84" height="91" decoding="async">
       <p class="eyebrow reveal" data-i18n="hero.eyebrow">Offline-first Android quiz app</p>
       <h1 class="hero-title reveal" data-i18n="hero.title">Forge knowledge. Earn XP. Play anywhere.</h1>
       <p class="hero-sub reveal" data-i18n="hero.sub">Create your own quizzes, play them timed or relaxed, build streaks and unlock 81 badges. Community quizzes arrive signed and verified. No account, no server, everything on your device.</p>
@@ -360,8 +363,23 @@
     <div class="release-grid">
       <article class="release-card glass reveal">
         <header class="release-head">
-          <span class="version-chip">v2.0.0</span>
+          <span class="version-chip">v2.0.1</span>
           <span class="latest-tag" data-i18n="rel.latest">Latest</span>
+          <time class="release-date" datetime="2026-09-16">16 Sep 2026</time>
+        </header>
+        <ul class="release-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r0.h1">Community quizzes are signature-verified and score the right answer</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r0.h2">Fixed community quizzes that could not load at all</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r0.h3">Website link in About, announcement pop-ups removed</span></li>
+        </ul>
+        <a class="link-more" href="https://github.com/SirYadav1/kvizo/releases/tag/v2.0.1" target="_blank" rel="noopener">
+          <span data-i18n="rel.notes">Release notes</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </article>
+
+      <article class="release-card glass reveal">
+        <header class="release-head">
+          <span class="version-chip">v2.0.0</span>
           <time class="release-date" datetime="2026-09-10">10 Sep 2026</time>
         </header>
         <ul class="release-list">
@@ -389,27 +407,13 @@
         </a>
       </article>
 
-      <article class="release-card glass reveal">
-        <header class="release-head">
-          <span class="version-chip">v1.3.0</span>
-          <time class="release-date" datetime="2026-08-08">8 Aug 2026</time>
-        </header>
-        <ul class="release-list">
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3.h1">Archived build, rebuilt with the Kvizo rebrand</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3.h2">Signed universal APK</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3.h3">Supports Android 8.0 and above</span></li>
-        </ul>
-        <a class="link-more" href="https://github.com/SirYadav1/kvizo/releases/tag/v1.3.0" target="_blank" rel="noopener">
-          <span data-i18n="rel.notes">Release notes</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </a>
-      </article>
     </div>
   </section>
 
   <section class="section" id="community">
     <div class="section-head">
       <h2 class="reveal" data-i18n="community.title">Community content you can trust</h2>
-      <p class="reveal" data-i18n="community.sub">Community quizzes and announcements are published as static files and signed with Ed25519. The app verifies the signature before anything is stored, and falls back to a verified local cache when there is no network.</p>
+      <p class="reveal" data-i18n="community.sub">Community quizzes are published as static files and signed with Ed25519. The app checks that signature and the SHA-256 of every quiz before anything is stored, then falls back to a re-verified local cache when there is no network.</p>
     </div>
 
     <div class="community-grid">
@@ -417,11 +421,11 @@
         <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span>
         <h3 data-i18n="community.cardTitle">Signed and verified</h3>
         <ul class="tick-list">
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v1">Ed25519 signature check on every fetch</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v2">Rotatable trusted key ids</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v3">Expiry check on published content</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v1">Ed25519 signature check on the signed manifest of every fetch</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v2">Every quiz validated against the SHA-256 in that manifest</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v3">Served from free static mirrors — GitHub raw and jsDelivr</span></li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v4">Offline cache, re-verified on read</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v5">Input sanitised before it reaches the database</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v5">A tampered cache is rejected, never trusted</span></li>
         </ul>
       </article>
 
@@ -457,7 +461,7 @@
     <div class="dev-grid">
       <article class="dev-card glass reveal">
         <div class="dev-head">
-          <span class="dev-avatar" aria-hidden="true"><svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="38" fill="#fff"/><path d="M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z" fill="#6C4DF6"/></svg></span>
+          <span class="dev-avatar" aria-hidden="true"><img src="assets/img/logo.png" alt="" width="56" height="60" loading="lazy" decoding="async"></span>
           <div>
             <strong>SirYadav1</strong>
             <span data-i18n="dev.role">Creator and developer</span>
@@ -525,7 +529,7 @@
       </details>
       <details class="faq-item glass">
         <summary><span data-i18n="faq.q5">How do community quizzes get verified?</span></summary>
-        <p data-i18n="faq.a5">They are published as static files signed with Ed25519. The app checks the signature against trusted key ids and validates the expiry before anything is imported.</p>
+        <p data-i18n="faq.a5">They are published to the community repository as static files and signed by a GitHub Action with a key that only exists as a repository secret. The app verifies that Ed25519 signature and then the SHA-256 of every quiz, so nothing can be published into your app without the key.</p>
       </details>
       <details class="faq-item glass">
         <summary><span data-i18n="faq.q6">Is it free, and are there ads?</span></summary>
@@ -601,7 +605,7 @@
     <div class="download-panel glass reveal">
       <div class="download-copy">
         <h2 data-i18n="download.title">Install Kvizo in three steps</h2>
-        <p data-i18n="download.sub">Version 2.0.0, build 24. Signed release APK for Android 8.0 and above.</p>
+        <p data-i18n="download.sub">Version 2.0.1, build 26. Signed release APK for Android 8.0 and above.</p>
 
         <ol class="steps">
           <li><span class="step-n">1</span><span data-i18n="download.step1">Download the latest APK from the releases page.</span></li>
@@ -621,7 +625,7 @@
       </div>
 
       <div class="download-facts">
-        <div class="fact glass"><span data-i18n="download.f1k">Version</span><strong>2.0.0</strong></div>
+        <div class="fact glass"><span data-i18n="download.f1k">Version</span><strong>2.0.1</strong></div>
         <div class="fact glass"><span data-i18n="download.f2k">Minimum Android</span><strong>8.0 (API 26)</strong></div>
         <div class="fact glass"><span data-i18n="download.f3k">Built with</span><strong>Kotlin, Compose</strong></div>
         <div class="fact glass"><span data-i18n="download.f4k">Licence</span><strong>MIT</strong></div>
@@ -638,11 +642,8 @@
 <footer class="footer glass">
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 108 108">
-          <circle cx="54" cy="54" r="38" fill="#fff"/>
-          <path d="M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z" fill="#6C4DF6"/>
-        </svg>
+      <span class="brand-mark brand-mark--img" aria-hidden="true">
+        <img src="assets/img/logo.png" alt="" width="40" height="43" loading="lazy" decoding="async">
       </span>
       <div>
         <strong>Kvizo</strong>
