@@ -411,23 +411,33 @@ img, svg { display: block; max-width: 100%; }
 }
 .brand-mark svg { width: 106%; height: 106%; }
 
-/* New app logo: the artwork carries its own shape, so the tile background is dropped
-   and the image is contained inside the same 34px box the SVG mark used. */
-.brand-mark--img { background: none; }
-.brand-mark img,
-.dev-avatar img {
+/* New app logo: the artwork is a finished badge with its own rounded shape, so no tile
+   behind it, no shadow and no overflow — it just sits inside the same box the SVG mark
+   used, and the developer card shows the badge itself instead of a cropped circle. */
+.brand-mark--img,
+.brand-mark--img img {
+  background: none;
+  box-shadow: none;
+  border: 0;
+}
+.brand-mark--img img,
+.dev-avatar--logo img {
   width: 100%; height: 100%;
   object-fit: contain;
   display: block;
 }
-.brand-mark--img img { width: 108%; height: 108%; }
+.dev-avatar--logo {
+  border-radius: 16px;
+  background: none;
+}
 
-/* App logo above the hero heading */
+/* App logo above the hero heading — flat, no box, no shadow */
 .hero-logo {
   width: 86px; height: auto;
   display: block;
   margin-bottom: 16px;
-  filter: drop-shadow(0 12px 26px rgba(108, 77, 246, 0.3));
+  background: none;
+  box-shadow: none;
 }
 
 @media (max-width: 640px) {
