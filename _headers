@@ -1,2 +1,25 @@
+# Cache rules for the Cloudflare host (kvizo.indev.in).
+#
+# The same origin serves two very different things: the landing page, which can
+# be cached for a while, and the signed community data, which the app may refetch
+# at any time. Cached JSON would be fine today (it is still verified on the app
+# side), but a long TTL makes a freshly published quiz look missing, so the data
+# files are kept short and revalidated while the site itself stays cached.
+
+/community.json
+  Cache-Control: public, max-age=60, must-revalidate
+
+/community.json.sig
+  Cache-Control: public, max-age=60, must-revalidate
+
+/manifest.json
+  Cache-Control: public, max-age=60, must-revalidate
+
+/manifest.json.sig
+  Cache-Control: public, max-age=60, must-revalidate
+
+/quizzes/*
+  Cache-Control: public, max-age=60, must-revalidate
+
 /*
-  Cache-Control: public, max-age=7200, s-maxage=7200, stale-while-revalidate=86400
+  Cache-Control: public, max-age=3600

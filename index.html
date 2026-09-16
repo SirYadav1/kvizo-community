@@ -1,18 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kvizo Community</title>
-    <style>
-        body { font-family: system-ui; max-width: 600px; margin: 50px auto; padding: 20px; text-align: center; }
-        h1 { color: #6366f1; }
-        p { color: #666; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kvizo Community — Community Powered Quizzes</title>
+<style>
+/* === RESET & BASE === */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a14;--surface:#12121f;--surface2:#1a1a2e;--surface3:#22223a;
+  --primary:#7c6fff;--primary-glow:rgba(124,111,255,.3);
+  --accent:#ff5e8a;--accent-glow:rgba(255,94,138,.3);
+  --success:#4ade80;--warning:#fbbf24;--text:#e8e8f0;--text-dim:#8888a0;
+  --radius:16px;--radius-sm:10px;--radius-full:9999px;
+  --font:'Segoe UI',system-ui,-apple-system,sans-serif;
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="light"]{--bg:#f0f0f5;--surface:#fff;--surface2:#f8f8fc;--surface3:#eeeef4;--text:#1a1a2e;--text-dim:#666;--primary-glow:rgba(124,111,255,.15);--accent-glow:rgba(255,94,138,.15)}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;transition:background .4s,color .4s}
+a{color:var(--primary);text-decoration:none;transition:var(--transition)}
+a:hover{color:var(--accent)}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* === NAV === */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition)}
+nav.scrolled{background:rgba(10,10,20,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(124,111,255,.1)}
+[data-theme="light"] nav.scrolled{background:rgba(255,255,255,.9)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:24px}
+.logo span{color:var(--primary);opacity:.6}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--text-dim);font-weight:500;font-size:15px;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.btn{padding:10px 24px;border:none;border-radius:var(--radius-sm);cursor:pointer;font-weight:600;font-size:14px;transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:#6a5de0;transform:translateY(-2px);box-shadow:0 8px 30px var(--primary-glow)}
+.btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
+.btn-glow{position:relative;overflow:hidden}
+.btn-glow::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.15) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.btn-glow:hover::after{opacity:1}
+.btn-icon{width:44px;height:44px;border-radius:50%;background:var(--surface2);border:1px solid rgba(124,111,255,.2);cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.btn-icon:hover{transform:scale(1.1);border-color:var(--primary)}
+
+/* === HERO === */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,var(--primary-glow),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);animation:float 6s ease-in-out infinite 2s;pointer-events:none}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--surface2);border:1px solid rgba(124,111,255,.2);border-radius:var(--radius-full);font-size:13px;font-weight:600;color:var(--primary);margin-bottom:24px;animation:fadeInUp .6s ease .2s both}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:56px;font-weight:800;line-height:1.1;margin-bottom:20px;animation:fadeInUp .6s ease .4s both}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--text-dim);line-height:1.7;max-width:500px;margin-bottom:40px;animation:fadeInUp .6s ease .6s both}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;animation:fadeInUp .6s ease .8s both}
+.hero-stats{display:flex;gap:48px;margin-top:60px;animation:fadeInUp .6s ease 1s both}
+.stat-number{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:14px;color:var(--text-dim);margin-top:4px}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.quiz-cards-float{display:flex;flex-direction:column;gap:12px}
+.floating-card{background:var(--surface2);border:1px solid rgba(124,111,255,.1);border-radius:var(--radius);padding:16px 20px;animation:floatCard 4s ease-in-out infinite;backdrop-filter:blur(10px)}
+.floating-card:nth-child(2){animation-delay:1s}
+.floating-card:nth-child(3){animation-delay:2s}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.floating-card .fc-title{font-weight:700;font-size:15px;margin-bottom:4px}
+.floating-card .fc-meta{font-size:12px;color:var(--text-dim);display:flex;gap:8px;align-items:center}
+.floating-card .fc-badge{font-size:11px;padding:2px 8px;border-radius:var(--radius-full);font-weight:600}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.animate-on-scroll{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease}
+.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+
+/* === SECTIONS === */
+section{padding:100px 0}
+.section-header{margin-bottom:60px}
+.section-tag{display:inline-block;padding:6px 14px;background:var(--surface2);border-radius:var(--radius-full);font-size:13px;font-weight:600;color:var(--primary);margin-bottom:12px}
+.section-title{font-size:42px;font-weight:800;line-height:1.2;margin-bottom:12px}
+.section-subtitle{font-size:17px;color:var(--text-dim);max-width:600px;line-height:1.6}
+
+/* === CATEGORIES === */
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.cat-card{background:var(--surface2);border:1px solid rgba(124,111,255,.08);border-radius:var(--radius);padding:32px;cursor:pointer;transition:var(--transition);position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.cat-card:hover{border-color:rgba(124,111,255,.3);transform:translateY(-6px);box-shadow:0 20px 60px rgba(124,111,255,.1)}
+.cat-card:hover::before{transform:scaleX(1)}
+.cat-icon{font-size:48px;margin-bottom:16px;transition:transform .3s}
+.cat-card:hover .cat-icon{transform:scale(1.1) rotate(-5deg)}
+.cat-name{font-size:22px;font-weight:700;margin-bottom:6px}
+.cat-count{font-size:14px;color:var(--text-dim)}
+.cat-count span{color:var(--primary);font-weight:700}
+.cat-difficulties{display:flex;gap:6px;margin-top:16px}
+
+/* === FEATURES === */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.feature-card{background:var(--surface2);border:1px solid rgba(124,111,255,.08);border-radius:var(--radius);padding:32px;transition:var(--transition);position:relative}
+.feature-card:hover{border-color:rgba(124,111,255,.25);transform:translateY(-4px)}
+.feature-card:nth-child(1){border-top:3px solid var(--primary)}
+.feature-card:nth-child(2){border-top:3px solid var(--accent)}
+.feature-card:nth-child(3){border-top:3px solid var(--success)}
+.feature-card:nth-child(4){border-top:3px solid var(--warning)}
+.feature-card:nth-child(5){border-top:3px solid #8b5cf6}
+.feature-card:nth-child(6){border-top:3px solid #06b6d4}
+.feature-card:nth-child(7){border-top:3px solid #f97316}
+.feature-card:nth-child(8){border-top:3px solid #ec4899}
+.feature-icon{width:64px;height:64px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;background:var(--surface3);transition:var(--transition)}
+.feature-card:hover .feature-icon{background:var(--primary);color:#fff}
+.feature-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.feature-card p{font-size:14px;color:var(--text-dim);line-height:1.6}
+
+/* === DOWNLOAD === */
+.download-section{text-align:center;padding:100px 0}
+.download-hero{background:linear-gradient(135deg,rgba(124,111,255,.1),rgba(255,94,138,.1));border-radius:24px;padding:80px 60px;position:relative;overflow:hidden}
+.download-hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(124,111,255,.05),transparent,rgba(255,94,138,.05),transparent);animation:spin 20s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.download-hero h2{font-size:36px;font-weight:800;margin-bottom:16px;position:relative}
+.download-hero p{font-size:17px;color:var(--text-dim);margin-bottom:40px;position:relative}
+.download-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+.app-store-badge{display:flex;align-items:center;gap:12px;background:var(--surface2);border:1px solid rgba(124,111,255,.15);border-radius:12px;padding:12px 24px;transition:var(--transition);cursor:pointer}
+.app-store-badge:hover{border-color:var(--primary);transform:translateY(-2px)}
+.app-store-badge .badge-icon{font-size:28px}
+.app-store-badge .badge-text{text-align:left}
+.app-store-badge .badge-text small{font-size:11px;color:var(--text-dim);display:block}
+.app-store-badge .badge-text strong{font-size:15px;display:block}
+
+/* === FOOTER === */
+footer{padding:60px 0;text-align:center;border-top:1px solid rgba(124,111,255,.1);color:var(--text-dim);font-size:14px}
+footer a{color:var(--primary)}
+footer .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:20px}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--surface3);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--primary)}
+
+/* === MOBILE === */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero h1{font-size:36px}
+  .hero-stats{justify-content:center;flex-wrap:wrap}
+  .hero-buttons{justify-content:center}
+  .nav-links{gap:16px;font-size:14px}
+  .categories-grid{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .section-title{font-size:32px}
+  .download-hero{padding:40px 24px}
+  section{padding:60px 0}
+}
+</style>
 </head>
 <body>
-    <h1>Kvizo Community Quizzes</h1>
-    <p>This site serves signed community quiz data for the Kvizo Android app.</p>
-    <p>All data is cryptographically verified using Ed25519 signatures.</p>
+<nav id="navbar">
+  <div class="container">
+    <div class="logo">kvizo<span>.</span>community</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
+      <button class="btn-icon" onclick="toggleTheme()" id="theme-btn" title="Theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> Ed25519 Verified Community Data</div>
+        <h1>Community <span class="gradient">Quizzes</span> for Everyone</h1>
+        <p>7 quizzes across 6 categories. All data cryptographically signed and verified. Test your knowledge, earn XP, collect badges.</p>
+        <div class="hero-buttons">
+          <a href="#categories" class="btn btn-primary btn-glow">Explore Quizzes</a>
+          <a href="#download" class="btn btn-outline">Get the App</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-number" id="sq">7</div><div class="stat-label">Quizzes</div></div>
+          <div><div class="stat-number">6</div><div class="stat-label">Categories</div></div>
+          <div><div class="stat-number" id="sq2">25+</div><div class="stat-label">Questions</div></div>
+          <div><div class="stat-number">80+</div><div class="stat-label">Badges</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="quiz-cards-float">
+          <div class="floating-card">
+            <div class="fc-title">💻 C++ Expert Challenge</div>
+            <div class="fc-meta"><span class="fc-badge" style="background:rgba(124,111,255,.2);color:var(--primary)">Expert</span><span>15 Questions</span><span>⏱️ Timed</span></div>
+          </div>
+          <div class="floating-card">
+            <div class="fc-title">🔬 Quantum Physics Basics</div>
+            <div class="fc-meta"><span class="fc-badge" style="background:rgba(74,222,128,.2);color:var(--success)">Medium</span><span>10 Questions</span><span>⭐ XP</span></div>
+          </div>
+          <div class="floating-card">
+            <div class="fc-title">🏏 Cricket World Cup Trivia</div>
+            <div class="fc-meta"><span class="fc-badge" style="background:rgba(251,191,36,.2);color:var(--warning)">Medium</span><span>12 Questions</span><span>🎖️ Badge</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-tag">Explore</div>
+      <h2 class="section-title">Pick Your Category</h2>
+      <p class="section-subtitle">From code to cricket — community-created quizzes for every interest</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
+        <div class="cat-icon">💻</div>
+        <div class="cat-name">Programming</div>
+        <div class="cat-count"><span>2</span> quizzes</div>
+        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(124,111,255,.15);color:var(--primary)">Medium</span><span class="fc-badge" style="background:rgba(255,94,138,.15);color:var(--accent)">Expert</span></div>
+      </div>
+      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
+        <div class="cat-icon">🔬</div>
+        <div class="cat-name">Science</div>
+        <div class="cat-count"><span>1</span> quiz</div>
+        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(74,222,128,.15);color:var(--success)">Medium</span></div>
+      </div>
+      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
+        <div class="cat-icon">📜</div>
+        <div class="cat-name">History</div>
+        <div class="cat-count"><span>1</span> quiz</div>
+        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(255,94,138,.15);color:var(--accent)">Hard</span></div>
+      </div>
+      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
+        <div class="cat-icon">🏏</div>
+        <div class="cat-name">Sports</div>
+        <div class="cat-count"><span>1</span> quiz</div>
+        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(251,191,36,.15);color:var(--warning)">Medium</span></div>
+      </div>
+      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
+        <div class="cat-icon">🌍</div>
+        <div class="cat-name">Geography</div>
+        <div class="cat-count"><span>1</span> quiz</div>
+        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(255,94,138,.15);color:var(--accent)">Hard</span></div>
+      </div>
+      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
+        <div class="cat-icon">📐</div>
+        <div class="cat-name">Mathematics</div>
+        <div class="cat-count"><span>1</span> quiz</div>
+        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(124,111,255,.15);color:var(--primary)">Expert</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-tag">Power-ups</div>
+      <h2 class="section-title">Everything You Need</h2>
+      <p class="section-subtitle">From first timer to quiz master — the full suite</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">⏱️</div>
+        <h3>Timed Mode</h3>
+        <p>Race against the clock. Faster answers = higher score. Pressure makes you sharper.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">⭐</div>
+        <h3>XP & Levels</h3>
+        <p>Earn XP per quiz. Climb from Novice to Quiz Master. Your progress is real and visible.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🎖️</div>
+        <h3>80+ Badges</h3>
+        <p>Streaks, perfect scores, category dominance — collect them all with unique badges.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🌙</div>
+        <h3>Dark & Light Mode</h3>
+        <p>Built-in theme switching. Persists across sessions. Easy on the eyes, late night ready.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">📊</div>
+        <h3>Stats & Heatmap</h3>
+        <p>See your performance at a glance. Heatmap shows strong and weak areas.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🔄</div>
+        <h3>Backup & Restore</h3>
+        <p>Never lose progress. Export your data, share it, restore anywhere.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🔗</div>
+        <h3>Share Codes</h3>
+        <p>Share quiz codes with friends. Challenge them. Climb the leaderboard together.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">🌐</div>
+        <h3>5 Languages</h3>
+        <p>Hindi, English, and more. The app speaks your language, literally.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">✅</div>
+        <h3>Ed25519 Signed</h3>
+        <p>Every quiz is cryptographically verified. No tampering, no fakes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="container">
+    <div class="download-section animate-on-scroll">
+      <div class="download-hero">
+        <h2>Download Kvizo Now</h2>
+        <p>Free on Google Play. Community quizzes, zero ads, zero cost.</p>
+        <div class="download-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.kvizo.app" class="app-store-badge">
+            <span class="badge-icon">📱</span>
+            <div class="badge-text"><strong>Get it on Google Play</strong><small>com.kvizo.app</small></div>
+          </a>
+          <a href="https://github.com/SirYadav1/kvizo/releases" class="app-store-badge">
+            <span class="badge-icon">📦</span>
+            <div class="badge-text"><strong>Download APK</strong><small>GitHub Releases</small></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://github.com/SirYadav1/kvizo">GitHub</a>
+      <a href="https://github.com/SirYadav1/kvizo-community">Community Data</a>
+      <a href="https://kvizo.indev.in">API Data</a>
+    </div>
+    <p>Kvizo Community &copy; 2026 | Built with ❤️</p>
+    <p style="margin-top:8px">Data signed with Ed25519 | All quizzes community verified</p>
+  </div>
+</footer>
+
+<script>
+// === THEME ===
+function toggleTheme(){
+  const b=document.body, btn=document.getElementById('theme-btn');
+  const t=b.getAttribute('data-theme')==='light'?'dark':'light';
+  b.setAttribute('data-theme',t);
+  btn.textContent=t==='light'?'🌙':'☀️';
+  localStorage.setItem('kvizo-theme',t);
+}
+if(localStorage.getItem('kvizo-theme')){
+  document.body.setAttribute('data-theme',localStorage.getItem('kvizo-theme'));
+  document.getElementById('theme-btn').textContent=localStorage.getItem('kvizo-theme')==='light'?'☀️':'🌙';
+}
+
+// === NAV SCROLL ===
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+});
+
+// === SCROLL ANIMATIONS ===
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
+
+// === COUNTER ANIMATION ===
+function animateCounter(el,target,duration=1500){
+  let start=0;
+  const step=()=>{
+    start++;
+    el.textContent=Math.min(start,target);
+    if(start<target) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const sq=document.getElementById('sq'), sq2=document.getElementById('sq2');
+if(sq)animateCounter(sq,7);
+if(sq2)animateCounter(sq2,25);
+</script>
 </body>
 </html>
