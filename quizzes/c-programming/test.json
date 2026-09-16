@@ -1,120 +1,120 @@
 {
-  "id": "c-programming-001",
-  "title": "C Programming Challenge",
+  "id": "cpp-programming-001",
+  "title": "C++ Programming Challenge",
   "category": "Programming",
   "difficulty": "Medium",
   "author": "kvizo-community",
   "created_at": "2026-09-16T00:00:00Z",
   "questions": [
     {
-      "question": "Who is the creator of the C programming language?",
+      "question": "Who is the creator of the C++ programming language?",
       "options": [
-        "Bjarne Stroustrup",
         "Dennis Ritchie",
+        "Bjarne Stroustrup",
         "James Gosling",
         "Guido van Rossum"
       ],
       "correct_index": 1,
-      "explanation": "Dennis Ritchie created the C programming language at Bell Labs in the early 1970s."
+      "explanation": "Bjarne Stroustrup created C++ at Bell Labs in 1979 as an extension of the C language with object-oriented features."
     },
     {
-      "question": "What is the correct format specifier to print an integer in C?",
+      "question": "Which operator is used to access members of a pointer to an object in C++?",
       "options": [
-        "%f",
-        "%c",
-        "%d",
-        "%s"
+        ".",
+        "::",
+        "->",
+        "*"
       ],
       "correct_index": 2,
-      "explanation": "%d is the format specifier used with printf() to print an integer value in C."
+      "explanation": "The -> (arrow) operator is used to access members of an object through a pointer, e.g., ptr->member."
     },
     {
-      "question": "Which header file is required to use printf() and scanf()?",
+      "question": "Which header file is required to use cout and cin in C++?",
       "options": [
+        "<stdio.h>",
         "<stdlib.h>",
-        "<string.h>",
-        "<math.h>",
-        "<stdio.h>"
-      ],
-      "correct_index": 3,
-      "explanation": "<stdio.h> (Standard Input Output Header) contains declarations for printf(), scanf(), and other I/O functions."
-    },
-    {
-      "question": "What is the size of an int on most modern 32-bit and 64-bit systems?",
-      "options": [
-        "2 bytes",
-        "4 bytes",
-        "8 bytes",
-        "It depends on the compiler only"
-      ],
-      "correct_index": 1,
-      "explanation": "On most modern systems, an int is 4 bytes (32 bits), though the C standard only guarantees a minimum of 2 bytes."
-    },
-    {
-      "question": "Which of the following is the correct way to declare a pointer to an integer?",
-      "options": [
-        "int ptr;",
-        "int *ptr;",
-        "int &ptr;",
-        "pointer int ptr;"
-      ],
-      "correct_index": 1,
-      "explanation": "int *ptr; declares a pointer variable named ptr that can hold the address of an integer."
-    },
-    {
-      "question": "What does the 'break' statement do inside a loop?",
-      "options": [
-        "Skips the current iteration and continues with the next",
-        "Exits the loop immediately",
-        "Restarts the loop from the beginning",
-        "Pauses the program execution"
-      ],
-      "correct_index": 1,
-      "explanation": "The break statement immediately terminates the innermost loop or switch statement and transfers control to the statement after it."
-    },
-    {
-      "question": "Which function is used to dynamically allocate memory in C?",
-      "options": [
-        "alloc()",
-        "new()",
-        "malloc()",
-        "create()"
+        "<iostream>",
+        "<fstream>"
       ],
       "correct_index": 2,
-      "explanation": "malloc() (memory allocation) is used to dynamically allocate a block of memory on the heap at runtime."
+      "explanation": "<iostream> is the standard C++ header that provides cout, cin, cerr, and clog for input/output operations."
     },
     {
-      "question": "What is the output of sizeof(char) in C?",
+      "question": "What is the correct way to declare a reference to an integer in C++?",
       "options": [
-        "1",
-        "2",
-        "4",
-        "Depends on the system"
+        "int *ref;",
+        "int &ref = x;",
+        "ref int x;",
+        "int ref = &x;"
+      ],
+      "correct_index": 1,
+      "explanation": "int &ref = x; declares a reference ref that acts as an alias for the variable x. References must be initialized when declared."
+    },
+    {
+      "question": "Which keyword is used to define a class in C++?",
+      "options": [
+        "struct",
+        "object",
+        "class",
+        "type"
+      ],
+      "correct_index": 2,
+      "explanation": "The class keyword is used to define a class in C++. Its members are private by default, unlike struct where they are public."
+    },
+    {
+      "question": "What is the purpose of the 'new' operator in C++?",
+      "options": [
+        "Declares a new variable",
+        "Creates a new function",
+        "Allocates memory dynamically on the heap",
+        "Defines a new class"
+      ],
+      "correct_index": 2,
+      "explanation": "The new operator dynamically allocates memory on the heap and returns a pointer to it. It replaces malloc() in C++."
+    },
+    {
+      "question": "Which of the following is used for runtime polymorphism in C++?",
+      "options": [
+        "Function overloading",
+        "Templates",
+        "Virtual functions",
+        "Operator overloading"
+      ],
+      "correct_index": 2,
+      "explanation": "Virtual functions enable runtime polymorphism. They allow a derived class to override a base class method, resolved at runtime via vtable."
+    },
+    {
+      "question": "What is the correct destructor syntax for a class named 'MyClass' in C++?",
+      "options": [
+        "~MyClass()",
+        "delete MyClass()",
+        "destroy MyClass()",
+        "void ~MyClass()"
       ],
       "correct_index": 0,
-      "explanation": "sizeof(char) is always 1 byte in C, as defined by the C standard."
+      "explanation": "A destructor is declared with a tilde (~) before the class name, e.g., ~MyClass(). It is called automatically when an object goes out of scope."
     },
     {
-      "question": "Which operator is used to access the value at a pointer's address?",
+      "question": "Which concept allows the same function name to be used with different parameters in C++?",
       "options": [
-        "&",
-        "*",
-        "->",
-        "."
+        "Encapsulation",
+        "Function overloading",
+        "Inheritance",
+        "Abstraction"
       ],
       "correct_index": 1,
-      "explanation": "The dereference operator * is used to access the value stored at the address held by a pointer."
+      "explanation": "Function overloading allows multiple functions with the same name but different parameter lists, resolved at compile time."
     },
     {
-      "question": "What is the correct way to write a comment in C?",
+      "question": "What does the '::' operator do in C++?",
       "options": [
-        "# This is a comment",
-        "// This is a comment",
-        "<!-- This is a comment -->",
-        "** This is a comment **"
+        "Pointer dereference",
+        "Scope resolution",
+        "Member access",
+        "Type casting"
       ],
       "correct_index": 1,
-      "explanation": "// is used for single-line comments in C, while /* */ is used for multi-line comments."
+      "explanation": "The :: operator is the scope resolution operator. It is used to access global variables, class members, or namespace members, e.g., std::cout."
     }
   ]
 }
