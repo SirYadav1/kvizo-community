@@ -1,394 +1,673 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kvizo Community — Community Powered Quizzes</title>
-<style>
-/* === RESET & BASE === */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#0a0a14;--surface:#12121f;--surface2:#1a1a2e;--surface3:#22223a;
-  --primary:#7c6fff;--primary-glow:rgba(124,111,255,.3);
-  --accent:#ff5e8a;--accent-glow:rgba(255,94,138,.3);
-  --success:#4ade80;--warning:#fbbf24;--text:#e8e8f0;--text-dim:#8888a0;
-  --radius:16px;--radius-sm:10px;--radius-full:9999px;
-  --font:'Segoe UI',system-ui,-apple-system,sans-serif;
-  --transition:all .3s cubic-bezier(.4,0,.2,1);
-}
-[data-theme="light"]{--bg:#f0f0f5;--surface:#fff;--surface2:#f8f8fc;--surface3:#eeeef4;--text:#1a1a2e;--text-dim:#666;--primary-glow:rgba(124,111,255,.15);--accent-glow:rgba(255,94,138,.15)}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;transition:background .4s,color .4s}
-a{color:var(--primary);text-decoration:none;transition:var(--transition)}
-a:hover{color:var(--accent)}
-.container{max-width:1280px;margin:0 auto;padding:0 24px}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kvizo — Forge knowledge. Earn XP. Play anywhere.</title>
+<meta name="description" content="Kvizo is an offline-first Android quiz app built with Kotlin and Jetpack Compose. Create quizzes, earn XP, keep streaks, unlock 81 badges and import community quizzes. No account, no server.">
+<meta name="theme-color" content="#7C3AED">
+<link rel="canonical" href="https://kvizo.indev.in/">
 
-/* === NAV === */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition)}
-nav.scrolled{background:rgba(10,10,20,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(124,111,255,.1)}
-[data-theme="light"] nav.scrolled{background:rgba(255,255,255,.9)}
-nav .container{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:24px}
-.logo span{color:var(--primary);opacity:.6}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{color:var(--text-dim);font-weight:500;font-size:15px;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width .3s}
-.nav-links a:hover{color:var(--text)}
-.nav-links a:hover::after{width:100%}
-.btn{padding:10px 24px;border:none;border-radius:var(--radius-sm);cursor:pointer;font-weight:600;font-size:14px;transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
-.btn-primary{background:var(--primary);color:#fff}
-.btn-primary:hover{background:#6a5de0;transform:translateY(-2px);box-shadow:0 8px 30px var(--primary-glow)}
-.btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
-.btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
-.btn-glow{position:relative;overflow:hidden}
-.btn-glow::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.15) 0%,transparent 60%);opacity:0;transition:opacity .3s}
-.btn-glow:hover::after{opacity:1}
-.btn-icon{width:44px;height:44px;border-radius:50%;background:var(--surface2);border:1px solid rgba(124,111,255,.2);cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
-.btn-icon:hover{transform:scale(1.1);border-color:var(--primary)}
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kvizo.indev.in/">
+<meta property="og:title" content="Kvizo — Forge knowledge. Earn XP. Play anywhere.">
+<meta property="og:description" content="Offline-first Android quiz app. Custom quizzes, XP and levels, 81 badges, streaks, community quizzes. No account needed.">
+<meta name="twitter:card" content="summary_large_image">
 
-/* === HERO === */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,var(--primary-glow),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);animation:float 6s ease-in-out infinite 2s;pointer-events:none}
-@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--surface2);border:1px solid rgba(124,111,255,.2);border-radius:var(--radius-full);font-size:13px;font-weight:600;color:var(--primary);margin-bottom:24px;animation:fadeInUp .6s ease .2s both}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s ease infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:56px;font-weight:800;line-height:1.1;margin-bottom:20px;animation:fadeInUp .6s ease .4s both}
-.hero h1 .gradient{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:18px;color:var(--text-dim);line-height:1.7;max-width:500px;margin-bottom:40px;animation:fadeInUp .6s ease .6s both}
-.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;animation:fadeInUp .6s ease .8s both}
-.hero-stats{display:flex;gap:48px;margin-top:60px;animation:fadeInUp .6s ease 1s both}
-.stat-number{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.stat-label{font-size:14px;color:var(--text-dim);margin-top:4px}
-.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
-.quiz-cards-float{display:flex;flex-direction:column;gap:12px}
-.floating-card{background:var(--surface2);border:1px solid rgba(124,111,255,.1);border-radius:var(--radius);padding:16px 20px;animation:floatCard 4s ease-in-out infinite;backdrop-filter:blur(10px)}
-.floating-card:nth-child(2){animation-delay:1s}
-.floating-card:nth-child(3){animation-delay:2s}
-@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.floating-card .fc-title{font-weight:700;font-size:15px;margin-bottom:4px}
-.floating-card .fc-meta{font-size:12px;color:var(--text-dim);display:flex;gap:8px;align-items:center}
-.floating-card .fc-badge{font-size:11px;padding:2px 8px;border-radius:var(--radius-full);font-weight:600}
-
-/* === ANIMATIONS === */
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.animate-on-scroll{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease}
-.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
-
-/* === SECTIONS === */
-section{padding:100px 0}
-.section-header{margin-bottom:60px}
-.section-tag{display:inline-block;padding:6px 14px;background:var(--surface2);border-radius:var(--radius-full);font-size:13px;font-weight:600;color:var(--primary);margin-bottom:12px}
-.section-title{font-size:42px;font-weight:800;line-height:1.2;margin-bottom:12px}
-.section-subtitle{font-size:17px;color:var(--text-dim);max-width:600px;line-height:1.6}
-
-/* === CATEGORIES === */
-.categories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
-.cat-card{background:var(--surface2);border:1px solid rgba(124,111,255,.08);border-radius:var(--radius);padding:32px;cursor:pointer;transition:var(--transition);position:relative;overflow:hidden}
-.cat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:transform .4s;transform-origin:left}
-.cat-card:hover{border-color:rgba(124,111,255,.3);transform:translateY(-6px);box-shadow:0 20px 60px rgba(124,111,255,.1)}
-.cat-card:hover::before{transform:scaleX(1)}
-.cat-icon{font-size:48px;margin-bottom:16px;transition:transform .3s}
-.cat-card:hover .cat-icon{transform:scale(1.1) rotate(-5deg)}
-.cat-name{font-size:22px;font-weight:700;margin-bottom:6px}
-.cat-count{font-size:14px;color:var(--text-dim)}
-.cat-count span{color:var(--primary);font-weight:700}
-.cat-difficulties{display:flex;gap:6px;margin-top:16px}
-
-/* === FEATURES === */
-.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.feature-card{background:var(--surface2);border:1px solid rgba(124,111,255,.08);border-radius:var(--radius);padding:32px;transition:var(--transition);position:relative}
-.feature-card:hover{border-color:rgba(124,111,255,.25);transform:translateY(-4px)}
-.feature-card:nth-child(1){border-top:3px solid var(--primary)}
-.feature-card:nth-child(2){border-top:3px solid var(--accent)}
-.feature-card:nth-child(3){border-top:3px solid var(--success)}
-.feature-card:nth-child(4){border-top:3px solid var(--warning)}
-.feature-card:nth-child(5){border-top:3px solid #8b5cf6}
-.feature-card:nth-child(6){border-top:3px solid #06b6d4}
-.feature-card:nth-child(7){border-top:3px solid #f97316}
-.feature-card:nth-child(8){border-top:3px solid #ec4899}
-.feature-icon{width:64px;height:64px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;background:var(--surface3);transition:var(--transition)}
-.feature-card:hover .feature-icon{background:var(--primary);color:#fff}
-.feature-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
-.feature-card p{font-size:14px;color:var(--text-dim);line-height:1.6}
-
-/* === DOWNLOAD === */
-.download-section{text-align:center;padding:100px 0}
-.download-hero{background:linear-gradient(135deg,rgba(124,111,255,.1),rgba(255,94,138,.1));border-radius:24px;padding:80px 60px;position:relative;overflow:hidden}
-.download-hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(124,111,255,.05),transparent,rgba(255,94,138,.05),transparent);animation:spin 20s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.download-hero h2{font-size:36px;font-weight:800;margin-bottom:16px;position:relative}
-.download-hero p{font-size:17px;color:var(--text-dim);margin-bottom:40px;position:relative}
-.download-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
-.app-store-badge{display:flex;align-items:center;gap:12px;background:var(--surface2);border:1px solid rgba(124,111,255,.15);border-radius:12px;padding:12px 24px;transition:var(--transition);cursor:pointer}
-.app-store-badge:hover{border-color:var(--primary);transform:translateY(-2px)}
-.app-store-badge .badge-icon{font-size:28px}
-.app-store-badge .badge-text{text-align:left}
-.app-store-badge .badge-text small{font-size:11px;color:var(--text-dim);display:block}
-.app-store-badge .badge-text strong{font-size:15px;display:block}
-
-/* === FOOTER === */
-footer{padding:60px 0;text-align:center;border-top:1px solid rgba(124,111,255,.1);color:var(--text-dim);font-size:14px}
-footer a{color:var(--primary)}
-footer .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:20px}
-
-/* === SCROLLBAR === */
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--surface3);border-radius:4px}
-::-webkit-scrollbar-thumb:hover{background:var(--primary)}
-
-/* === MOBILE === */
-@media(max-width:768px){
-  .hero-grid{grid-template-columns:1fr;text-align:center}
-  .hero h1{font-size:36px}
-  .hero-stats{justify-content:center;flex-wrap:wrap}
-  .hero-buttons{justify-content:center}
-  .nav-links{gap:16px;font-size:14px}
-  .categories-grid{grid-template-columns:1fr}
-  .features-grid{grid-template-columns:1fr}
-  .section-title{font-size:32px}
-  .download-hero{padding:40px 24px}
-  section{padding:60px 0}
-}
-</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Ccircle cx='54' cy='54' r='38' fill='%23FFFFFF'/%3E%3Cpath d='M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z' fill='%236C4DF6'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/space_grotesk.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<nav id="navbar">
-  <div class="container">
-    <div class="logo">kvizo<span>.</span>community</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#features">Features</a>
-      <a href="#download">Download</a>
-      <button class="btn-icon" onclick="toggleTheme()" id="theme-btn" title="Theme">🌙</button>
-    </div>
-  </div>
-</nav>
 
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-grid">
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2"/><path d="M4 12l1 1 2-2"/><path d="M4 18l1 1 2-2"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9.5V13l2.5 2"/><path d="M9.5 2.5h5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8"/><path d="M12 17.5V21"/><path d="M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5v2a3 3 0 0 0 3 3"/><path d="M17 5.5h2.5v2a3 3 0 0 1-3 3"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7.5" r="3.5"/><path d="M22 21v-2a4 4 0 0 0-3-3.85"/><path d="M16 4.2a3.5 3.5 0 0 1 0 6.6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.8"/><circle cx="6" cy="12" r="2.8"/><circle cx="18" cy="19" r="2.8"/><path d="M8.5 13.6l7 3.9M15.5 6.5l-7 3.9"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1.6"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M10 13.5h4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 3 2.6 15 0 18-2.6-3-2.6-15 0-18z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a7.2 7.2 0 1 0 11.3 11.3z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8.2-8 9.3-4.6-1.1-8-4.3-8-9.3V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6.5L9.5 17 4 11.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7.5 10.5L12 15l4.5-4.5"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-offline" viewBox="0 0 24 24"><path d="M2.5 2.5l19 19"/><path d="M8.8 16.4a4.6 4.6 0 0 1 6.4 0"/><path d="M5.2 12.9a9.6 9.6 0 0 1 3.3-2.2"/><path d="M15.5 10.7a9.6 9.6 0 0 1 3.3 2.2"/><path d="M12 20h.01"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10.5" rx="2.4"/><path d="M8 10V7.2a4 4 0 0 1 8 0V10"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.3L19 10l-5.1 1.7L12 17l-1.9-5.3L5 10l5.1-1.7z"/><path d="M18.5 16.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3s4.5 4.2 4.5 8.2A4.5 4.5 0 0 1 12 16a4.5 4.5 0 0 1-4.5-4.8c0-1.6.7-2.8 1.4-3.9"/><path d="M7 13.5a5 5 0 0 0 10 0c0-1.5-.6-3-1.3-4.3"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.88 1.52 2.34 1.08 2.9.83.1-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21.7 4.3a1 1 0 0 1 .2 1.06l-4.7 14.4a1 1 0 0 1-1.6.44l-4.1-3.4-2.2 2.1a1 1 0 0 1-1.7-.6l-.4-3.7-3.9-1.6a1 1 0 0 1 .03-1.87l17.2-6.9a1 1 0 0 1 1.17 1.47z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5v15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M4 15l-1-8 5 3.5L12 4l4 6.5 5-3.5-1 8z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M13 3c3.5 0 8 4.5 8 8-3 0-7 1.5-9 4l-3-3c2.5-2 4-6 4-9z"/><path d="M9 12l-3 1-2 4 4-2 1-3z"/><circle cx="15.5" cy="8.5" r="1.6"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-6-3-9 0 0-3 1.5-3 4.5 0-1-1-2.5-1-2.5S7 11 7 15a5 5 0 0 0 5 6z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  </defs>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+
+<div class="decor" aria-hidden="true">
+  <span class="grid-lines"></span>
+</div>
+
+<header class="nav-wrap">
+  <nav class="nav glass" aria-label="Main">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 108 108">
+          <circle cx="54" cy="54" r="38" fill="#fff"/>
+          <path d="M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z" fill="#6C4DF6"/>
+          <path d="M30 30 L32 36 L38 38 L32 40 L30 46 L28 40 L22 38 L28 36 Z" fill="#FFB300"/>
+          <path d="M78 68 L79.5 72 L83.5 73.5 L79.5 75 L78 79 L76.5 75 L72.5 73.5 L76.5 72 Z" fill="#FF6EC7"/>
+        </svg>
+      </span>
+      <span class="brand-name">Kvizo</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#features" data-i18n="nav.features">Features</a></li>
+      <li><a href="#releases" data-i18n="nav.releases">Releases</a></li>
+      <li><a href="#levels" data-i18n="nav.levels">Levels</a></li>
+      <li><a href="#badges" data-i18n="nav.badges">Badges</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="#community" data-i18n="nav.community">Community</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>
+          <span class="lang-current">English</span>
+          <svg class="ico chevron" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <ul class="lang-menu glass" role="listbox">
+          <li><button type="button" data-lang="en" role="option">English</button></li>
+          <li><button type="button" data-lang="hi" role="option">हिन्दी</button></li>
+          <li><button type="button" data-lang="zh" role="option">中文</button></li>
+          <li><button type="button" data-lang="es" role="option">Español</button></li>
+          <li><button type="button" data-lang="fr" role="option">Français</button></li>
+        </ul>
+      </div>
+
+      <button class="icon-btn" type="button" id="themeToggle" aria-label="Toggle theme">
+        <svg class="ico ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="ico ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+
+      <a class="btn btn-primary btn-sm" href="https://github.com/SirYadav1/kvizo/releases/latest" target="_blank" rel="noopener">
+        <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
+        <span data-i18n="nav.download">Download</span>
+      </a>
+    </div>
+  </nav>
+
+  <nav class="mobile-nav" aria-label="Sections">
+    <ul>
+      <li><a href="#features" data-i18n="nav.features">Features</a></li>
+      <li><a href="#releases" data-i18n="nav.releases">Releases</a></li>
+      <li><a href="#levels" data-i18n="nav.levels">Levels</a></li>
+      <li><a href="#badges" data-i18n="nav.badges">Badges</a></li>
+      <li><a href="#community" data-i18n="nav.community">Community</a></li>
+      <li><a href="#developer" data-i18n="footer.developer">Developer</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="#licence" data-i18n="footer.licenceLink">Licence</a></li>
+      <li><a href="#help" data-i18n="footer.help">Need help</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow reveal" data-i18n="hero.eyebrow">Offline-first Android quiz app</p>
+      <h1 class="hero-title reveal" data-i18n="hero.title">Forge knowledge. Earn XP. Play anywhere.</h1>
+      <p class="hero-sub reveal" data-i18n="hero.sub">Create your own quizzes, play them timed or relaxed, build streaks and unlock 81 badges. Community quizzes arrive signed and verified. No account, no server, everything on your device.</p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="https://github.com/SirYadav1/kvizo/releases/latest" target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
+          <span data-i18n="hero.cta">Download for Android</span>
+        </a>
+        <a class="btn btn-glass" href="https://github.com/SirYadav1/kvizo" target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>
+          <span data-i18n="hero.ctaAlt">View source on GitHub</span>
+        </a>
+      </div>
+
+      <ul class="hero-meta reveal">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.meta1">Android 8.0 and above</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.meta2">No login required</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.meta3">MIT licensed</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="phone glass">
+        <div class="phone-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="phone-title" data-i18n="mock.title">Quiz in progress</span>
+        </div>
+        <div class="phone-body">
+          <div class="mock-head">
+            <span class="chip chip-violet" data-i18n="mock.category">Computer Science</span>
+            <span class="chip chip-amber" data-i18n="mock.difficulty">Medium</span>
+            <span class="mock-timer">
+              <svg class="ring" viewBox="0 0 44 44" aria-hidden="true">
+                <circle class="ring-track" cx="22" cy="22" r="18"/>
+                <circle class="ring-fill" cx="22" cy="22" r="18"/>
+              </svg>
+              <span class="mock-timer-text">0:18</span>
+            </span>
+          </div>
+
+          <p class="mock-q" data-i18n="mock.question">Which data structure stores items in first-in, first-out order?</p>
+
+          <ul class="mock-options">
+            <li class="mock-opt"><span class="opt-key">A</span><span data-i18n="mock.a">Stack</span></li>
+            <li class="mock-opt is-correct"><span class="opt-key">B</span><span data-i18n="mock.b">Queue</span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li class="mock-opt"><span class="opt-key">C</span><span data-i18n="mock.c">Binary tree</span></li>
+            <li class="mock-opt"><span class="opt-key">D</span><span data-i18n="mock.d">Hash map</span></li>
+          </ul>
+
+          <div class="mock-foot">
+            <span class="xp-chip"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg><span data-i18n="mock.xp">+30 XP</span></span>
+            <span class="mock-progress"><span data-i18n="mock.progress">Question 7 of 10</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-card glass float-xp">
+        <svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg>
+        <div>
+          <strong data-i18n="float.level">Level 4</strong>
+          <span data-i18n="float.title">Advanced</span>
+        </div>
+      </div>
+
+      <div class="float-card glass float-streak">
+        <svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg>
+        <div>
+          <strong>12</strong>
+          <span data-i18n="float.streak">day streak</span>
+        </div>
+      </div>
+
+      <div class="float-card glass float-badge">
+        <svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg>
+        <div>
+          <strong data-i18n="float.badge">Perfect Score</strong>
+          <span data-i18n="float.badgeSub">Badge unlocked</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statband glass reveal" aria-label="Key numbers">
+    <div class="stat">
+      <strong class="count" data-count="81">0</strong>
+      <span data-i18n="stats.badges">Badges to unlock</span>
+    </div>
+    <div class="stat">
+      <strong class="count" data-count="5">0</strong>
+      <span data-i18n="stats.languages">Languages</span>
+    </div>
+    <div class="stat">
+      <strong class="count" data-count="20">0</strong>
+      <span data-i18n="stats.categories">Quiz categories</span>
+    </div>
+    <div class="stat">
+      <strong class="count" data-count="0">0</strong>
+      <span data-i18n="stats.servers">Accounts or servers needed</span>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="features.title">Built for people who like to be quizzed</h2>
+      <p class="reveal" data-i18n="features.sub">Everything runs on the device. The app works with the network switched off, and syncs only when you want it to.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+        <h3 data-i18n="f1.t">Custom quizzes</h3>
+        <p data-i18n="f1.d">Categories, Easy to Expert difficulty, tags and a per-quiz time limit. Build a quiz in the app or import one from text.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-timer"/></svg></span>
+        <h3 data-i18n="f2.t">Timed mode</h3>
+        <p data-i18n="f2.d">Race the clock or take it slow. Timed runs pause automatically when the app goes to the background.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg></span>
+        <h3 data-i18n="f3.t">XP and levels</h3>
+        <p data-i18n="f3.d">XP for finishing, for every correct answer, for perfect runs and for answer streaks. Six levels from Beginner to Quiz Master.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+        <h3 data-i18n="f4.t">80+ badges</h3>
+        <p data-i18n="f4.d">Milestones, streaks, accuracy tiers, speed runs, creator and community badges, each with an unlock celebration.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span>
+        <h3 data-i18n="f5.t">Community quizzes</h3>
+        <p data-i18n="f5.d">Browse the community feed and import a quiz in one tap. Content arrives signed and is checked before it is stored.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg></span>
+        <h3 data-i18n="f6.t">Share codes</h3>
+        <p data-i18n="f6.d">Share any quiz through the clipboard and import someone else's with a single paste. No upload, no account.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span>
+        <h3 data-i18n="f7.t">Stats and heatmap</h3>
+        <p data-i18n="f7.d">Accuracy trends, per-category breakdowns, an activity calendar for the year, and CSV or PDF export.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-archive"/></svg></span>
+        <h3 data-i18n="f8.t">Backup and restore</h3>
+        <p data-i18n="f8.d">Export profiles, stats, badges and quizzes to a single JSON file and bring them back on any device.</p>
+      </article>
+      <article class="card glass tilt reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></span>
+        <h3 data-i18n="f9.t">Five languages, instant switching</h3>
+        <p data-i18n="f9.d">English, Hindi, Chinese, Spanish and French, plus a full dark theme.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="levels">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="levels.title">Every correct answer moves the bar</h2>
+      <p class="reveal" data-i18n="levels.sub">Completion is worth 20 XP, each correct answer 10, a perfect run 30 more, and every three correct answers in a row add 5. Drag the slider to see how XP maps to levels, or tap a level to jump to it.</p>
+    </div>
+
+    <div class="levels-panel glass reveal" id="levelsPanel" data-level="1">
+      <div class="levels-demo">
+        <div class="levels-bar-head">
+          <span class="levels-level" id="levelName">Beginner</span>
+          <span class="levels-xp" id="levelXp">0 XP</span>
+        </div>
+        <div class="levels-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="levelBar" aria-label="Progress across all six XP levels">
+          <span class="levels-fill" id="levelFill"></span>
+        </div>
+        <p class="levels-next" id="levelNext" aria-live="polite">200 XP to Learner</p>
+
+        <label class="levels-slider-label" for="xpSlider">
+          <span data-i18n="levels.slider">Drag to add XP and watch the level change</span>
+          <output class="levels-out" id="levelOut" for="xpSlider">120</output>
+        </label>
+        <input class="levels-slider" id="xpSlider" type="range" min="0" max="6000" step="10" value="120" aria-describedby="levelNext">
+      </div>
+
+      <ul class="levels-list" id="levelList">
+        <li><button type="button" data-xp="0" data-name="level.1"><span class="lv-dot"></span><strong data-i18n="level.1">Beginner</strong><em>0 XP</em></button></li>
+        <li><button type="button" data-xp="200" data-name="level.2"><span class="lv-dot"></span><strong data-i18n="level.2">Learner</strong><em>200 XP</em></button></li>
+        <li><button type="button" data-xp="500" data-name="level.3"><span class="lv-dot"></span><strong data-i18n="level.3">Intermediate</strong><em>500 XP</em></button></li>
+        <li><button type="button" data-xp="1000" data-name="level.4"><span class="lv-dot"></span><strong data-i18n="level.4">Advanced</strong><em>1000 XP</em></button></li>
+        <li><button type="button" data-xp="2000" data-name="level.5"><span class="lv-dot"></span><strong data-i18n="level.5">Expert</strong><em>2000 XP</em></button></li>
+        <li><button type="button" data-xp="5000" data-name="level.6"><span class="lv-dot"></span><strong data-i18n="level.6">Quiz Master</strong><em>5000 XP</em></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="badges">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="badges.title">81 badges, from first quiz to legend</h2>
+      <p class="reveal" data-i18n="badges.sub">Streaks, accuracy, speed, creation and community badges. A selection of what can be unlocked:</p>
+    </div>
+
+    <div class="badge-grid">
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg><span data-i18n="badge.1">First Quiz</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg><span data-i18n="badge.2">Perfect Score</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-fire"/></svg><span data-i18n="badge.3">3-Day Streak</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="badge.4">30-Day Streak</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-timer"/></svg><span data-i18n="badge.5">Speed Demon</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><span data-i18n="badge.6">Bookworm</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-crown"/></svg><span data-i18n="badge.7">Century</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg><span data-i18n="badge.8">Sharpshooter</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-crown"/></svg><span data-i18n="badge.9">Category King</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-rocket"/></svg><span data-i18n="badge.10">Creator</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="badge.11">Community Pioneer</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg><span data-i18n="badge.12">Night Owl</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg><span data-i18n="badge.13">Early Bird</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg><span data-i18n="badge.14">Marathon Runner</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg><span data-i18n="badge.15">Grandmaster</span></span>
+      <span class="badge glass reveal"><svg class="ico" aria-hidden="true"><use href="#i-crown"/></svg><span data-i18n="badge.16">Legendary</span></span>
+    </div>
+
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+  </section>
+
+  <section class="section" id="releases">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="rel.title">Version history</h2>
+      <p class="reveal" data-i18n="rel.sub">The three most recent builds, newest first. Every release is signed and installable over the previous one.</p>
+    </div>
+
+    <div class="release-grid">
+      <article class="release-card glass reveal">
+        <header class="release-head">
+          <span class="version-chip">v2.0.0</span>
+          <span class="latest-tag" data-i18n="rel.latest">Latest</span>
+          <time class="release-date" datetime="2026-09-10">10 Sep 2026</time>
+        </header>
+        <ul class="release-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r1.h1">80+ badges across 15 categories with unlock celebrations</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r1.h2">Community quizzes with one-tap import</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r1.h3">Share codes, five languages, crash logger and smoother buttons</span></li>
+        </ul>
+        <a class="link-more" href="https://github.com/SirYadav1/kvizo/releases/tag/v2.0.0" target="_blank" rel="noopener">
+          <span data-i18n="rel.notes">Release notes</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </article>
+
+      <article class="release-card glass reveal">
+        <header class="release-head">
+          <span class="version-chip">v1.5.0</span>
+          <time class="release-date" datetime="2026-08-26">26 Aug 2026</time>
+        </header>
+        <ul class="release-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r2.h1">Community quizzes with Ed25519 signed content</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r2.h2">Anime avatars for player profiles</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r2.h3">Verified offline cache for community content</span></li>
+        </ul>
+        <a class="link-more" href="https://github.com/SirYadav1/kvizo/releases/tag/v1.5.0" target="_blank" rel="noopener">
+          <span data-i18n="rel.notes">Release notes</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </article>
+
+      <article class="release-card glass reveal">
+        <header class="release-head">
+          <span class="version-chip">v1.3.0</span>
+          <time class="release-date" datetime="2026-08-08">8 Aug 2026</time>
+        </header>
+        <ul class="release-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3.h1">Archived build, rebuilt with the Kvizo rebrand</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3.h2">Signed universal APK</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3.h3">Supports Android 8.0 and above</span></li>
+        </ul>
+        <a class="link-more" href="https://github.com/SirYadav1/kvizo/releases/tag/v1.3.0" target="_blank" rel="noopener">
+          <span data-i18n="rel.notes">Release notes</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="community.title">Community content you can trust</h2>
+      <p class="reveal" data-i18n="community.sub">Community quizzes and announcements are published as static files and signed with Ed25519. The app verifies the signature before anything is stored, and falls back to a verified local cache when there is no network.</p>
+    </div>
+
+    <div class="community-grid">
+      <article class="card glass community-note reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span>
+        <h3 data-i18n="community.cardTitle">Signed and verified</h3>
+        <ul class="tick-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v1">Ed25519 signature check on every fetch</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v2">Rotatable trusted key ids</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v3">Expiry check on published content</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v4">Offline cache, re-verified on read</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="community.v5">Input sanitised before it reaches the database</span></li>
+        </ul>
+      </article>
+
+      <a class="card glass link-card tilt reveal" href="https://github.com/SirYadav1" target="_blank" rel="noopener">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></span>
+        <h3>GitHub</h3>
+        <p data-i18n="community.l1">Source code, releases and the community content repository.</p>
+        <span class="link-more"><span data-i18n="community.open">Open</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <a class="card glass link-card tilt reveal" href="https://t.me/SirYadav1" target="_blank" rel="noopener">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg></span>
+        <h3>Telegram</h3>
+        <p data-i18n="community.l2">Announcements, new releases and community quiz drops.</p>
+        <span class="link-more"><span data-i18n="community.open">Open</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <a class="card glass link-card tilt reveal" href="https://instagram.com/SirYadav1" target="_blank" rel="noopener">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></span>
+        <h3>Instagram</h3>
+        <p data-i18n="community.l3">Behind the scenes of the app and the quiz community.</p>
+        <span class="link-more"><span data-i18n="community.open">Open</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="developer">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="dev.title">Developer</h2>
+      <p class="reveal" data-i18n="dev.sub">Kvizo is designed and built in the open by one developer, with the community shaping what comes next.</p>
+    </div>
+
+    <div class="dev-grid">
+      <article class="dev-card glass reveal">
+        <div class="dev-head">
+          <span class="dev-avatar" aria-hidden="true"><svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="38" fill="#fff"/><path d="M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z" fill="#6C4DF6"/></svg></span>
+          <div>
+            <strong>SirYadav1</strong>
+            <span data-i18n="dev.role">Creator and developer</span>
+          </div>
+        </div>
+        <ul class="dev-links">
+          <li>
+            <a href="https://github.com/SirYadav1" target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>
+              <span>GitHub</span>
+              <em>SirYadav1</em>
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/SirYadav1" target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>
+              <span>Telegram</span>
+              <em>SirYadav1</em>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/SirYadav1" target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg>
+              <span>Instagram</span>
+              <em>SirYadav1</em>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card glass reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span>
+        <h3 data-i18n="dev.contributors">Contributors</h3>
+        <p data-i18n="dev.none">No contributors yet. The project is open source and the first pull request is always the hardest to send.</p>
+        <a class="btn btn-glass btn-sm dev-cta" href="https://github.com/SirYadav1/kvizo" target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-rocket"/></svg>
+          <span data-i18n="dev.become">Become a contributor</span>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="faq.title">Frequently asked questions</h2>
+      <p class="reveal" data-i18n="faq.sub">Short answers to what people ask before installing Kvizo.</p>
+    </div>
+
+    <div class="faq reveal">
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q1">Do I need an account to play?</span></summary>
+        <p data-i18n="faq.a1">No. There is no sign-up, no login and no password. You create a local profile with a name and an avatar, and that is the whole setup.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q2">Does it work without internet?</span></summary>
+        <p data-i18n="faq.a2">Yes. Quizzes, stats, badges and streaks all live on the device. The network is only used to check for new releases and to fetch community quizzes, and both fall back to a verified local cache.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q3">Where is my data stored?</span></summary>
+        <p data-i18n="faq.a3">In a local database inside the app, on your phone only. There is no analytics service and no tracking. Use Backup to export everything to a JSON file whenever you want a copy.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q4">Why is it not on the Play Store?</span></summary>
+        <p data-i18n="faq.a4">Kvizo is distributed as a signed APK from the GitHub releases page, which keeps the app free of store requirements and account services. Android will ask you to allow installs from unknown sources once.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q5">How do community quizzes get verified?</span></summary>
+        <p data-i18n="faq.a5">They are published as static files signed with Ed25519. The app checks the signature against trusted key ids and validates the expiry before anything is imported.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q6">Is it free, and are there ads?</span></summary>
+        <p data-i18n="faq.a6">It is free and open source under the MIT licence, with no ads, no in-app purchases and no data collection.</p>
+      </details>
+      <details class="faq-item glass">
+        <summary><span data-i18n="faq.q7">Which Android versions are supported?</span></summary>
+        <p data-i18n="faq.a7">Android 8.0 (API 26) and above, as a single universal APK for all supported CPU architectures.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="licence">
+    <div class="licence-panel glass reveal">
+      <div class="licence-copy">
+        <h2 data-i18n="lic.title">Licence</h2>
+        <p data-i18n="lic.sub">Kvizo is released under the MIT Licence, copyright 2026 SirYadav1. You are free to use, study, modify and redistribute the app and its source code.</p>
+        <a class="btn btn-glass" href="https://github.com/SirYadav1/kvizo/blob/main/LICENSE" target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>
+          <span data-i18n="lic.read">Read the full licence text</span>
+        </a>
+      </div>
+      <div class="licence-cols">
+        <div class="licence-col glass">
+          <span class="licence-tag" data-i18n="lic.can">You can</span>
+          <ul class="tick-list">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="lic.can1">Use it privately and commercially</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="lic.can2">Modify it and publish your changes</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="lic.can3">Distribute copies of the app</span></li>
+          </ul>
+        </div>
+        <div class="licence-col glass">
+          <span class="licence-tag" data-i18n="lic.must">You must</span>
+          <ul class="tick-list">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="lic.must1">Keep the copyright notice and the licence text with any copy</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="lic.must2">Accept that the software comes with no warranty</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="help">
+    <div class="section-head">
+      <h2 class="reveal" data-i18n="help.title">Need help?</h2>
+      <p class="reveal" data-i18n="help.sub">Report a bug, ask a question or follow the project. Crashes are logged so you can attach the file to an issue.</p>
+    </div>
+
+    <div class="help-grid">
+      <a class="card glass link-card tilt reveal" href="https://github.com/SirYadav1/kvizo/issues" target="_blank" rel="noopener">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></span>
+        <h3 data-i18n="help.issue.t">Report a bug</h3>
+        <p data-i18n="help.issue.d">Open an issue on GitHub with your Android version, the app version and what you were doing.</p>
+        <span class="link-more"><span data-i18n="help.issue.cta">Open an issue</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <a class="card glass link-card tilt reveal" href="https://t.me/SirYadav1" target="_blank" rel="noopener">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg></span>
+        <h3 data-i18n="help.tg.t">Ask on Telegram</h3>
+        <p data-i18n="help.tg.d">Quickest place for questions about installing, importing quizzes or badges that will not unlock.</p>
+        <span class="link-more"><span data-i18n="help.tg.cta">Message on Telegram</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+
+      <article class="card glass reveal">
+        <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-archive"/></svg></span>
+        <h3 data-i18n="help.crash.t">Crash logs</h3>
+        <p data-i18n="help.crash.d">If the app ever closes on its own, a readable log is saved in the files/crash folder inside the app data directory. Share that file with the report and the cause is usually obvious.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="download">
+    <div class="download-panel glass reveal">
+      <div class="download-copy">
+        <h2 data-i18n="download.title">Install Kvizo in three steps</h2>
+        <p data-i18n="download.sub">Version 2.0.0, build 24. Signed release APK for Android 8.0 and above.</p>
+
+        <ol class="steps">
+          <li><span class="step-n">1</span><span data-i18n="download.step1">Download the latest APK from the releases page.</span></li>
+          <li><span class="step-n">2</span><span data-i18n="download.step2">Open the file and allow installs from unknown sources when Android asks.</span></li>
+          <li><span class="step-n">3</span><span data-i18n="download.step3">Play. No login, no sign-up, no ads.</span></li>
+        </ol>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://github.com/SirYadav1/kvizo/releases/latest" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
+            <span data-i18n="download.cta">Get the latest release</span>
+          </a>
+          <a class="btn btn-glass" href="https://github.com/SirYadav1/kvizo/releases" target="_blank" rel="noopener">
+            <span data-i18n="download.allReleases">All releases</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="download-facts">
+        <div class="fact glass"><span data-i18n="download.f1k">Version</span><strong>2.0.0</strong></div>
+        <div class="fact glass"><span data-i18n="download.f2k">Minimum Android</span><strong>8.0 (API 26)</strong></div>
+        <div class="fact glass"><span data-i18n="download.f3k">Built with</span><strong>Kotlin, Compose</strong></div>
+        <div class="fact glass"><span data-i18n="download.f4k">Licence</span><strong>MIT</strong></div>
+        <div class="fact glass fact-wide">
+          <span data-i18n="download.f5k">Privacy</span>
+          <strong data-i18n="download.f5v">No analytics, no tracking, no accounts. Quiz data never leaves the device unless you export it.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer glass">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 108 108">
+          <circle cx="54" cy="54" r="38" fill="#fff"/>
+          <path d="M59 26 L38 58 L51 58 L47 82 L70 46 L57 46 Z" fill="#6C4DF6"/>
+        </svg>
+      </span>
       <div>
-        <div class="hero-badge"><span class="dot"></span> Ed25519 Verified Community Data</div>
-        <h1>Community <span class="gradient">Quizzes</span> for Everyone</h1>
-        <p>7 quizzes across 6 categories. All data cryptographically signed and verified. Test your knowledge, earn XP, collect badges.</p>
-        <div class="hero-buttons">
-          <a href="#categories" class="btn btn-primary btn-glow">Explore Quizzes</a>
-          <a href="#download" class="btn btn-outline">Get the App</a>
-        </div>
-        <div class="hero-stats">
-          <div><div class="stat-number" id="sq">7</div><div class="stat-label">Quizzes</div></div>
-          <div><div class="stat-number">6</div><div class="stat-label">Categories</div></div>
-          <div><div class="stat-number" id="sq2">25+</div><div class="stat-label">Questions</div></div>
-          <div><div class="stat-number">80+</div><div class="stat-label">Badges</div></div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="quiz-cards-float">
-          <div class="floating-card">
-            <div class="fc-title">💻 C++ Expert Challenge</div>
-            <div class="fc-meta"><span class="fc-badge" style="background:rgba(124,111,255,.2);color:var(--primary)">Expert</span><span>15 Questions</span><span>⏱️ Timed</span></div>
-          </div>
-          <div class="floating-card">
-            <div class="fc-title">🔬 Quantum Physics Basics</div>
-            <div class="fc-meta"><span class="fc-badge" style="background:rgba(74,222,128,.2);color:var(--success)">Medium</span><span>10 Questions</span><span>⭐ XP</span></div>
-          </div>
-          <div class="floating-card">
-            <div class="fc-title">🏏 Cricket World Cup Trivia</div>
-            <div class="fc-meta"><span class="fc-badge" style="background:rgba(251,191,36,.2);color:var(--warning)">Medium</span><span>12 Questions</span><span>🎖️ Badge</span></div>
-          </div>
-        </div>
+        <strong>Kvizo</strong>
+        <span data-i18n="footer.tagline">Forge knowledge. Earn XP. Play anywhere.</span>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="categories">
-  <div class="container">
-    <div class="section-header animate-on-scroll">
-      <div class="section-tag">Explore</div>
-      <h2 class="section-title">Pick Your Category</h2>
-      <p class="section-subtitle">From code to cricket — community-created quizzes for every interest</p>
-    </div>
-    <div class="categories-grid">
-      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
-        <div class="cat-icon">💻</div>
-        <div class="cat-name">Programming</div>
-        <div class="cat-count"><span>2</span> quizzes</div>
-        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(124,111,255,.15);color:var(--primary)">Medium</span><span class="fc-badge" style="background:rgba(255,94,138,.15);color:var(--accent)">Expert</span></div>
-      </div>
-      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
-        <div class="cat-icon">🔬</div>
-        <div class="cat-name">Science</div>
-        <div class="cat-count"><span>1</span> quiz</div>
-        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(74,222,128,.15);color:var(--success)">Medium</span></div>
-      </div>
-      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
-        <div class="cat-icon">📜</div>
-        <div class="cat-name">History</div>
-        <div class="cat-count"><span>1</span> quiz</div>
-        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(255,94,138,.15);color:var(--accent)">Hard</span></div>
-      </div>
-      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
-        <div class="cat-icon">🏏</div>
-        <div class="cat-name">Sports</div>
-        <div class="cat-count"><span>1</span> quiz</div>
-        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(251,191,36,.15);color:var(--warning)">Medium</span></div>
-      </div>
-      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
-        <div class="cat-icon">🌍</div>
-        <div class="cat-name">Geography</div>
-        <div class="cat-count"><span>1</span> quiz</div>
-        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(255,94,138,.15);color:var(--accent)">Hard</span></div>
-      </div>
-      <div class="cat-card animate-on-scroll" onclick="location.href='https://play.google.com/store/apps/details?id=com.kvizo.app'">
-        <div class="cat-icon">📐</div>
-        <div class="cat-name">Mathematics</div>
-        <div class="cat-count"><span>1</span> quiz</div>
-        <div class="cat-difficulties"><span class="fc-badge" style="background:rgba(124,111,255,.15);color:var(--primary)">Expert</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <ul class="footer-links">
+      <li><a href="https://github.com/SirYadav1/kvizo" target="_blank" rel="noopener" data-i18n="footer.source">Source</a></li>
+      <li><a href="#releases" data-i18n="footer.releases">Releases</a></li>
+      <li><a href="#developer" data-i18n="footer.developer">Developer</a></li>
+      <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
+      <li><a href="#licence" data-i18n="footer.licenceLink">Licence</a></li>
+      <li><a href="#help" data-i18n="footer.help">Need help</a></li>
+    </ul>
 
-<section id="features">
-  <div class="container">
-    <div class="section-header animate-on-scroll">
-      <div class="section-tag">Power-ups</div>
-      <h2 class="section-title">Everything You Need</h2>
-      <p class="section-subtitle">From first timer to quiz master — the full suite</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">⏱️</div>
-        <h3>Timed Mode</h3>
-        <p>Race against the clock. Faster answers = higher score. Pressure makes you sharper.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">⭐</div>
-        <h3>XP & Levels</h3>
-        <p>Earn XP per quiz. Climb from Novice to Quiz Master. Your progress is real and visible.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">🎖️</div>
-        <h3>80+ Badges</h3>
-        <p>Streaks, perfect scores, category dominance — collect them all with unique badges.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">🌙</div>
-        <h3>Dark & Light Mode</h3>
-        <p>Built-in theme switching. Persists across sessions. Easy on the eyes, late night ready.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">📊</div>
-        <h3>Stats & Heatmap</h3>
-        <p>See your performance at a glance. Heatmap shows strong and weak areas.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">🔄</div>
-        <h3>Backup & Restore</h3>
-        <p>Never lose progress. Export your data, share it, restore anywhere.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">🔗</div>
-        <h3>Share Codes</h3>
-        <p>Share quiz codes with friends. Challenge them. Climb the leaderboard together.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">🌐</div>
-        <h3>5 Languages</h3>
-        <p>Hindi, English, and more. The app speaks your language, literally.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">✅</div>
-        <h3>Ed25519 Signed</h3>
-        <p>Every quiz is cryptographically verified. No tampering, no fakes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="download">
-  <div class="container">
-    <div class="download-section animate-on-scroll">
-      <div class="download-hero">
-        <h2>Download Kvizo Now</h2>
-        <p>Free on Google Play. Community quizzes, zero ads, zero cost.</p>
-        <div class="download-buttons">
-          <a href="https://play.google.com/store/apps/details?id=com.kvizo.app" class="app-store-badge">
-            <span class="badge-icon">📱</span>
-            <div class="badge-text"><strong>Get it on Google Play</strong><small>com.kvizo.app</small></div>
-          </a>
-          <a href="https://github.com/SirYadav1/kvizo/releases" class="app-store-badge">
-            <span class="badge-icon">📦</span>
-            <div class="badge-text"><strong>Download APK</strong><small>GitHub Releases</small></div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-links">
-      <a href="https://github.com/SirYadav1/kvizo">GitHub</a>
-      <a href="https://github.com/SirYadav1/kvizo-community">Community Data</a>
-      <a href="https://kvizo.indev.in">API Data</a>
-    </div>
-    <p>Kvizo Community &copy; 2026 | Built with ❤️</p>
-    <p style="margin-top:8px">Data signed with Ed25519 | All quizzes community verified</p>
+    <p class="footer-note"><span data-i18n="footer.note1">Kvizo is an independent Android app and is not affiliated with any quiz platform.</span></p>
   </div>
 </footer>
 
-<script>
-// === THEME ===
-function toggleTheme(){
-  const b=document.body, btn=document.getElementById('theme-btn');
-  const t=b.getAttribute('data-theme')==='light'?'dark':'light';
-  b.setAttribute('data-theme',t);
-  btn.textContent=t==='light'?'🌙':'☀️';
-  localStorage.setItem('kvizo-theme',t);
-}
-if(localStorage.getItem('kvizo-theme')){
-  document.body.setAttribute('data-theme',localStorage.getItem('kvizo-theme'));
-  document.getElementById('theme-btn').textContent=localStorage.getItem('kvizo-theme')==='light'?'☀️':'🌙';
-}
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">
+  <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+</button>
 
-// === NAV SCROLL ===
-const nav=document.getElementById('navbar');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled',window.scrollY>40);
-});
-
-// === SCROLL ANIMATIONS ===
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('visible'),i*80);
-      observer.unobserve(e.target);
-    }
-  });
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
-
-// === COUNTER ANIMATION ===
-function animateCounter(el,target,duration=1500){
-  let start=0;
-  const step=()=>{
-    start++;
-    el.textContent=Math.min(start,target);
-    if(start<target) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-const sq=document.getElementById('sq'), sq2=document.getElementById('sq2');
-if(sq)animateCounter(sq,7);
-if(sq2)animateCounter(sq2,25);
-</script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

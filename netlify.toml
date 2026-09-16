@@ -6,7 +6,7 @@
 
 [build]
   publish = "public"
-  command = "mkdir -p public && cp index.html _headers public/ && cp manifest.json manifest.json.sig community.json community.json.sig public_key.hex categories.json public/ && cp -r quizzes public/quizzes"
+  command = "mkdir -p public && cp index.html _headers public/ && cp -r assets public/assets && cp manifest.json manifest.json.sig community.json community.json.sig public_key.hex categories.json public/ && cp -r quizzes public/quizzes"
 
 # The landing page is cached for a while and the signed data files stay
 # short-lived; those per-path rules live in _headers (copied into public/ above).
