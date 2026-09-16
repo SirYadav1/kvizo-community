@@ -1,4 +1,5 @@
-# Cache rules for the Cloudflare host (kvizo.indev.in).
+# Cache rules for the host serving kvizo.indev.in (Netlify reads this file from the
+# publish directory, see netlify.toml).
 #
 # The same origin serves two very different things: the landing page, which can
 # be cached for a while, and the signed community data, which the app may refetch
