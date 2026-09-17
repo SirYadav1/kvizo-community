@@ -73,9 +73,44 @@ To confirm: `python3 build.py --verify-only`.
 
 | URL | Notes |
 |---|---|
+| `https://kvizo.indevs.in/` | the website (Cloudflare Pages, see Hosting below) |
+| `https://kvizo.indevs.in/manifest.json` · `/community.json` | the same signed files, served from the site |
 | `https://raw.githubusercontent.com/SirYadav1/kvizo-community/master/community.json` | the app's primary source |
 | `https://cdn.jsdelivr.net/gh/SirYadav1/kvizo-community@master/community.json` | free CDN mirror, CORS enabled |
-| `https://siryadav1.github.io/kvizo-community/` | GitHub Pages (currently serving the stale `docs/` folder) |
+
+## Hosting
+
+The website is a static bundle served by **Cloudflare Pages** at <https://kvizo.indevs.in>
+(project `kvizo-site`, custom domain on the same Cloudflare account). Nothing to run, nothing to
+pay: <https://kvizo.indevs.in> is the apex of the `kvizo.indevs.in` zone, which is a Cloudflare
+zone, so Cloudflare creates the DNS record and the certificate itself.
+
+````
+push to master  ->  deploy-cloudflare.yml: build.py --verify-only  ->  wrangler pages deploy
+````
+
+`deploy-cloudflare.yml` assembles the publish directory (only `index.html`, `_headers`, `assets/`,
+the signed data files, `categories.json` and `quizzes/` — the tooling and the stale `docs/` copy
+stay out of the CDN) and uploads it with `wrangler pages deploy`. Cache rules live in `_headers`,
+which the CDN reads from the publish directory; the rules are non-overlapping so each path gets
+exactly one `Cache-Control` value.
+
+Two repo secrets hold the credentials:
+
+| Secret | Meaning |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | token with **Pages: Edit** (and DNS: Edit if you want the domain managed too) |
+| `CLOUDFLARE_ACCOUNT_ID` | the Cloudflare account that owns the `kvizo-site` project |
+
+Deploying by hand works the same way:
+
+```bash
+rm -rf public && mkdir -p public
+cp index.html _headers public/ && cp -r assets public/assets
+cp manifest.json manifest.json.sig community.json community.json.sig public_key.hex categories.json public/
+cp -r quizzes public/quizzes
+npx wrangler@4 pages deploy public --project-name=kvizo-site --branch=master
+```
 
 ## Setup (already done, for the record)
 

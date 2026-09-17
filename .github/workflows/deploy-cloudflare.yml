@@ -1,0 +1,53 @@
+name: Deploy to Cloudflare Pages
+
+# The site is a plain static bundle: index.html + assets + the signed community data.
+# Every push to master publishes it to https://kvizo.indevs.in
+# (Cloudflare Pages project "kvizo-site", see README).
+#
+# The signed files are produced by validate-and-sign.yml, which commits them back to this
+# branch. This job only re-checks that the signature is still valid and uploads the bundle.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify the signed bundle
+        # A broken signature must never reach the CDN.
+        run: python3 build.py --verify-only
+
+      - name: Assemble the publish directory
+        # Only the files meant to be public: the tooling in this repo (build.py,
+        # add_quiz.py, the workflows, the stale docs/ copy) never reaches the CDN.
+        run: |
+          set -euo pipefail
+          rm -rf public && mkdir -p public
+          cp index.html _headers public/
+          cp -r assets public/assets
+          cp manifest.json manifest.json.sig community.json community.json.sig \
+             public_key.hex categories.json public/
+          cp -r quizzes public/quizzes
+          echo "publishing $(find public -type f | wc -l) files"
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: >-
+          npx --yes wrangler@4 pages deploy public
+          --project-name=kvizo-site
+          --branch=master
+          --commit-dirty=true

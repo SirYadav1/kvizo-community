@@ -1,32 +1,37 @@
-# Cache rules for the host serving the Kvizo site (kvizo-appp.netlify.app; Netlify
-# reads this file from the publish directory, see netlify.toml).
+# Cache rules for the host serving the Kvizo site (https://kvizo.indevs.in, a
+# Cloudflare Pages project; Cloudflare reads this file from the publish directory).
 #
 # The same origin serves two very different things: the landing page, which can be
 # cached for a while, and the signed community data, which the app may refetch at any
 # time. A long TTL on the data files makes a freshly published quiz look missing.
 #
-# Netlify applies the LAST matching rule (verified against the live site: with the
-# catch-all written last, /community.json was answered with the catch-all's 3600),
-# so the broad rule comes first and the exact paths come after it.
+# The rules below are deliberately NON-OVERLAPPING: a request matches exactly one of
+# them, so it does not matter whether the host merges matching rules or lets the last
+# one win. (Overlapping rules produced duplicated Cache-Control values on the previous
+# host, which is why the catch-all is gone.)
 
-/*
-  Cache-Control: public, max-age=1800
-
-# The page itself is small and changes with every site tweak: keep it short-lived so
-# nobody keeps seeing an old layout (assets are versioned with ?v=).
+# The page itself changes with every site tweak: keep it short-lived so nobody keeps
+# seeing an old layout (the CSS/JS are versioned with ?v=).
 /
   Cache-Control: public, max-age=60, must-revalidate
 
 /index.html
   Cache-Control: public, max-age=60, must-revalidate
 
-# Landing-page artwork and the fonts: a long cache is safe, the filenames change
-# whenever the artwork does.
+# Landing-page artwork and fonts: a long cache is safe, the filenames change whenever
+# the artwork does.
 /assets/img/*
   Cache-Control: public, max-age=604800
 
 /assets/fonts/*
   Cache-Control: public, max-age=604800
+
+# Styles and scripts are versioned with ?v= in index.html, so a long cache is safe.
+/assets/css/*
+  Cache-Control: public, max-age=86400
+
+/assets/js/*
+  Cache-Control: public, max-age=86400
 
 # Signed community data: short TTL so a newly published quiz shows up quickly.
 /community.json
@@ -42,6 +47,9 @@
   Cache-Control: public, max-age=60, must-revalidate
 
 /public_key.hex
+  Cache-Control: public, max-age=60, must-revalidate
+
+/categories.json
   Cache-Control: public, max-age=60, must-revalidate
 
 /quizzes/*
