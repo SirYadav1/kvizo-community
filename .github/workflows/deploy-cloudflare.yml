@@ -35,7 +35,7 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf public && mkdir -p public
-          cp index.html _headers public/
+          cp index.html 404.html _headers public/
           cp -r assets public/assets
           cp manifest.json manifest.json.sig community.json community.json.sig \
              public_key.hex categories.json public/

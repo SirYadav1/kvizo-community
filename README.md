@@ -89,11 +89,15 @@ zone, so Cloudflare creates the DNS record and the certificate itself.
 push to master  ->  deploy-cloudflare.yml: build.py --verify-only  ->  wrangler pages deploy
 ````
 
-`deploy-cloudflare.yml` assembles the publish directory (only `index.html`, `_headers`, `assets/`,
-the signed data files, `categories.json` and `quizzes/` — the tooling and the stale `docs/` copy
-stay out of the CDN) and uploads it with `wrangler pages deploy`. Cache rules live in `_headers`,
-which the CDN reads from the publish directory; the rules are non-overlapping so each path gets
-exactly one `Cache-Control` value.
+`deploy-cloudflare.yml` assembles the publish directory (only `index.html`, `404.html`, `_headers`,
+`assets/`, the signed data files, `categories.json` and `quizzes/` — the tooling and the stale
+`docs/` copy stay out of the CDN) and uploads it with `wrangler pages deploy`. Cache rules live in
+`_headers`, which the CDN reads from the publish directory; the rules are non-overlapping so each
+path gets exactly one `Cache-Control` value.
+
+`404.html` is not optional polish: without a top-level 404 page, Cloudflare Pages assumes the site
+is a single-page app and answers **every** unknown path with `index.html` and a 200. With the file
+present, a missing quiz answers 404, which is what a client should see.
 
 Two repo secrets hold the credentials:
 
@@ -106,7 +110,7 @@ Deploying by hand works the same way:
 
 ```bash
 rm -rf public && mkdir -p public
-cp index.html _headers public/ && cp -r assets public/assets
+cp index.html 404.html _headers public/ && cp -r assets public/assets
 cp manifest.json manifest.json.sig community.json community.json.sig public_key.hex categories.json public/
 cp -r quizzes public/quizzes
 npx wrangler@4 pages deploy public --project-name=kvizo-site --branch=master

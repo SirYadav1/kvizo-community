@@ -18,6 +18,11 @@
 /index.html
   Cache-Control: public, max-age=60, must-revalidate
 
+# Served for anything that is not a file on this site. Its presence is also what stops
+# Cloudflare Pages from treating the whole site as a single-page app (see README).
+/404.html
+  Cache-Control: public, max-age=60, must-revalidate
+
 # Landing-page artwork and fonts: a long cache is safe, the filenames change whenever
 # the artwork does.
 /assets/img/*
