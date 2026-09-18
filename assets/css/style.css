@@ -420,15 +420,18 @@ img, svg { display: block; max-width: 100%; }
   box-shadow: none;
   border: 0;
 }
-.brand-mark--img img,
-.dev-avatar--logo img {
+.brand-mark--img img {
   width: 100%; height: 100%;
   object-fit: contain;
   display: block;
 }
-.dev-avatar--logo {
-  border-radius: 16px;
-  background: none;
+
+/* Profile photo in the developer card — the avatar fills the circle and is cropped,
+   instead of the app badge that used to sit there. */
+.dev-avatar--photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* App wordmark — the app name ("kvizo", its "o" drawn as a question mark) that sits
@@ -443,8 +446,12 @@ img, svg { display: block; max-width: 100%; }
 }
 [data-theme="dark"] .wordmark { filter: invert(1); }
 
-.brand-wordmark { height: 21px; }
-.footer-wordmark { height: 20px; margin-bottom: 5px; }
+/* Measure the two halves of the lockup instead of guessing at them.
+   The badge artwork is 392x425 with 6px of bleed all round, so in the 34px-wide brand box
+   it draws 36.86px tall and shows 35.8px of ink. The wordmark is cropped to its ink, so its
+   CSS height *is* its ink height — 35.8px therefore makes logo and app name exactly equal. */
+.brand-wordmark { height: 35.8px; }
+.footer-wordmark { height: 35.8px; margin-bottom: 5px; }
 
 /* App logo + app name above the hero heading — flat, no box, no shadow */
 .hero-brand {
@@ -459,12 +466,16 @@ img, svg { display: block; max-width: 100%; }
   background: none;
   box-shadow: none;
 }
-.hero-wordmark { height: 34px; }
+/* the 86px-wide mark draws a 90.6px-tall mark, so the name matches it exactly */
+.hero-wordmark { height: 90.6px; }
 
 @media (max-width: 640px) {
-  .hero-brand { gap: 12px; margin-bottom: 12px; }
-  .hero-logo { width: 68px; }
-  .hero-wordmark { height: 26px; }
+  /* both halves scale down together, so the lockup stays equal — and at 56px the whole
+     row is ~267px, which still fits the 284px a 320px-wide phone leaves inside the
+     hero padding. */
+  .hero-brand { gap: 12px; margin-bottom: 14px; }
+  .hero-logo { width: 56px; }
+  .hero-wordmark { height: 59px; }
 }
 
 .brand-name {
