@@ -431,17 +431,40 @@ img, svg { display: block; max-width: 100%; }
   background: none;
 }
 
-/* App logo above the hero heading — flat, no box, no shadow */
+/* App wordmark — the app name ("kvizo", its "o" drawn as a question mark) that sits
+   next to the logo wherever the brand is shown. One black asset; the dark theme flips
+   it to white so the ink always reads on the surface behind it. */
+.wordmark {
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+  user-select: none;
+}
+[data-theme="dark"] .wordmark { filter: invert(1); }
+
+.brand-wordmark { height: 21px; }
+.footer-wordmark { height: 20px; margin-bottom: 5px; }
+
+/* App logo + app name above the hero heading — flat, no box, no shadow */
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
 .hero-logo {
   width: 86px; height: auto;
   display: block;
-  margin-bottom: 16px;
   background: none;
   box-shadow: none;
 }
+.hero-wordmark { height: 34px; }
 
 @media (max-width: 640px) {
-  .hero-logo { width: 68px; margin-bottom: 12px; }
+  .hero-brand { gap: 12px; margin-bottom: 12px; }
+  .hero-logo { width: 68px; }
+  .hero-wordmark { height: 26px; }
 }
 
 .brand-name {
@@ -1695,7 +1718,7 @@ main { position: relative; z-index: 1; }
   .hero { padding: 40px 18px 56px; }
   .nav-wrap { padding: 10px 12px 0; }
   .nav { padding: 0 8px 0 12px; gap: 8px; }
-  .brand-name { display: none; }
+  .brand-name, .brand-wordmark { display: none; }
   .lang-btn { padding: 0 10px; }
   .btn-sm { padding: 0 14px 0 12px; }
   .float-xp { left: -10px; }

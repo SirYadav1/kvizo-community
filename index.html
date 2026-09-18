@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="assets/img/logo-512.png">
 <link rel="preload" href="assets/fonts/space_grotesk.ttf" as="font" type="font/ttf" crossorigin>
 <!-- ?v= is bumped on every visual change so a cached page never pairs with stale CSS/JS -->
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.1-2">
+<link rel="stylesheet" href="assets/css/style.css?v=2.0.1-3">
 </head>
 <body>
 
@@ -73,7 +73,7 @@
       <span class="brand-mark brand-mark--img" aria-hidden="true">
         <img src="assets/img/logo.png" alt="" width="34" height="37" decoding="async">
       </span>
-      <span class="brand-name">Kvizo</span>
+      <img class="wordmark brand-wordmark" src="assets/img/wordmark.png" alt="Kvizo" width="426" height="135" decoding="async">
     </a>
 
     <ul class="nav-links">
@@ -132,7 +132,10 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <img class="hero-logo reveal" src="assets/img/logo.png" alt="Kvizo" width="84" height="91" decoding="async">
+      <div class="hero-brand reveal">
+        <img class="hero-logo" src="assets/img/logo.png" alt="" width="84" height="91" decoding="async">
+        <img class="wordmark hero-wordmark" src="assets/img/wordmark.png" alt="Kvizo" width="426" height="135" decoding="async">
+      </div>
       <p class="eyebrow reveal" data-i18n="hero.eyebrow">Offline-first Android quiz app</p>
       <h1 class="hero-title reveal" data-i18n="hero.title">Forge knowledge. Earn XP. Play anywhere.</h1>
       <p class="hero-sub reveal" data-i18n="hero.sub">Create your own quizzes, play them timed or relaxed, build streaks and unlock 81 badges. Community quizzes arrive signed and verified. No account, no server, everything on your device.</p>
@@ -647,7 +650,7 @@
         <img src="assets/img/logo.png" alt="" width="40" height="43" loading="lazy" decoding="async">
       </span>
       <div>
-        <strong>Kvizo</strong>
+        <img class="wordmark footer-wordmark" src="assets/img/wordmark.png" alt="Kvizo" width="426" height="135" loading="lazy" decoding="async">
         <span data-i18n="footer.tagline">Forge knowledge. Earn XP. Play anywhere.</span>
       </div>
     </div>
