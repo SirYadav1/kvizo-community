@@ -449,9 +449,9 @@ img, svg { display: block; max-width: 100%; }
 /* Measure the two halves of the lockup instead of guessing at them.
    The badge artwork is 392x425 with 6px of bleed all round, so in the 34px-wide brand box
    it draws 36.86px tall and shows 35.8px of ink. The wordmark is cropped to its ink, so its
-   CSS height *is* its ink height — 0.85 of the badge's ink (30.4px) reads as the same
-   weight as the mark without towering over it. */
-.brand-wordmark { height: 30.4px; }
+   CSS height *is* its ink height — the nav is tight for room, so there the name sits at
+   26px (0.73 of the mark) and in the roomier footer at 30.4px (0.85). */
+.brand-wordmark { height: 26px; }
 .footer-wordmark { height: 30.4px; margin-bottom: 5px; }
 
 /* App logo + app name above the hero heading — flat, no box, no shadow */
