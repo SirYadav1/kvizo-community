@@ -1,0 +1,450 @@
+{
+  "id": "cpp-inheritance-007",
+  "title": "Inheritance - C++",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-30T00:00:00Z",
+  "questions": [
+    {
+      "question": "What is inheritance in C++?",
+      "options": [
+        "The process by which one class acquires the properties and behaviors of another class",
+        "The process of deleting a class",
+        "The process of copying a function",
+        "The process of creating multiple objects"
+      ],
+      "correct_index": 0,
+      "explanation": "Inheritance allows a new class (derived) to acquire properties and methods of an existing class (base)."
+    },
+    {
+      "question": "Which class is also known as the parent class?",
+      "options": [
+        "Derived class",
+        "Base class",
+        "Child class",
+        "Subclass"
+      ],
+      "correct_index": 1,
+      "explanation": "The base class is also called the parent or super class."
+    },
+    {
+      "question": "Which class is also known as the child class?",
+      "options": [
+        "Base class",
+        "Parent class",
+        "Derived class",
+        "Super class"
+      ],
+      "correct_index": 2,
+      "explanation": "The derived class is also called the child or subclass."
+    },
+    {
+      "question": "What is the correct syntax for inheriting class Derived from class Base?",
+      "options": [
+        "class Derived : public Base { };",
+        "class Derived inherits Base { };",
+        "class Derived extends Base { };",
+        "class Derived : Base inherits { };"
+      ],
+      "correct_index": 0,
+      "explanation": "The syntax is: class Derived : access_specifier Base { };"
+    },
+    {
+      "question": "What is the default access specifier for inheritance in a class?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static"
+      ],
+      "correct_index": 1,
+      "explanation": "When inheriting with the class keyword, the default access specifier is private."
+    },
+    {
+      "question": "What is the default access specifier for inheritance in a struct?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static"
+      ],
+      "correct_index": 0,
+      "explanation": "When inheriting with the struct keyword, the default access specifier is public."
+    },
+    {
+      "question": "In public inheritance, public members of the base class become:",
+      "options": [
+        "Public in the derived class",
+        "Private in the derived class",
+        "Protected in the derived class",
+        "Inaccessible"
+      ],
+      "correct_index": 0,
+      "explanation": "Public inheritance preserves the access levels of public members."
+    },
+    {
+      "question": "In public inheritance, protected members of the base class become:",
+      "options": [
+        "Public in the derived class",
+        "Private in the derived class",
+        "Protected in the derived class",
+        "Inaccessible"
+      ],
+      "correct_index": 2,
+      "explanation": "Protected members remain protected in the derived class under public inheritance."
+    },
+    {
+      "question": "In public inheritance, private members of the base class become:",
+      "options": [
+        "Public in the derived class",
+        "Private in the derived class",
+        "Protected in the derived class",
+        "Inaccessible directly"
+      ],
+      "correct_index": 3,
+      "explanation": "Private members of the base class are never directly accessible in the derived class."
+    },
+    {
+      "question": "In private inheritance, public members of the base class become:",
+      "options": [
+        "Public in the derived class",
+        "Private in the derived class",
+        "Protected in the derived class",
+        "Inaccessible"
+      ],
+      "correct_index": 1,
+      "explanation": "Private inheritance makes all public and protected members private in the derived class."
+    },
+    {
+      "question": "In protected inheritance, public members of the base class become:",
+      "options": [
+        "Public in the derived class",
+        "Private in the derived class",
+        "Protected in the derived class",
+        "Inaccessible"
+      ],
+      "correct_index": 2,
+      "explanation": "Protected inheritance makes public and protected members protected in the derived class."
+    },
+    {
+      "question": "Which members of the base class are NOT accessible in the derived class?",
+      "options": [
+        "public",
+        "protected",
+        "private",
+        "all"
+      ],
+      "correct_index": 2,
+      "explanation": "Private members of the base class are not directly accessible in the derived class."
+    },
+    {
+      "question": "Which inheritance type creates an 'is-a' relationship?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "virtual"
+      ],
+      "correct_index": 0,
+      "explanation": "Public inheritance represents an 'is-a' relationship, e.g., a Car is a Vehicle."
+    },
+    {
+      "question": "Which inheritance type creates a 'has-a' relationship?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "multiple"
+      ],
+      "correct_index": 1,
+      "explanation": "Private inheritance represents a 'has-a' or 'implemented-in-terms-of' relationship."
+    },
+    {
+      "question": "When is the base class constructor called in inheritance?",
+      "options": [
+        "Before the derived class constructor",
+        "After the derived class constructor",
+        "Along with the derived class constructor",
+        "Never"
+      ],
+      "correct_index": 0,
+      "explanation": "Base class constructors are called before derived class constructors."
+    },
+    {
+      "question": "When is the base class destructor called in inheritance?",
+      "options": [
+        "Before the derived class destructor",
+        "After the derived class destructor",
+        "Along with the derived class destructor",
+        "Never"
+      ],
+      "correct_index": 1,
+      "explanation": "Base class destructors are called after derived class destructors."
+    },
+    {
+      "question": "How do you call a parameterized base class constructor from a derived class?",
+      "options": [
+        "In the derived class constructor's initializer list",
+        "Inside the derived class constructor body",
+        "Before the derived class constructor",
+        "After the derived class constructor"
+      ],
+      "correct_index": 0,
+      "explanation": "Base class constructors with parameters are called using the initializer list, e.g., Derived() : Base(args)."
+    },
+    {
+      "question": "If a derived class constructor does not explicitly call a base class constructor, which one is called?",
+      "options": [
+        "The default constructor of the base class",
+        "The parameterized constructor",
+        "No constructor is called",
+        "Compilation error"
+      ],
+      "correct_index": 0,
+      "explanation": "If not specified, the compiler calls the default constructor of the base class."
+    },
+    {
+      "question": "What is function overriding?",
+      "options": [
+        "Redefining a base class function in the derived class with the same signature",
+        "Defining multiple functions with the same name",
+        "Calling a function multiple times",
+        "Deleting a function"
+      ],
+      "correct_index": 0,
+      "explanation": "Function overriding occurs when a derived class provides a new implementation for a base class function."
+    },
+    {
+      "question": "What is the main difference between function overloading and function overriding?",
+      "options": [
+        "Overloading is compile-time, overriding is runtime",
+        "Overloading is runtime, overriding is compile-time",
+        "Both are compile-time",
+        "Both are runtime"
+      ],
+      "correct_index": 0,
+      "explanation": "Overloading is resolved at compile time, while overriding is resolved at runtime using virtual functions."
+    },
+    {
+      "question": "Which keyword is used to enable runtime polymorphism in function overriding?",
+      "options": [
+        "override",
+        "virtual",
+        "friend",
+        "static"
+      ],
+      "correct_index": 1,
+      "explanation": "The virtual keyword in the base class enables runtime polymorphism."
+    },
+    {
+      "question": "What is a class hierarchy?",
+      "options": [
+        "A tree-like structure of classes related by inheritance",
+        "A list of functions",
+        "An array of objects",
+        "A group of unrelated classes"
+      ],
+      "correct_index": 0,
+      "explanation": "A class hierarchy organizes classes in a tree structure based on inheritance."
+    },
+    {
+      "question": "What is single inheritance?",
+      "options": [
+        "A derived class inheriting from one base class",
+        "A derived class inheriting from multiple base classes",
+        "A base class inheriting from derived class",
+        "No inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Single inheritance means a derived class has only one base class."
+    },
+    {
+      "question": "What is multiple inheritance?",
+      "options": [
+        "A derived class inheriting from multiple base classes",
+        "A derived class inheriting from one base class",
+        "A base class inheriting from derived class",
+        "No inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Multiple inheritance allows a derived class to inherit from more than one base class."
+    },
+    {
+      "question": "What is multilevel inheritance?",
+      "options": [
+        "A derived class inheriting from another derived class",
+        "A derived class inheriting from multiple base classes",
+        "A base class inheriting from derived class",
+        "No inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Multilevel inheritance forms a chain, e.g., A → B → C."
+    },
+    {
+      "question": "What is hierarchical inheritance?",
+      "options": [
+        "Multiple derived classes inheriting from a single base class",
+        "A derived class inheriting from multiple base classes",
+        "A derived class inheriting from another derived class",
+        "No inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "In hierarchical inheritance, one base class is inherited by multiple derived classes."
+    },
+    {
+      "question": "What is hybrid inheritance?",
+      "options": [
+        "A combination of two or more types of inheritance",
+        "Only multiple inheritance",
+        "Only multilevel inheritance",
+        "Only single inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Hybrid inheritance combines multiple and multilevel inheritance."
+    },
+    {
+      "question": "What is the diamond problem in multiple inheritance?",
+      "options": [
+        "Ambiguity when a class inherits from two classes that share a common base class",
+        "A syntax error in class definition",
+        "A problem with constructors",
+        "A problem with destructors"
+      ],
+      "correct_index": 0,
+      "explanation": "The diamond problem occurs when a derived class inherits from two classes with a common base, causing ambiguity."
+    },
+    {
+      "question": "How is the diamond problem resolved in C++?",
+      "options": [
+        "Using virtual inheritance",
+        "Using multiple constructors",
+        "Using private inheritance",
+        "Using static members"
+      ],
+      "correct_index": 0,
+      "explanation": "Virtual inheritance ensures only one copy of the common base class is inherited."
+    },
+    {
+      "question": "Which keyword is used for virtual inheritance?",
+      "options": [
+        "virtual",
+        "static",
+        "friend",
+        "public"
+      ],
+      "correct_index": 0,
+      "explanation": "Virtual inheritance is declared as class Derived : virtual public Base."
+    },
+    {
+      "question": "Which access specifier makes base class members accessible to derived class but not to outside code?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static"
+      ],
+      "correct_index": 2,
+      "explanation": "Protected members are accessible in derived classes but not from outside."
+    },
+    {
+      "question": "Can a derived class access private members of the base class directly?",
+      "options": [
+        "Yes",
+        "No",
+        "Only with friend",
+        "Only with virtual"
+      ],
+      "correct_index": 1,
+      "explanation": "Private members of the base class cannot be accessed directly by the derived class."
+    },
+    {
+      "question": "How can a derived class access private members of the base class?",
+      "options": [
+        "Through public or protected member functions of the base class",
+        "By using the scope resolution operator",
+        "By declaring them public",
+        "By using the friend keyword"
+      ],
+      "correct_index": 0,
+      "explanation": "The derived class can access private members through public or protected methods of the base class."
+    },
+    {
+      "question": "What happens if a derived class defines a function with the same name as a base class function but different parameters?",
+      "options": [
+        "The base class function is hidden",
+        "The base class function is overridden",
+        "Compilation error",
+        "Nothing happens"
+      ],
+      "correct_index": 0,
+      "explanation": "The base class function is hidden by the derived class function, not overridden."
+    },
+    {
+      "question": "How do you call a hidden base class function from a derived class?",
+      "options": [
+        "Base::functionName()",
+        "Derived::functionName()",
+        "this->functionName()",
+        "functionName()"
+      ],
+      "correct_index": 0,
+      "explanation": "Use the scope resolution operator: Base::functionName()."
+    },
+    {
+      "question": "Which of the following is NOT inherited by a derived class?",
+      "options": [
+        "Constructors",
+        "Public member functions",
+        "Protected data members",
+        "Public data members"
+      ],
+      "correct_index": 0,
+      "explanation": "Constructors and destructors are not inherited in C++."
+    },
+    {
+      "question": "Can a derived class have additional members not present in the base class?",
+      "options": [
+        "Yes",
+        "No",
+        "Only data members",
+        "Only functions"
+      ],
+      "correct_index": 0,
+      "explanation": "A derived class can add its own data members and member functions."
+    },
+    {
+      "question": "What is the size of a derived class object?",
+      "options": [
+        "At least the size of the base class plus derived class members",
+        "Exactly the size of the base class",
+        "Exactly the size of the derived class",
+        "Zero"
+      ],
+      "correct_index": 0,
+      "explanation": "A derived object includes base class members plus its own members."
+    },
+    {
+      "question": "Can a base class pointer point to a derived class object?",
+      "options": [
+        "Yes, this is called upcasting",
+        "No",
+        "Only with virtual functions",
+        "Only with private inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "A base class pointer can point to a derived class object, which is called upcasting."
+    },
+    {
+      "question": "Can a derived class pointer point to a base class object without explicit casting?",
+      "options": [
+        "No, it requires explicit casting (downcasting)",
+        "Yes, automatically",
+        "Only with virtual",
+        "Only with private inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Downcasting (base to derived) requires explicit casting."
+    }
+  ]
+}
