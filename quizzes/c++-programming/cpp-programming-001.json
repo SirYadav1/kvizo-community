@@ -1,0 +1,120 @@
+{
+  "id": "cpp-programming-001",
+  "title": "C++ Programming Challenge",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-16T00:00:00Z",
+  "questions": [
+    {
+      "question": "Who is the creator of the C++ programming language?",
+      "options": [
+        "Dennis Ritchie",
+        "Bjarne Stroustrup",
+        "James Gosling",
+        "Guido van Rossum"
+      ],
+      "correct_index": 1,
+      "explanation": "Bjarne Stroustrup created C++ at Bell Labs in 1979 as an extension of the C language with object-oriented features."
+    },
+    {
+      "question": "Which operator is used to access members of a pointer to an object in C++?",
+      "options": [
+        ".",
+        "::",
+        "->",
+        "*"
+      ],
+      "correct_index": 2,
+      "explanation": "The -> (arrow) operator is used to access members of an object through a pointer, e.g., ptr->member."
+    },
+    {
+      "question": "Which header file is required to use cout and cin in C++?",
+      "options": [
+        "<stdio.h>",
+        "<stdlib.h>",
+        "<iostream>",
+        "<fstream>"
+      ],
+      "correct_index": 2,
+      "explanation": "<iostream> is the standard C++ header that provides cout, cin, cerr, and clog for input/output operations."
+    },
+    {
+      "question": "What is the correct way to declare a reference to an integer in C++?",
+      "options": [
+        "int *ref;",
+        "int &ref = x;",
+        "ref int x;",
+        "int ref = &x;"
+      ],
+      "correct_index": 1,
+      "explanation": "int &ref = x; declares a reference ref that acts as an alias for the variable x. References must be initialized when declared."
+    },
+    {
+      "question": "Which keyword is used to define a class in C++?",
+      "options": [
+        "struct",
+        "object",
+        "class",
+        "type"
+      ],
+      "correct_index": 2,
+      "explanation": "The class keyword is used to define a class in C++. Its members are private by default, unlike struct where they are public."
+    },
+    {
+      "question": "What is the purpose of the 'new' operator in C++?",
+      "options": [
+        "Declares a new variable",
+        "Creates a new function",
+        "Allocates memory dynamically on the heap",
+        "Defines a new class"
+      ],
+      "correct_index": 2,
+      "explanation": "The new operator dynamically allocates memory on the heap and returns a pointer to it. It replaces malloc() in C++."
+    },
+    {
+      "question": "Which of the following is used for runtime polymorphism in C++?",
+      "options": [
+        "Function overloading",
+        "Templates",
+        "Virtual functions",
+        "Operator overloading"
+      ],
+      "correct_index": 2,
+      "explanation": "Virtual functions enable runtime polymorphism. They allow a derived class to override a base class method, resolved at runtime via vtable."
+    },
+    {
+      "question": "What is the correct destructor syntax for a class named 'MyClass' in C++?",
+      "options": [
+        "~MyClass()",
+        "delete MyClass()",
+        "destroy MyClass()",
+        "void ~MyClass()"
+      ],
+      "correct_index": 0,
+      "explanation": "A destructor is declared with a tilde (~) before the class name, e.g., ~MyClass(). It is called automatically when an object goes out of scope."
+    },
+    {
+      "question": "Which concept allows the same function name to be used with different parameters in C++?",
+      "options": [
+        "Encapsulation",
+        "Function overloading",
+        "Inheritance",
+        "Abstraction"
+      ],
+      "correct_index": 1,
+      "explanation": "Function overloading allows multiple functions with the same name but different parameter lists, resolved at compile time."
+    },
+    {
+      "question": "What does the '::' operator do in C++?",
+      "options": [
+        "Pointer dereference",
+        "Scope resolution",
+        "Member access",
+        "Type casting"
+      ],
+      "correct_index": 1,
+      "explanation": "The :: operator is the scope resolution operator. It is used to access global variables, class members, or namespace members, e.g., std::cout."
+    }
+  ]
+}
