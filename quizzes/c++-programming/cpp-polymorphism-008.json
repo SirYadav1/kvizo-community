@@ -1,0 +1,450 @@
+{
+  "id": "cpp-polymorphism-008",
+  "title": "Polymorphism - C++",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-30T00:00:00Z",
+  "questions": [
+    {
+      "question": "What does polymorphism mean in C++?",
+      "options": [
+        "One name, many forms",
+        "Many names, one form",
+        "Data hiding",
+        "Memory allocation"
+      ],
+      "correct_index": 0,
+      "explanation": "Polymorphism allows the same name to be used for different purposes, i.e., one name, many forms."
+    },
+    {
+      "question": "Which of the following is a type of polymorphism in C++?",
+      "options": [
+        "Compile-time polymorphism",
+        "Runtime polymorphism",
+        "Both A and B",
+        "None of the above"
+      ],
+      "correct_index": 2,
+      "explanation": "C++ supports both compile-time (static) and runtime (dynamic) polymorphism."
+    },
+    {
+      "question": "Compile-time polymorphism is also known as:",
+      "options": [
+        "Static polymorphism",
+        "Dynamic polymorphism",
+        "Runtime polymorphism",
+        "Late binding"
+      ],
+      "correct_index": 0,
+      "explanation": "Compile-time polymorphism is also called static or early binding."
+    },
+    {
+      "question": "Runtime polymorphism is also known as:",
+      "options": [
+        "Static polymorphism",
+        "Dynamic polymorphism",
+        "Early binding",
+        "Compile-time polymorphism"
+      ],
+      "correct_index": 1,
+      "explanation": "Runtime polymorphism is also called dynamic polymorphism or late binding."
+    },
+    {
+      "question": "Which of the following is an example of compile-time polymorphism?",
+      "options": [
+        "Function overloading",
+        "Virtual functions",
+        "Function overriding",
+        "Runtime binding"
+      ],
+      "correct_index": 0,
+      "explanation": "Function overloading is resolved at compile time."
+    },
+    {
+      "question": "Which of the following is an example of runtime polymorphism?",
+      "options": [
+        "Function overloading",
+        "Operator overloading",
+        "Virtual functions",
+        "Templates"
+      ],
+      "correct_index": 2,
+      "explanation": "Virtual functions enable runtime polymorphism."
+    },
+    {
+      "question": "Function overloading is resolved at:",
+      "options": [
+        "Compile time",
+        "Runtime",
+        "Link time",
+        "Load time"
+      ],
+      "correct_index": 0,
+      "explanation": "The compiler decides which overloaded function to call based on arguments."
+    },
+    {
+      "question": "Virtual functions are resolved at:",
+      "options": [
+        "Compile time",
+        "Runtime",
+        "Link time",
+        "Load time"
+      ],
+      "correct_index": 1,
+      "explanation": "Virtual function calls are resolved at runtime using the vtable."
+    },
+    {
+      "question": "Which keyword is used to declare a virtual function?",
+      "options": [
+        "virtual",
+        "static",
+        "friend",
+        "inline"
+      ],
+      "correct_index": 0,
+      "explanation": "The virtual keyword is used in the base class to enable runtime polymorphism."
+    },
+    {
+      "question": "What is function overriding?",
+      "options": [
+        "Redefining a base class function in the derived class with the same signature",
+        "Defining multiple functions with the same name",
+        "Calling a function multiple times",
+        "Deleting a function"
+      ],
+      "correct_index": 0,
+      "explanation": "Function overriding provides a new implementation for a base class virtual function in the derived class."
+    },
+    {
+      "question": "Which of the following is necessary for runtime polymorphism?",
+      "options": [
+        "Inheritance and virtual functions",
+        "Only inheritance",
+        "Only virtual functions",
+        "Templates"
+      ],
+      "correct_index": 0,
+      "explanation": "Runtime polymorphism requires inheritance and virtual functions."
+    },
+    {
+      "question": "What is a pure virtual function?",
+      "options": [
+        "A virtual function with no definition, declared as = 0",
+        "A virtual function with a definition",
+        "A static function",
+        "A friend function"
+      ],
+      "correct_index": 0,
+      "explanation": "A pure virtual function is declared with = 0 and makes the class abstract."
+    },
+    {
+      "question": "What is an abstract class?",
+      "options": [
+        "A class that contains at least one pure virtual function",
+        "A class with only static members",
+        "A class with no members",
+        "A class that cannot be inherited"
+      ],
+      "correct_index": 0,
+      "explanation": "An abstract class has at least one pure virtual function and cannot be instantiated."
+    },
+    {
+      "question": "Can an abstract class be instantiated?",
+      "options": [
+        "No",
+        "Yes",
+        "Only with virtual",
+        "Only with static"
+      ],
+      "correct_index": 0,
+      "explanation": "Abstract classes cannot be instantiated directly."
+    },
+    {
+      "question": "What is a virtual destructor?",
+      "options": [
+        "A destructor declared with the virtual keyword",
+        "A destructor that deletes virtual functions",
+        "A destructor that is pure virtual",
+        "A destructor that cannot be overloaded"
+      ],
+      "correct_index": 0,
+      "explanation": "A virtual destructor ensures that the correct destructor is called when deleting a derived object via a base pointer."
+    },
+    {
+      "question": "Why is a virtual destructor needed?",
+      "options": [
+        "To properly destroy derived class objects through base class pointers",
+        "To make the class abstract",
+        "To enable function overloading",
+        "To speed up destruction"
+      ],
+      "correct_index": 0,
+      "explanation": "Without a virtual destructor, deleting a derived object via a base pointer may cause undefined behavior."
+    },
+    {
+      "question": "What is the output of the following code?\n\nclass Base { public: virtual void show() { cout << \"Base\"; } };\nclass Derived : public Base { public: void show() { cout << \"Derived\"; } };\nint main() { Base *b = new Derived(); b->show(); }",
+      "options": [
+        "Base",
+        "Derived",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_index": 1,
+      "explanation": "Due to virtual function, the derived class version is called, so output is Derived."
+    },
+    {
+      "question": "What is the output if the virtual keyword is removed from the base class show()?",
+      "options": [
+        "Base",
+        "Derived",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_index": 0,
+      "explanation": "Without virtual, the function call is resolved at compile time based on the pointer type, so Base is called."
+    },
+    {
+      "question": "Which of the following is NOT a type of polymorphism?",
+      "options": [
+        "Compile-time",
+        "Runtime",
+        "Static",
+        "Sequential"
+      ],
+      "correct_index": 3,
+      "explanation": "Sequential is not a type of polymorphism."
+    },
+    {
+      "question": "Operator overloading is an example of:",
+      "options": [
+        "Compile-time polymorphism",
+        "Runtime polymorphism",
+        "Dynamic polymorphism",
+        "Late binding"
+      ],
+      "correct_index": 0,
+      "explanation": "Operator overloading is resolved at compile time."
+    },
+    {
+      "question": "Function overriding is an example of:",
+      "options": [
+        "Compile-time polymorphism",
+        "Runtime polymorphism",
+        "Static polymorphism",
+        "Early binding"
+      ],
+      "correct_index": 1,
+      "explanation": "Function overriding with virtual functions is runtime polymorphism."
+    },
+    {
+      "question": "What is the vtable in C++?",
+      "options": [
+        "A table of virtual function pointers",
+        "A table of variables",
+        "A table of constructors",
+        "A table of destructors"
+      ],
+      "correct_index": 0,
+      "explanation": "The vtable is used to resolve virtual function calls at runtime."
+    },
+    {
+      "question": "Which of the following can be virtual?",
+      "options": [
+        "Member functions",
+        "Constructors",
+        "Static functions",
+        "Friend functions"
+      ],
+      "correct_index": 0,
+      "explanation": "Only member functions can be virtual. Constructors cannot be virtual."
+    },
+    {
+      "question": "Can a constructor be virtual?",
+      "options": [
+        "No",
+        "Yes",
+        "Only in C++11",
+        "Only in abstract classes"
+      ],
+      "correct_index": 0,
+      "explanation": "Constructors cannot be virtual because the object's type is not fully determined until construction is complete."
+    },
+    {
+      "question": "Can a destructor be virtual?",
+      "options": [
+        "Yes",
+        "No",
+        "Only in abstract classes",
+        "Only in C++11"
+      ],
+      "correct_index": 0,
+      "explanation": "Destructors can and should be virtual in base classes with virtual functions."
+    },
+    {
+      "question": "Which of the following is true about pure virtual functions?",
+      "options": [
+        "They have no body and are declared with = 0",
+        "They must have a body",
+        "They cannot be overridden",
+        "They are static"
+      ],
+      "correct_index": 0,
+      "explanation": "Pure virtual functions have no implementation in the base class and are declared with = 0."
+    },
+    {
+      "question": "What happens if a derived class does not override a pure virtual function?",
+      "options": [
+        "The derived class also becomes abstract",
+        "The program will not compile",
+        "The base class function is called",
+        "The derived class can be instantiated"
+      ],
+      "correct_index": 0,
+      "explanation": "If a derived class does not implement all pure virtual functions, it remains abstract."
+    },
+    {
+      "question": "What is the main advantage of polymorphism?",
+      "options": [
+        "It allows code to be written generically and reused",
+        "It makes programs slower",
+        "It increases code size",
+        "It removes the need for inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Polymorphism allows writing generic code that can work with objects of different types."
+    },
+    {
+      "question": "Which of the following demonstrates polymorphism?",
+      "options": [
+        "A base class pointer pointing to derived class objects",
+        "A function with no parameters",
+        "A global variable",
+        "A static function"
+      ],
+      "correct_index": 0,
+      "explanation": "Using a base class pointer to call virtual functions on derived objects is a classic example."
+    },
+    {
+      "question": "What is the output of the following code?\n\nclass A { public: void show() { cout << \"A\"; } };\nclass B : public A { public: void show() { cout << \"B\"; } };\nint main() { A *a = new B(); a->show(); }",
+      "options": [
+        "A",
+        "B",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_index": 0,
+      "explanation": "Without virtual, the function is called based on the pointer type, so A is printed."
+    },
+    {
+      "question": "What is the output if show() is virtual in the above code?",
+      "options": [
+        "A",
+        "B",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_index": 1,
+      "explanation": "With virtual, the derived class version is called, so B is printed."
+    },
+    {
+      "question": "Which of the following is true about virtual functions?",
+      "options": [
+        "They enable runtime polymorphism",
+        "They enable compile-time polymorphism",
+        "They cannot be overridden",
+        "They must be static"
+      ],
+      "correct_index": 0,
+      "explanation": "Virtual functions are the mechanism for runtime polymorphism."
+    },
+    {
+      "question": "What is late binding?",
+      "options": [
+        "Function call resolved at runtime",
+        "Function call resolved at compile time",
+        "Function call resolved at link time",
+        "Function call resolved at load time"
+      ],
+      "correct_index": 0,
+      "explanation": "Late binding means the function call is resolved at runtime, which is done via virtual functions."
+    },
+    {
+      "question": "What is early binding?",
+      "options": [
+        "Function call resolved at compile time",
+        "Function call resolved at runtime",
+        "Function call resolved at link time",
+        "Function call resolved at load time"
+      ],
+      "correct_index": 0,
+      "explanation": "Early binding means the function call is resolved at compile time, as in function overloading."
+    },
+    {
+      "question": "Which of the following is NOT a valid use of polymorphism?",
+      "options": [
+        "Using a base class pointer to call derived class methods",
+        "Using function overloading",
+        "Using operator overloading",
+        "Using global variables"
+      ],
+      "correct_index": 3,
+      "explanation": "Global variables are not related to polymorphism."
+    },
+    {
+      "question": "Which of the following is a compile-time polymorphism technique?",
+      "options": [
+        "Templates",
+        "Virtual functions",
+        "Function overriding",
+        "Dynamic binding"
+      ],
+      "correct_index": 0,
+      "explanation": "Templates are resolved at compile time, so they are compile-time polymorphism."
+    },
+    {
+      "question": "What is the output of the following code?\n\nclass Base { public: virtual void print() { cout << \"Base\"; } };\nclass Derived : public Base { public: void print() { cout << \"Derived\"; } };\nint main() { Base b; Derived d; Base *ptr = &d; ptr->print(); }",
+      "options": [
+        "Base",
+        "Derived",
+        "BaseDerived",
+        "Compilation error"
+      ],
+      "correct_index": 1,
+      "explanation": "ptr points to a Derived object and print() is virtual, so Derived is printed."
+    },
+    {
+      "question": "Which of the following is true about virtual functions and constructors?",
+      "options": [
+        "Constructors cannot be virtual, but destructors can be",
+        "Both can be virtual",
+        "Neither can be virtual",
+        "Only constructors can be virtual"
+      ],
+      "correct_index": 0,
+      "explanation": "Constructors cannot be virtual; destructors can and often should be virtual."
+    },
+    {
+      "question": "What is the main difference between function overloading and function overriding?",
+      "options": [
+        "Overloading is compile-time, overriding is runtime",
+        "Overloading is runtime, overriding is compile-time",
+        "Both are compile-time",
+        "Both are runtime"
+      ],
+      "correct_index": 0,
+      "explanation": "Overloading is resolved at compile time; overriding is resolved at runtime with virtual functions."
+    },
+    {
+      "question": "Which of the following allows a class to be polymorphic?",
+      "options": [
+        "Virtual functions",
+        "Static functions",
+        "Friend functions",
+        "Inline functions"
+      ],
+      "correct_index": 0,
+      "explanation": "Virtual functions make a class polymorphic by enabling runtime binding."
+    }
+  ]
+}
