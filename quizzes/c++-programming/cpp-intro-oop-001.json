@@ -1,0 +1,450 @@
+{
+  "id": "cpp-intro-oop-001",
+  "title": "Introduction to OOP - C++",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-30T00:00:00Z",
+  "questions": [
+    {
+      "question": "What is the main concept of OOP?",
+      "options": [
+        "Executing functions in a sequence",
+        "Binding data and functions into a single unit (object)",
+        "Storing only data",
+        "Writing machine code"
+      ],
+      "correct_index": 1,
+      "explanation": "OOP binds data and the functions that operate on it into a single unit called an object."
+    },
+    {
+      "question": "Which of the following is NOT a characteristic of OOP?",
+      "options": [
+        "Encapsulation",
+        "Inheritance",
+        "Polymorphism",
+        "Top-down execution only"
+      ],
+      "correct_index": 3,
+      "explanation": "OOP does not rely only on top-down execution. Its main characteristics are Encapsulation, Inheritance, Polymorphism, and Abstraction."
+    },
+    {
+      "question": "What is the main advantage of OOP over procedural programming?",
+      "options": [
+        "Data security and reusability",
+        "Only faster execution",
+        "No functions",
+        "Direct hardware control"
+      ],
+      "correct_index": 0,
+      "explanation": "OOP provides better data hiding (security) and code reuse through inheritance."
+    },
+    {
+      "question": "What is the relationship between a class and an object?",
+      "options": [
+        "Object is a blueprint, class is an instance",
+        "Class is a blueprint, object is an instance",
+        "Both are the same",
+        "No relationship"
+      ],
+      "correct_index": 1,
+      "explanation": "A class is a blueprint or template, and an object is a specific instance created from that class."
+    },
+    {
+      "question": "Which OOP feature increases code reusability?",
+      "options": [
+        "Inheritance",
+        "Loop",
+        "Array",
+        "Pointer"
+      ],
+      "correct_index": 0,
+      "explanation": "Inheritance allows a new class to reuse the properties and methods of an existing class."
+    },
+    {
+      "question": "What does encapsulation mean?",
+      "options": [
+        "Binding data and functions into a single unit",
+        "Creating only functions",
+        "Deleting a class",
+        "Running a loop"
+      ],
+      "correct_index": 0,
+      "explanation": "Encapsulation wraps data and the functions that manipulate it into a single unit (class)."
+    },
+    {
+      "question": "What is the main purpose of abstraction?",
+      "options": [
+        "Hiding implementation details and showing only essential features",
+        "Deleting data",
+        "Freeing memory",
+        "Breaking a loop"
+      ],
+      "correct_index": 0,
+      "explanation": "Abstraction shows only essential features to the user while hiding internal implementation."
+    },
+    {
+      "question": "What does polymorphism mean?",
+      "options": [
+        "One name, many forms",
+        "One form, one name",
+        "Data hiding",
+        "Memory allocation"
+      ],
+      "correct_index": 0,
+      "explanation": "Polymorphism means 'one name, many forms' — for example, function overloading and virtual functions."
+    },
+    {
+      "question": "Who is the creator of C++?",
+      "options": [
+        "Dennis Ritchie",
+        "Bjarne Stroustrup",
+        "James Gosling",
+        "Guido van Rossum"
+      ],
+      "correct_index": 1,
+      "explanation": "Bjarne Stroustrup created C++ at Bell Labs in 1979 as an extension of C with object-oriented features."
+    },
+    {
+      "question": "What is the relationship between C and C++?",
+      "options": [
+        "C++ is a superset of C",
+        "C is a superset of C++",
+        "Both are the same",
+        "No relationship"
+      ],
+      "correct_index": 0,
+      "explanation": "C++ is a superset of C — it includes all C features and adds object-oriented features."
+    },
+    {
+      "question": "Why was OOP needed?",
+      "options": [
+        "To overcome limitations of procedural programming",
+        "To make programs slower",
+        "To remove functions",
+        "To avoid data types"
+      ],
+      "correct_index": 0,
+      "explanation": "OOP was introduced to solve problems like data insecurity, poor reusability, and difficulty in managing large programs in procedural programming."
+    },
+    {
+      "question": "In procedural programming, what is the main focus?",
+      "options": [
+        "Functions and procedures",
+        "Objects and classes",
+        "Inheritance",
+        "Polymorphism"
+      ],
+      "correct_index": 0,
+      "explanation": "Procedural programming focuses on functions and step-by-step procedures, while OOP focuses on objects."
+    },
+    {
+      "question": "What is a project-oriented approach in OOP?",
+      "options": [
+        "Building software as a collection of interacting objects",
+        "Writing only one function",
+        "Avoiding classes",
+        "Using only loops"
+      ],
+      "correct_index": 0,
+      "explanation": "A project-oriented approach means designing software as a set of objects that interact with each other, making it modular and maintainable."
+    },
+    {
+      "question": "Which of the following is a benefit of reusability in OOP?",
+      "options": [
+        "Reduced development time",
+        "Increased code duplication",
+        "Slower execution",
+        "More memory usage"
+      ],
+      "correct_index": 0,
+      "explanation": "Reusability allows existing code to be used again, reducing development time and effort."
+    },
+    {
+      "question": "Encapsulation helps in:",
+      "options": [
+        "Data hiding",
+        "Data deletion",
+        "Data duplication",
+        "Data loss"
+      ],
+      "correct_index": 0,
+      "explanation": "Encapsulation hides internal data from outside interference, which is known as data hiding."
+    },
+    {
+      "question": "Which access specifier makes class members accessible only within the class?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "global"
+      ],
+      "correct_index": 1,
+      "explanation": "Private members are accessible only within the class, which is a key part of encapsulation."
+    },
+    {
+      "question": "What is inheritance in OOP?",
+      "options": [
+        "Deriving a new class from an existing class",
+        "Deleting a class",
+        "Copying a function",
+        "Running a loop"
+      ],
+      "correct_index": 0,
+      "explanation": "Inheritance allows a new class (derived) to acquire properties and methods of an existing class (base)."
+    },
+    {
+      "question": "What is the base class in inheritance?",
+      "options": [
+        "The class that inherits",
+        "The class that is inherited from",
+        "A function",
+        "An object"
+      ],
+      "correct_index": 1,
+      "explanation": "The base class is the existing class from which other classes inherit features."
+    },
+    {
+      "question": "What is the derived class in inheritance?",
+      "options": [
+        "The class that inherits from another class",
+        "The class that is inherited",
+        "A function",
+        "An object"
+      ],
+      "correct_index": 0,
+      "explanation": "The derived class is the new class that inherits properties and methods from the base class."
+    },
+    {
+      "question": "Compile-time polymorphism is achieved by:",
+      "options": [
+        "Function overloading",
+        "Virtual functions",
+        "Inheritance",
+        "Encapsulation"
+      ],
+      "correct_index": 0,
+      "explanation": "Function overloading and operator overloading are examples of compile-time polymorphism."
+    },
+    {
+      "question": "Runtime polymorphism is achieved by:",
+      "options": [
+        "Virtual functions",
+        "Function overloading",
+        "Operator overloading",
+        "Templates"
+      ],
+      "correct_index": 0,
+      "explanation": "Virtual functions enable runtime polymorphism, where the function call is resolved at runtime."
+    },
+    {
+      "question": "What is function overloading?",
+      "options": [
+        "Same function name with different parameters",
+        "Different function names with same parameters",
+        "Same function name with same parameters",
+        "No function"
+      ],
+      "correct_index": 0,
+      "explanation": "Function overloading allows multiple functions with the same name but different parameter lists."
+    },
+    {
+      "question": "What is operator overloading?",
+      "options": [
+        "Giving new meaning to an existing operator for user-defined types",
+        "Creating a new operator",
+        "Deleting an operator",
+        "Using only arithmetic operators"
+      ],
+      "correct_index": 0,
+      "explanation": "Operator overloading allows existing operators to work with user-defined data types."
+    },
+    {
+      "question": "Which of the following is NOT a benefit of OOP?",
+      "options": [
+        "Code reusability",
+        "Data security",
+        "Easier maintenance",
+        "Increased code complexity"
+      ],
+      "correct_index": 3,
+      "explanation": "OOP aims to reduce complexity, not increase it. It provides reusability, security, and easier maintenance."
+    },
+    {
+      "question": "In OOP, data and functions are combined into:",
+      "options": [
+        "Objects",
+        "Loops",
+        "Arrays",
+        "Pointers"
+      ],
+      "correct_index": 0,
+      "explanation": "In OOP, data and functions are encapsulated into objects."
+    },
+    {
+      "question": "Which language was C++ derived from?",
+      "options": [
+        "Java",
+        "C",
+        "Python",
+        "C#"
+      ],
+      "correct_index": 1,
+      "explanation": "C++ was derived from the C language, adding object-oriented features."
+    },
+    {
+      "question": "What is the original name of C++?",
+      "options": [
+        "C with Classes",
+        "C Plus",
+        "Super C",
+        "Objective C"
+      ],
+      "correct_index": 0,
+      "explanation": "C++ was originally called 'C with Classes' before being renamed to C++."
+    },
+    {
+      "question": "What does the '++' in C++ signify?",
+      "options": [
+        "Increment operator",
+        "Decrement operator",
+        "Addition",
+        "Multiplication"
+      ],
+      "correct_index": 0,
+      "explanation": "The '++' is the increment operator, symbolizing an enhanced version of C."
+    },
+    {
+      "question": "Which of the following is a procedural programming language?",
+      "options": [
+        "C",
+        "C++",
+        "Java",
+        "Python"
+      ],
+      "correct_index": 0,
+      "explanation": "C is a procedural programming language, while C++, Java, and Python support OOP."
+    },
+    {
+      "question": "In OOP, what is an object?",
+      "options": [
+        "An instance of a class",
+        "A function",
+        "A loop",
+        "A header file"
+      ],
+      "correct_index": 0,
+      "explanation": "An object is a runtime instance of a class."
+    },
+    {
+      "question": "What is a class in OOP?",
+      "options": [
+        "A blueprint for creating objects",
+        "A function",
+        "A variable",
+        "A loop"
+      ],
+      "correct_index": 0,
+      "explanation": "A class is a blueprint or template that defines the properties and behavior of objects."
+    },
+    {
+      "question": "Which of the following is an example of encapsulation?",
+      "options": [
+        "A class with private data members and public methods",
+        "A function with no parameters",
+        "A loop with no condition",
+        "An array with no size"
+      ],
+      "correct_index": 0,
+      "explanation": "Encapsulation is achieved by making data members private and providing public methods to access them."
+    },
+    {
+      "question": "What is data hiding in OOP?",
+      "options": [
+        "Restricting access to internal data of a class",
+        "Deleting data",
+        "Copying data",
+        "Displaying data"
+      ],
+      "correct_index": 0,
+      "explanation": "Data hiding restricts direct access to internal data, usually achieved using private access specifier."
+    },
+    {
+      "question": "Which of the following is a characteristic of OOP?",
+      "options": [
+        "Encapsulation",
+        "Top-down execution",
+        "Global variables only",
+        "No functions"
+      ],
+      "correct_index": 0,
+      "explanation": "Encapsulation is one of the main characteristics of OOP."
+    },
+    {
+      "question": "What is the main disadvantage of procedural programming?",
+      "options": [
+        "Poor data security and reusability",
+        "Too many classes",
+        "Too many objects",
+        "Too much inheritance"
+      ],
+      "correct_index": 0,
+      "explanation": "Procedural programming has poor data security and limited code reusability compared to OOP."
+    },
+    {
+      "question": "Which of the following supports multiple inheritance in C++?",
+      "options": [
+        "Classes",
+        "Functions",
+        "Loops",
+        "Arrays"
+      ],
+      "correct_index": 0,
+      "explanation": "C++ supports multiple inheritance through classes, where a derived class can inherit from multiple base classes."
+    },
+    {
+      "question": "What is the purpose of the 'class' keyword in C++?",
+      "options": [
+        "To define a class",
+        "To define a function",
+        "To define a loop",
+        "To define an array"
+      ],
+      "correct_index": 0,
+      "explanation": "The 'class' keyword is used to define a class in C++."
+    },
+    {
+      "question": "Which of the following is true about OOP?",
+      "options": [
+        "It makes programs more modular and maintainable",
+        "It makes programs slower",
+        "It removes the need for functions",
+        "It only works with small programs"
+      ],
+      "correct_index": 0,
+      "explanation": "OOP makes programs more modular, maintainable, and reusable."
+    },
+    {
+      "question": "What is the main goal of OOP?",
+      "options": [
+        "To model real-world entities as objects",
+        "To avoid functions",
+        "To use only loops",
+        "To remove data types"
+      ],
+      "correct_index": 0,
+      "explanation": "OOP aims to model real-world entities as objects, making software design more intuitive."
+    },
+    {
+      "question": "Which of the following is NOT an OOP language?",
+      "options": [
+        "C",
+        "C++",
+        "Java",
+        "Python"
+      ],
+      "correct_index": 0,
+      "explanation": "C is a procedural language, while C++, Java, and Python support OOP."
+    }
+  ]
+}
