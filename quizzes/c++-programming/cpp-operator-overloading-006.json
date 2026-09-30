@@ -1,0 +1,450 @@
+{
+  "id": "cpp-operator-overloading-006",
+  "title": "Operator Overloading - C++",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-30T00:00:00Z",
+  "questions": [
+    {
+      "question": "What is operator overloading in C++?",
+      "options": [
+        "Giving new meaning to an existing operator for user-defined types",
+        "Creating a new operator",
+        "Deleting an existing operator",
+        "Changing the precedence of an operator"
+      ],
+      "correct_index": 0,
+      "explanation": "Operator overloading allows existing operators to work with user-defined data types."
+    },
+    {
+      "question": "Which of the following operators cannot be overloaded in C++?",
+      "options": [
+        "+",
+        "-",
+        "::",
+        "*"
+      ],
+      "correct_index": 2,
+      "explanation": "The scope resolution operator :: cannot be overloaded."
+    },
+    {
+      "question": "Can operator overloading change the precedence of an operator?",
+      "options": [
+        "Yes",
+        "No",
+        "Only for some operators",
+        "Only with friend functions"
+      ],
+      "correct_index": 1,
+      "explanation": "Operator overloading cannot change the precedence or associativity of an operator."
+    },
+    {
+      "question": "Can operator overloading change the number of operands an operator takes?",
+      "options": [
+        "Yes",
+        "No",
+        "Only for unary operators",
+        "Only for binary operators"
+      ],
+      "correct_index": 1,
+      "explanation": "The arity (number of operands) of an operator cannot be changed."
+    },
+    {
+      "question": "How many operands does a unary operator take?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "A unary operator takes one operand, e.g., ++, --, -."
+    },
+    {
+      "question": "How many operands does a binary operator take?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "A binary operator takes two operands, e.g., +, -, *, /."
+    },
+    {
+      "question": "Which operator must be overloaded as a member function?",
+      "options": [
+        "+",
+        "-",
+        "=",
+        "*"
+      ],
+      "correct_index": 2,
+      "explanation": "The assignment operator = must be overloaded as a non-static member function."
+    },
+    {
+      "question": "Which of the following operators cannot be overloaded as a friend function?",
+      "options": [
+        "+",
+        "-",
+        "=",
+        "*"
+      ],
+      "correct_index": 2,
+      "explanation": "Operators =, [], (), and -> must be overloaded as member functions, not as friend functions."
+    },
+    {
+      "question": "What is the correct syntax for overloading the + operator as a member function?",
+      "options": [
+        "ClassName operator+(const ClassName&);",
+        "friend ClassName operator+(const ClassName&, const ClassName&);",
+        "ClassName operator+(const ClassName&, const ClassName&);",
+        "operator+(ClassName);"
+      ],
+      "correct_index": 0,
+      "explanation": "A member function version takes one explicit parameter (the right operand)."
+    },
+    {
+      "question": "What is the correct syntax for overloading the + operator as a friend function?",
+      "options": [
+        "ClassName operator+(const ClassName&);",
+        "friend ClassName operator+(const ClassName&, const ClassName&);",
+        "ClassName operator+(const ClassName&, const ClassName&);",
+        "friend operator+(ClassName);"
+      ],
+      "correct_index": 1,
+      "explanation": "A friend function takes two parameters, one for each operand."
+    },
+    {
+      "question": "What is the typical return type of a binary arithmetic operator like +?",
+      "options": [
+        "ClassName&",
+        "ClassName",
+        "void",
+        "int"
+      ],
+      "correct_index": 1,
+      "explanation": "Binary arithmetic operators usually return a new object by value."
+    },
+    {
+      "question": "Why is a binary arithmetic operator usually returned by value?",
+      "options": [
+        "To allow chaining and avoid dangling references",
+        "To save memory",
+        "To make it faster",
+        "To prevent copying"
+      ],
+      "correct_index": 0,
+      "explanation": "Returning by value creates a new object that can be used in further expressions without referring to a local temporary."
+    },
+    {
+      "question": "What is a temporary object in C++?",
+      "options": [
+        "An unnamed object created by the compiler",
+        "A static object",
+        "A global object",
+        "A pointer object"
+      ],
+      "correct_index": 0,
+      "explanation": "A temporary object is an unnamed object created during expression evaluation."
+    },
+    {
+      "question": "When is a temporary object typically created?",
+      "options": [
+        "When returning by value or during type conversions",
+        "When declaring a global variable",
+        "When using a static variable",
+        "When using a pointer"
+      ],
+      "correct_index": 0,
+      "explanation": "Temporary objects are often created when functions return by value or when implicit conversions occur."
+    },
+    {
+      "question": "What is the main issue when overloading the increment operator?",
+      "options": [
+        "Prefix and postfix versions have the same name",
+        "It cannot be overloaded",
+        "It takes no arguments",
+        "It must be a friend function"
+      ],
+      "correct_index": 0,
+      "explanation": "Both prefix and postfix increment use operator++, so a dummy parameter is used to distinguish them."
+    },
+    {
+      "question": "How do you distinguish prefix and postfix increment in operator overloading?",
+      "options": [
+        "Prefix takes no argument, postfix takes a dummy int",
+        "Prefix takes an int, postfix takes no argument",
+        "Both take no arguments",
+        "Both take an int"
+      ],
+      "correct_index": 0,
+      "explanation": "Prefix: operator++(); Postfix: operator++(int)."
+    },
+    {
+      "question": "What is the correct syntax for overloading the prefix increment operator?",
+      "options": [
+        "ClassName& operator++();",
+        "ClassName operator++(int);",
+        "ClassName operator++();",
+        "void operator++();"
+      ],
+      "correct_index": 0,
+      "explanation": "Prefix increment is declared as ClassName& operator++();"
+    },
+    {
+      "question": "What is the correct syntax for overloading the postfix increment operator?",
+      "options": [
+        "ClassName& operator++();",
+        "ClassName operator++(int);",
+        "ClassName operator++();",
+        "void operator++(int);"
+      ],
+      "correct_index": 1,
+      "explanation": "Postfix increment is declared as ClassName operator++(int);"
+    },
+    {
+      "question": "What is the typical return type of the prefix increment operator?",
+      "options": [
+        "ClassName&",
+        "ClassName",
+        "void",
+        "int"
+      ],
+      "correct_index": 0,
+      "explanation": "Prefix increment usually returns a reference to the incremented object."
+    },
+    {
+      "question": "What is the typical return type of the postfix increment operator?",
+      "options": [
+        "ClassName&",
+        "ClassName",
+        "void",
+        "int"
+      ],
+      "correct_index": 1,
+      "explanation": "Postfix increment usually returns a copy of the object before incrementing."
+    },
+    {
+      "question": "What is data conversion in the context of operator overloading?",
+      "options": [
+        "Converting one user-defined type to another or to a built-in type",
+        "Converting an operator to a function",
+        "Converting a class to a struct",
+        "Converting a pointer to an integer"
+      ],
+      "correct_index": 0,
+      "explanation": "Data conversion allows objects of one type to be converted to another type."
+    },
+    {
+      "question": "How do you define a conversion operator to convert a class object to int?",
+      "options": [
+        "operator int() { }",
+        "int operator() { }",
+        "operator int(int) { }",
+        "int operator int() { }"
+      ],
+      "correct_index": 0,
+      "explanation": "A conversion operator is declared as operator type() { }."
+    },
+    {
+      "question": "Can a conversion operator take arguments?",
+      "options": [
+        "No, it takes no arguments",
+        "Yes, one argument",
+        "Yes, two arguments",
+        "Yes, any number"
+      ],
+      "correct_index": 0,
+      "explanation": "A conversion operator takes no arguments and returns the target type."
+    },
+    {
+      "question": "Which of the following is a pitfall of operator overloading?",
+      "options": [
+        "It can make code confusing if misused",
+        "It always makes code faster",
+        "It reduces code readability",
+        "It cannot be used with classes"
+      ],
+      "correct_index": 0,
+      "explanation": "Overusing or misusing operator overloading can lead to confusing and error-prone code."
+    },
+    {
+      "question": "What is a major pitfall of overloading the && and || operators?",
+      "options": [
+        "Loss of short-circuit evaluation",
+        "They cannot be overloaded",
+        "They become faster",
+        "They change precedence"
+      ],
+      "correct_index": 0,
+      "explanation": "Overloading && and || removes the short-circuit behavior, which can lead to unexpected side effects."
+    },
+    {
+      "question": "What is a pitfall of overloading the comma operator?",
+      "options": [
+        "It can lead to unexpected behavior",
+        "It cannot be overloaded",
+        "It makes code faster",
+        "It changes precedence"
+      ],
+      "correct_index": 0,
+      "explanation": "Overloading the comma operator is rarely needed and can cause confusing behavior."
+    },
+    {
+      "question": "What is a pitfall of overloading the -> operator?",
+      "options": [
+        "It must return a pointer or an object that supports ->",
+        "It cannot be overloaded",
+        "It must return an int",
+        "It must be a friend function"
+      ],
+      "correct_index": 0,
+      "explanation": "The -> operator must ultimately return a pointer or another object that overloads ->."
+    },
+    {
+      "question": "What is a pitfall of overloading new and delete?",
+      "options": [
+        "It complicates memory management",
+        "It is not allowed",
+        "It makes programs slower",
+        "It changes the size of objects"
+      ],
+      "correct_index": 0,
+      "explanation": "Overloading new and delete requires careful memory management and can introduce bugs."
+    },
+    {
+      "question": "What is the main advantage of operator overloading?",
+      "options": [
+        "It makes user-defined types behave like built-in types",
+        "It makes programs run faster",
+        "It reduces memory usage",
+        "It eliminates the need for functions"
+      ],
+      "correct_index": 0,
+      "explanation": "Operator overloading allows user-defined types to be used with operators in a natural way."
+    },
+    {
+      "question": "Can operator overloading create new operators?",
+      "options": [
+        "No, only existing operators can be overloaded",
+        "Yes, any operator can be created",
+        "Yes, with friend functions",
+        "Yes, with static functions"
+      ],
+      "correct_index": 0,
+      "explanation": "C++ does not allow creating new operators; only existing ones can be overloaded."
+    },
+    {
+      "question": "Which of the following operators can be overloaded?",
+      "options": [
+        "+",
+        "::",
+        ".*",
+        "?:"
+      ],
+      "correct_index": 0,
+      "explanation": "+ can be overloaded; ::, .*, ., ?:, and sizeof cannot be overloaded."
+    },
+    {
+      "question": "Which of the following operators cannot be overloaded?",
+      "options": [
+        "+",
+        "-",
+        ".*",
+        "*"
+      ],
+      "correct_index": 2,
+      "explanation": "The pointer-to-member operator .* cannot be overloaded."
+    },
+    {
+      "question": "What is the correct way to overload the unary minus operator as a member function?",
+      "options": [
+        "ClassName operator-();",
+        "ClassName operator-(const ClassName&);",
+        "friend ClassName operator-();",
+        "ClassName operator-(int);"
+      ],
+      "correct_index": 0,
+      "explanation": "Unary minus as a member takes no arguments."
+    },
+    {
+      "question": "What is the correct way to overload the binary minus operator as a member function?",
+      "options": [
+        "ClassName operator-();",
+        "ClassName operator-(const ClassName&);",
+        "friend ClassName operator-(const ClassName&);",
+        "ClassName operator-(int);"
+      ],
+      "correct_index": 1,
+      "explanation": "Binary minus as a member takes one explicit parameter."
+    },
+    {
+      "question": "What is the correct way to overload the binary minus operator as a friend function?",
+      "options": [
+        "ClassName operator-();",
+        "ClassName operator-(const ClassName&);",
+        "friend ClassName operator-(const ClassName&, const ClassName&);",
+        "friend ClassName operator-(const ClassName&);"
+      ],
+      "correct_index": 2,
+      "explanation": "Binary minus as a friend takes two parameters, one for each operand."
+    },
+    {
+      "question": "Which operator is commonly overloaded to allow input from cin?",
+      "options": [
+        ">>",
+        "<<",
+        "=",
+        "[]"
+      ],
+      "correct_index": 0,
+      "explanation": "The extraction operator >> is overloaded for input."
+    },
+    {
+      "question": "Which operator is commonly overloaded to allow output to cout?",
+      "options": [
+        ">>",
+        "<<",
+        "=",
+        "[]"
+      ],
+      "correct_index": 1,
+      "explanation": "The insertion operator << is overloaded for output."
+    },
+    {
+      "question": "When overloading << for output, what should it return?",
+      "options": [
+        "ostream&",
+        "istream&",
+        "void",
+        "ClassName"
+      ],
+      "correct_index": 0,
+      "explanation": "It should return ostream& to allow chaining like cout << a << b."
+    },
+    {
+      "question": "When overloading >> for input, what should it return?",
+      "options": [
+        "ostream&",
+        "istream&",
+        "void",
+        "ClassName"
+      ],
+      "correct_index": 1,
+      "explanation": "It should return istream& to allow chaining like cin >> a >> b."
+    },
+    {
+      "question": "Which operator must be overloaded as a non-static member function?",
+      "options": [
+        "+",
+        "[]",
+        "-",
+        "*"
+      ],
+      "correct_index": 1,
+      "explanation": "The subscript operator [] must be a non-static member function."
+    }
+  ]
+}
