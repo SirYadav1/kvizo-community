@@ -5,7 +5,7 @@ name: Deploy to Cloudflare Pages
 # (Cloudflare Pages project "kvizo-site", see README).
 #
 # The signed files are produced by validate-and-sign.yml, which commits them back to this
-# branch. This job only re-checks that the signature is still valid and uploads the bundle.
+# branch. This job waits for that commit to land, then re-checks the signature before uploading.
 
 on:
   push:
@@ -25,13 +25,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify the signed bundle
-        # A broken signature must never reach the CDN.
-        run: python3 build.py --verify-only
+      - name: Wait for the signing workflow to land its commit
+        # validate-and-sign runs in parallel and pushes a "[skip ci]" commit.
+        # Without this wait we verify against the pre-signing manifest and fail.
+        run: |
+          pip install cryptography --quiet
+          echo "waiting for manifest hashes to match on-disk quizzes..."
+          for i in $(seq 1 30); do
+            if python3 build.py --verify-only 2>/dev/null; then
+              echo "signed bundle verified after ${i} attempt(s)"
+              break
+            fi
+            if [ "$i" -eq 30 ]; then
+              echo "::error::manifest still stale after 5 minutes - signing workflow may be broken"
+              exit 1
+            fi
+            echo "attempt $i: not signed yet, pulling latest and retrying in 10s"
+            git pull --rebase origin master 2>/dev/null || true
+            sleep 10
+          done
 
       - name: Assemble the publish directory
-        # Only the files meant to be public: the tooling in this repo (build.py,
-        # add_quiz.py, the workflows, the stale docs/ copy) never reaches the CDN.
         run: |
           set -euo pipefail
           rm -rf public && mkdir -p public
