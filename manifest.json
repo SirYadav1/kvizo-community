@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "key_id": "kvizo-pub-2026-09",
-  "issued_at": "2026-09-30T12:40:02Z",
+  "issued_at": "2026-09-30T14:09:45Z",
   "count": 8,
   "quizzes": [
     {
@@ -27,12 +27,12 @@
     {
       "id": "cpp-programming-001",
       "title": "C++ Programming Challenge",
-      "category": "Programming",
+      "category": "C Programming",
       "difficulty": "Medium",
       "author": "kvizo-community",
       "questions_count": 10,
       "file": "quizzes/c-programming/test.json",
-      "sha256": "05e66155bb4d68d442c6453f82c30d43a60582eb0247ca1254c0298ccde82fe7"
+      "sha256": "9a871cdd8a11711e247016812a75e744b2fb6a61eae470fde9dc90133f000af2"
     },
     {
       "id": "geography-asia-005",
