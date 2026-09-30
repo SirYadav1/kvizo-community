@@ -221,7 +221,7 @@
         "char str[] = \"Hello\";",
         "string str = \"Hello\";",
         "char str = \"Hello\";",
-        "String str = \"Hello\";"
+        "char* str = \"Hello\";"
       ],
       "correct_index": 0,
       "explanation": "A C-style string is an array of characters ending with a null character."
@@ -243,7 +243,7 @@
         "std::string str;",
         "string str;",
         "char str;",
-        "String str;"
+        "std::string* str;"
       ],
       "correct_index": 0,
       "explanation": "std::string is the standard string class; you can also use string if using namespace std is declared."
