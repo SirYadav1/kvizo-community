@@ -1,8 +1,1325 @@
 {
   "schema_version": 1,
   "key_id": "kvizo-pub-2026-09",
-  "issued_at": "2026-09-30T15:26:24Z",
+  "issued_at": "2026-09-30T15:35:11Z",
   "quizzes": [
+    {
+      "id": "cpp-arrays-strings-005",
+      "title": "Arrays & Strings - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is an array in C++?",
+          "options": [
+            "A collection of elements of the same data type stored in contiguous memory",
+            "A collection of elements of different data types",
+            "A single variable",
+            "A function"
+          ],
+          "correct_index": 0,
+          "explanation": "An array is a collection of elements of the same type stored in contiguous memory locations."
+        },
+        {
+          "question": "What is the correct way to declare a 1D array of 5 integers?",
+          "options": [
+            "int arr[5];",
+            "array int arr[5];",
+            "int arr(5);",
+            "int arr = new int[5];"
+          ],
+          "correct_index": 0,
+          "explanation": "The syntax for a 1D array is: data_type array_name[size];"
+        },
+        {
+          "question": "What is the index of the first element of an array?",
+          "options": [
+            "0",
+            "1",
+            "-1",
+            "Depends on compiler"
+          ],
+          "correct_index": 0,
+          "explanation": "In C++, array indexing starts at 0."
+        },
+        {
+          "question": "If an array has 10 elements, what is the valid index range?",
+          "options": [
+            "0 to 9",
+            "1 to 10",
+            "0 to 10",
+            "1 to 9"
+          ],
+          "correct_index": 0,
+          "explanation": "Valid indices are from 0 to size-1."
+        },
+        {
+          "question": "How do you access the third element of an array arr?",
+          "options": [
+            "arr[2]",
+            "arr[3]",
+            "arr(3)",
+            "arr.3"
+          ],
+          "correct_index": 0,
+          "explanation": "The third element is at index 2 (0-based indexing)."
+        },
+        {
+          "question": "What is the correct way to initialize an array with values?",
+          "options": [
+            "int arr[3] = {1, 2, 3};",
+            "int arr[3] = (1, 2, 3);",
+            "int arr[3] = [1, 2, 3];",
+            "int arr[3] = {1; 2; 3};"
+          ],
+          "correct_index": 0,
+          "explanation": "Arrays are initialized using braces with comma-separated values."
+        },
+        {
+          "question": "What happens if you partially initialize an array?",
+          "options": [
+            "Remaining elements are set to 0",
+            "Remaining elements are garbage",
+            "Compilation error",
+            "Array size increases"
+          ],
+          "correct_index": 0,
+          "explanation": "In C++, if you initialize fewer elements, the rest are automatically set to 0."
+        },
+        {
+          "question": "What is a multidimensional array?",
+          "options": [
+            "An array with more than one dimension",
+            "An array with one dimension",
+            "An array of functions",
+            "An array of pointers"
+          ],
+          "correct_index": 0,
+          "explanation": "A multidimensional array has more than one index, such as a 2D array."
+        },
+        {
+          "question": "What is the correct declaration of a 2D array of 3 rows and 4 columns?",
+          "options": [
+            "int arr[3][4];",
+            "int arr[4][3];",
+            "int arr[3,4];",
+            "int arr(3,4);"
+          ],
+          "correct_index": 0,
+          "explanation": "The syntax is: data_type array_name[rows][columns];"
+        },
+        {
+          "question": "How do you access the element in the second row and third column of a 2D array?",
+          "options": [
+            "arr[1][2]",
+            "arr[2][3]",
+            "arr[1,2]",
+            "arr(1,2)"
+          ],
+          "correct_index": 0,
+          "explanation": "Indices are 0-based: second row is index 1, third column is index 2."
+        },
+        {
+          "question": "How are elements of a 2D array stored in memory?",
+          "options": [
+            "Row by row (row-major order)",
+            "Column by column (column-major order)",
+            "Randomly",
+            "In linked list"
+          ],
+          "correct_index": 0,
+          "explanation": "C++ stores 2D arrays in row-major order."
+        },
+        {
+          "question": "How do you pass a 1D array to a function?",
+          "options": [
+            "void func(int arr[])",
+            "void func(int arr)",
+            "void func(int &arr)",
+            "void func(array arr)"
+          ],
+          "correct_index": 0,
+          "explanation": "Arrays are passed as pointers, so int arr[] or int *arr is used."
+        },
+        {
+          "question": "When you pass an array to a function, what is actually passed?",
+          "options": [
+            "The address of the first element",
+            "A copy of the entire array",
+            "The size of the array",
+            "The last element"
+          ],
+          "correct_index": 0,
+          "explanation": "Arrays decay to pointers, so the address of the first element is passed."
+        },
+        {
+          "question": "Can you return an array from a function directly?",
+          "options": [
+            "No, you must return a pointer or use a reference",
+            "Yes, by value",
+            "Yes, using return arr;",
+            "Yes, with array keyword"
+          ],
+          "correct_index": 0,
+          "explanation": "Arrays cannot be returned by value; you can return a pointer to a dynamically allocated array or use std::array/vector."
+        },
+        {
+          "question": "What is an array of objects?",
+          "options": [
+            "An array where each element is an object of a class",
+            "An array of integers",
+            "An array of pointers",
+            "An array of functions"
+          ],
+          "correct_index": 0,
+          "explanation": "An array of objects stores multiple objects of the same class."
+        },
+        {
+          "question": "How do you create an array of 5 objects of class Student?",
+          "options": [
+            "Student arr[5];",
+            "array Student arr[5];",
+            "Student arr(5);",
+            "Student arr = new Student[5];"
+          ],
+          "correct_index": 0,
+          "explanation": "The syntax is: ClassName arrayName[size];"
+        },
+        {
+          "question": "When an array of objects is created, which constructor is called?",
+          "options": [
+            "Default constructor for each object",
+            "Parameterized constructor",
+            "Copy constructor",
+            "Destructor"
+          ],
+          "correct_index": 0,
+          "explanation": "If no initializer is provided, the default constructor is called for each object."
+        },
+        {
+          "question": "What is a string in C++?",
+          "options": [
+            "A sequence of characters",
+            "A sequence of integers",
+            "A single character",
+            "A function"
+          ],
+          "correct_index": 0,
+          "explanation": "A string is a sequence of characters."
+        },
+        {
+          "question": "Which header file is required to use std::string?",
+          "options": [
+            "<string>",
+            "<cstring>",
+            "<iostream>",
+            "<string.h>"
+          ],
+          "correct_index": 0,
+          "explanation": "The <string> header provides the std::string class."
+        },
+        {
+          "question": "How do you declare a C-style string?",
+          "options": [
+            "char str[] = \"Hello\";",
+            "string str = \"Hello\";",
+            "char str = \"Hello\";",
+            "char* str = \"Hello\";"
+          ],
+          "correct_index": 0,
+          "explanation": "A C-style string is an array of characters ending with a null character."
+        },
+        {
+          "question": "What is the null character in a C-style string?",
+          "options": [
+            "'\\0'",
+            "'0'",
+            "0",
+            "NULL"
+          ],
+          "correct_index": 0,
+          "explanation": "C-style strings are terminated by the null character '\\0'."
+        },
+        {
+          "question": "How do you declare a string object in C++?",
+          "options": [
+            "std::string str;",
+            "string str;",
+            "char str;",
+            "std::string* str;"
+          ],
+          "correct_index": 0,
+          "explanation": "std::string is the standard string class; you can also use string if using namespace std is declared."
+        },
+        {
+          "question": "What is the difference between a string variable and a string constant?",
+          "options": [
+            "String variable can be modified; string constant cannot",
+            "String constant can be modified; string variable cannot",
+            "Both can be modified",
+            "Both cannot be modified"
+          ],
+          "correct_index": 0,
+          "explanation": "A string constant (e.g., const char*) is read-only, while a string variable can be changed."
+        },
+        {
+          "question": "How do you find the length of a std::string?",
+          "options": [
+            "str.length()",
+            "str.size()",
+            "Both length() and size()",
+            "str.len()"
+          ],
+          "correct_index": 2,
+          "explanation": "Both length() and size() return the number of characters in a std::string."
+        },
+        {
+          "question": "How do you concatenate two std::string objects?",
+          "options": [
+            "Using + operator",
+            "Using & operator",
+            "Using concat()",
+            "Using append()"
+          ],
+          "correct_index": 0,
+          "explanation": "The + operator concatenates two std::string objects."
+        },
+        {
+          "question": "What is an array of strings?",
+          "options": [
+            "An array where each element is a string",
+            "An array of characters",
+            "A single string",
+            "A string with multiple lines"
+          ],
+          "correct_index": 0,
+          "explanation": "An array of strings can be an array of std::string objects or a 2D char array."
+        },
+        {
+          "question": "How do you declare an array of 3 std::string objects?",
+          "options": [
+            "std::string arr[3];",
+            "string arr[3];",
+            "char arr[3][20];",
+            "Both A and B"
+          ],
+          "correct_index": 3,
+          "explanation": "You can use std::string arr[3]; or string arr[3]; if using namespace std."
+        },
+        {
+          "question": "How do you declare a 2D character array to store 3 strings of max length 20?",
+          "options": [
+            "char arr[3][20];",
+            "char arr[20][3];",
+            "string arr[3];",
+            "char arr[3,20];"
+          ],
+          "correct_index": 0,
+          "explanation": "A 2D char array with rows for strings and columns for characters."
+        },
+        {
+          "question": "Can a class have a string as a data member?",
+          "options": [
+            "Yes, using std::string",
+            "No",
+            "Only char arrays",
+            "Only pointers"
+          ],
+          "correct_index": 0,
+          "explanation": "A class can have std::string as a data member."
+        },
+        {
+          "question": "What happens when you assign a string literal to a char array?",
+          "options": [
+            "The string is copied into the array with a null terminator",
+            "The array points to the string literal",
+            "Compilation error",
+            "The string is modified"
+          ],
+          "correct_index": 0,
+          "explanation": "char arr[] = \"Hello\"; copies the characters and adds '\\0'."
+        },
+        {
+          "question": "What is the output of: char str[] = \"Hello\"; cout << str[1];",
+          "options": [
+            "H",
+            "e",
+            "l",
+            "o"
+          ],
+          "correct_index": 1,
+          "explanation": "Index 1 corresponds to the second character, 'e'."
+        },
+        {
+          "question": "What is the output of: std::string s = \"Hello\"; cout << s.size();",
+          "options": [
+            "5",
+            "6",
+            "4",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "The string \"Hello\" has 5 characters."
+        },
+        {
+          "question": "How do you access the first character of a std::string?",
+          "options": [
+            "s[0]",
+            "s[1]",
+            "s.first()",
+            "s.at(1)"
+          ],
+          "correct_index": 0,
+          "explanation": "Indexing starts at 0, so s[0] is the first character."
+        },
+        {
+          "question": "What is the correct way to compare two std::string objects?",
+          "options": [
+            "Using == operator",
+            "Using = operator",
+            "Using compare() only",
+            "Using strcmp()"
+          ],
+          "correct_index": 0,
+          "explanation": "std::string supports == for comparison."
+        },
+        {
+          "question": "What is the difference between char[] and std::string?",
+          "options": [
+            "char[] is a fixed-size array; std::string is a dynamic class",
+            "char[] is dynamic; std::string is fixed",
+            "Both are same",
+            "char[] is a class; std::string is an array"
+          ],
+          "correct_index": 0,
+          "explanation": "char[] has fixed size and manual memory management; std::string manages memory automatically."
+        },
+        {
+          "question": "What is the size of an empty std::string?",
+          "options": [
+            "0",
+            "1",
+            "-1",
+            "Depends on compiler"
+          ],
+          "correct_index": 0,
+          "explanation": "An empty std::string has size 0."
+        },
+        {
+          "question": "How do you read a string with spaces using cin?",
+          "options": [
+            "getline(cin, str)",
+            "cin >> str",
+            "cin.get(str)",
+            "cin.read(str)"
+          ],
+          "correct_index": 0,
+          "explanation": "getline(cin, str) reads a whole line including spaces."
+        },
+        {
+          "question": "What does the following code do? int arr[5] = {1,2};",
+          "options": [
+            "Initializes first two elements to 1,2 and rest to 0",
+            "Initializes all elements to 1,2",
+            "Compilation error",
+            "Initializes array with garbage"
+          ],
+          "correct_index": 0,
+          "explanation": "Partial initialization fills the remaining elements with 0."
+        }
+      ]
+    },
+    {
+      "id": "cpp-basics-002",
+      "title": "C++ Programming Basics",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is the correct entry point of a C++ program?",
+          "options": [
+            "start()",
+            "main()",
+            "begin()",
+            "program()"
+          ],
+          "correct_index": 1,
+          "explanation": "Execution of a C++ program begins from the main() function."
+        },
+        {
+          "question": "What is the correct basic structure of a C++ program?",
+          "options": [
+            "#include directives, main() function, statements",
+            "main() function, #include directives, statements",
+            "statements, main(), #include directives",
+            "#include directives, statements, main()"
+          ],
+          "correct_index": 0,
+          "explanation": "A C++ program typically starts with #include directives, followed by the main() function containing statements."
+        },
+        {
+          "question": "Which header file is required to use cout and cin?",
+          "options": [
+            "<stdio.h>",
+            "<stdlib.h>",
+            "<iostream>",
+            "<fstream>"
+          ],
+          "correct_index": 2,
+          "explanation": "<iostream> is the standard header for input/output streams like cout and cin."
+        },
+        {
+          "question": "What is the correct way to include a header file in C++?",
+          "options": [
+            "#include <iostream>",
+            "include <iostream>",
+            "#import <iostream>",
+            "using <iostream>"
+          ],
+          "correct_index": 0,
+          "explanation": "Preprocessor directives start with #, and #include is used to include header files."
+        },
+        {
+          "question": "What does the #include directive do?",
+          "options": [
+            "Includes the contents of another file before compilation",
+            "Compiles the program",
+            "Links the program",
+            "Executes the program"
+          ],
+          "correct_index": 0,
+          "explanation": "#include is a preprocessor directive that inserts the contents of the specified file into the source code before compilation."
+        },
+        {
+          "question": "Which preprocessor directive is used to define a constant or macro?",
+          "options": [
+            "#include",
+            "#define",
+            "#ifdef",
+            "#pragma"
+          ],
+          "correct_index": 1,
+          "explanation": "#define is used to define macros or symbolic constants."
+        },
+        {
+          "question": "Which symbol is used for a single-line comment in C++?",
+          "options": [
+            "/* */",
+            "//",
+            "--",
+            "#"
+          ],
+          "correct_index": 1,
+          "explanation": "// is used for single-line comments, while /* */ is used for multi-line comments."
+        },
+        {
+          "question": "Which of the following is a multi-line comment in C++?",
+          "options": [
+            "// comment",
+            "/* comment */",
+            "# comment",
+            "-- comment"
+          ],
+          "correct_index": 1,
+          "explanation": "/* ... */ is used for multi-line comments in C++."
+        },
+        {
+          "question": "What is the purpose of using namespace std;?",
+          "options": [
+            "To avoid writing std:: before standard library names",
+            "To define a new class",
+            "To include a header file",
+            "To compile the program"
+          ],
+          "correct_index": 0,
+          "explanation": "using namespace std; allows you to use standard library names (like cout, cin) without prefixing them with std::."
+        },
+        {
+          "question": "Which data type is used to store a single character?",
+          "options": [
+            "int",
+            "float",
+            "char",
+            "double"
+          ],
+          "correct_index": 2,
+          "explanation": "char stores a single character, e.g., 'A'."
+        },
+        {
+          "question": "Which data type is used to store whole numbers?",
+          "options": [
+            "float",
+            "double",
+            "int",
+            "char"
+          ],
+          "correct_index": 2,
+          "explanation": "int is used to store integer (whole) numbers."
+        },
+        {
+          "question": "Which data type is used to store decimal numbers with single precision?",
+          "options": [
+            "int",
+            "float",
+            "char",
+            "bool"
+          ],
+          "correct_index": 1,
+          "explanation": "float stores single-precision floating-point (decimal) numbers."
+        },
+        {
+          "question": "Which of the following is NOT a primitive data type in C++?",
+          "options": [
+            "int",
+            "float",
+            "char",
+            "string"
+          ],
+          "correct_index": 3,
+          "explanation": "string is a class in the standard library, not a primitive data type."
+        },
+        {
+          "question": "What is the size of an int typically in C++?",
+          "options": [
+            "1 byte",
+            "2 bytes",
+            "4 bytes",
+            "8 bytes"
+          ],
+          "correct_index": 2,
+          "explanation": "On most modern systems, int is 4 bytes, though it is platform-dependent."
+        },
+        {
+          "question": "Which of the following is a valid variable declaration?",
+          "options": [
+            "int x;",
+            "x int;",
+            "int = x;",
+            "declare int x;"
+          ],
+          "correct_index": 0,
+          "explanation": "The correct syntax is: data_type variable_name; e.g., int x;"
+        },
+        {
+          "question": "Which of the following is a valid variable name?",
+          "options": [
+            "2var",
+            "int",
+            "my-var",
+            "_value"
+          ],
+          "correct_index": 3,
+          "explanation": "Variable names can start with an underscore or letter, but not with a digit or hyphen, and cannot be keywords."
+        },
+        {
+          "question": "What is the default value of a local variable in C++?",
+          "options": [
+            "0",
+            "1",
+            "Garbage (undefined)",
+            "null"
+          ],
+          "correct_index": 2,
+          "explanation": "Local variables are not automatically initialized; they contain garbage values."
+        },
+        {
+          "question": "What is implicit type conversion also known as?",
+          "options": [
+            "Type casting",
+            "Automatic conversion",
+            "Explicit conversion",
+            "Forced conversion"
+          ],
+          "correct_index": 1,
+          "explanation": "Implicit conversion is done automatically by the compiler."
+        },
+        {
+          "question": "What is explicit type conversion also known as?",
+          "options": [
+            "Automatic conversion",
+            "Type casting",
+            "Implicit conversion",
+            "Natural conversion"
+          ],
+          "correct_index": 1,
+          "explanation": "Explicit conversion is also called type casting, where the programmer specifies the conversion."
+        },
+        {
+          "question": "Which C++ operator is used for explicit type conversion?",
+          "options": [
+            "static_cast",
+            "dynamic_cast",
+            "reinterpret_cast",
+            "All of the above"
+          ],
+          "correct_index": 3,
+          "explanation": "C++ provides static_cast, dynamic_cast, const_cast, and reinterpret_cast for explicit conversions."
+        },
+        {
+          "question": "Which type conversion may cause data loss?",
+          "options": [
+            "Widening conversion",
+            "Narrowing conversion",
+            "Implicit conversion",
+            "Promotion"
+          ],
+          "correct_index": 1,
+          "explanation": "Narrowing conversion (e.g., float to int) may lose data such as the fractional part."
+        },
+        {
+          "question": "What is the result of 5 / 2 in C++ (integer division)?",
+          "options": [
+            "2.5",
+            "2",
+            "3",
+            "2.0"
+          ],
+          "correct_index": 1,
+          "explanation": "Integer division truncates the decimal part, so 5/2 gives 2."
+        },
+        {
+          "question": "Which operator is used to find the remainder of division?",
+          "options": [
+            "/",
+            "%",
+            "*",
+            "//"
+          ],
+          "correct_index": 1,
+          "explanation": "% is the modulus operator, used to find the remainder."
+        },
+        {
+          "question": "What is the output of 10 % 3?",
+          "options": [
+            "3",
+            "1",
+            "0",
+            "2"
+          ],
+          "correct_index": 1,
+          "explanation": "10 divided by 3 gives remainder 1."
+        },
+        {
+          "question": "What is the output of 5 + 3 * 2?",
+          "options": [
+            "16",
+            "11",
+            "13",
+            "10"
+          ],
+          "correct_index": 1,
+          "explanation": "Multiplication (*) has higher precedence than addition (+), so 3*2=6, then 5+6=11."
+        },
+        {
+          "question": "What does a relational operator return?",
+          "options": [
+            "int",
+            "float",
+            "bool (true/false)",
+            "char"
+          ],
+          "correct_index": 2,
+          "explanation": "Relational operators return a boolean value: true or false."
+        },
+        {
+          "question": "Which operator represents logical AND?",
+          "options": [
+            "&",
+            "&&",
+            "||",
+            "!"
+          ],
+          "correct_index": 1,
+          "explanation": "&& is the logical AND operator."
+        },
+        {
+          "question": "Which operator represents logical OR?",
+          "options": [
+            "|",
+            "||",
+            "&&",
+            "!"
+          ],
+          "correct_index": 1,
+          "explanation": "|| is the logical OR operator."
+        },
+        {
+          "question": "Which operator represents logical NOT?",
+          "options": [
+            "~",
+            "!",
+            "&",
+            "|"
+          ],
+          "correct_index": 1,
+          "explanation": "! is the logical NOT operator."
+        },
+        {
+          "question": "What is the output of (5 > 3) ? \"Yes\" : \"No\"?",
+          "options": [
+            "Yes",
+            "No",
+            "5",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "The condition 5 > 3 is true, so the ternary operator returns \"Yes\"."
+        },
+        {
+          "question": "Which statement is used for multi-way branching?",
+          "options": [
+            "if",
+            "if-else",
+            "switch",
+            "for"
+          ],
+          "correct_index": 2,
+          "explanation": "switch is used when there are multiple possible branches based on a single expression."
+        },
+        {
+          "question": "What is the correct syntax for an if statement?",
+          "options": [
+            "if (condition) { }",
+            "if condition { }",
+            "if (condition) then { }",
+            "if condition then { }"
+          ],
+          "correct_index": 0,
+          "explanation": "The condition must be enclosed in parentheses, followed by braces for the block."
+        },
+        {
+          "question": "What is the purpose of break in a switch statement?",
+          "options": [
+            "To exit the switch block",
+            "To exit the program",
+            "To skip an iteration",
+            "To continue to the next case"
+          ],
+          "correct_index": 0,
+          "explanation": "break is used to terminate the switch block and prevent fall-through to the next case."
+        },
+        {
+          "question": "Which loop is guaranteed to execute at least once?",
+          "options": [
+            "for",
+            "while",
+            "do-while",
+            "None"
+          ],
+          "correct_index": 2,
+          "explanation": "do-while checks the condition after executing the loop body, so it runs at least once."
+        },
+        {
+          "question": "Which loop checks the condition before executing the body?",
+          "options": [
+            "do-while",
+            "for and while",
+            "only for",
+            "only while"
+          ],
+          "correct_index": 1,
+          "explanation": "Both for and while loops check the condition before each iteration."
+        },
+        {
+          "question": "What is the correct syntax of a for loop?",
+          "options": [
+            "for (init; condition; update)",
+            "for (init, condition, update)",
+            "for (init; update; condition)",
+            "for (condition; init; update)"
+          ],
+          "correct_index": 0,
+          "explanation": "The for loop uses semicolons to separate initialization, condition, and update."
+        },
+        {
+          "question": "How many times does the loop for(int i=0;i<5;i++) execute?",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "It runs for i = 0, 1, 2, 3, 4 — a total of 5 times."
+        },
+        {
+          "question": "Which keyword is used to exit a loop immediately?",
+          "options": [
+            "continue",
+            "break",
+            "exit",
+            "return"
+          ],
+          "correct_index": 1,
+          "explanation": "break terminates the loop immediately and transfers control to the statement after the loop."
+        },
+        {
+          "question": "Which keyword is used to skip the current iteration and continue with the next?",
+          "options": [
+            "break",
+            "continue",
+            "skip",
+            "pass"
+          ],
+          "correct_index": 1,
+          "explanation": "continue skips the remaining statements in the current iteration and proceeds to the next iteration."
+        },
+        {
+          "question": "Which keyword is used for an unconditional jump in C++?",
+          "options": [
+            "goto",
+            "jump",
+            "break",
+            "continue"
+          ],
+          "correct_index": 0,
+          "explanation": "goto transfers control unconditionally to a labeled statement."
+        }
+      ]
+    },
+    {
+      "id": "cpp-classes-objects-004",
+      "title": "Classes & Objects - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is a class in C++?",
+          "options": [
+            "A user-defined data type that binds data and functions together",
+            "A primitive data type",
+            "A loop",
+            "A header file"
+          ],
+          "correct_index": 0,
+          "explanation": "A class is a user-defined data type that encapsulates data members and member functions."
+        },
+        {
+          "question": "Which keyword is used to define a class in C++?",
+          "options": [
+            "struct",
+            "object",
+            "class",
+            "type"
+          ],
+          "correct_index": 2,
+          "explanation": "The class keyword is used to define a class in C++."
+        },
+        {
+          "question": "By default, members of a class are:",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 1,
+          "explanation": "In a class, members are private by default."
+        },
+        {
+          "question": "What is an object in C++?",
+          "options": [
+            "An instance of a class",
+            "A function",
+            "A loop",
+            "A header file"
+          ],
+          "correct_index": 0,
+          "explanation": "An object is a runtime instance of a class."
+        },
+        {
+          "question": "What is class specification?",
+          "options": [
+            "The declaration of a class including its data members and member functions",
+            "The definition of main()",
+            "The call to a function",
+            "The output of a program"
+          ],
+          "correct_index": 0,
+          "explanation": "Class specification declares the class, its data members, and member functions."
+        },
+        {
+          "question": "What is the correct way to create an object of class Student?",
+          "options": [
+            "Student s;",
+            "s Student;",
+            "object Student s;",
+            "create Student s;"
+          ],
+          "correct_index": 0,
+          "explanation": "Objects are created using the syntax: ClassName objectName;"
+        },
+        {
+          "question": "How do you access a member of an object?",
+          "options": [
+            "Using dot operator (.)",
+            "Using scope resolution (::)",
+            "Using arrow (->)",
+            "Using asterisk (*)"
+          ],
+          "correct_index": 0,
+          "explanation": "The dot (.) operator is used to access members of an object."
+        },
+        {
+          "question": "How do you access members through a pointer to an object?",
+          "options": [
+            "Using dot operator (.)",
+            "Using arrow operator (->)",
+            "Using scope resolution (::)",
+            "Using asterisk (*)"
+          ],
+          "correct_index": 1,
+          "explanation": "The arrow (->) operator is used to access members through a pointer to an object."
+        },
+        {
+          "question": "What is the purpose of a constructor?",
+          "options": [
+            "To initialize objects of a class",
+            "To destroy objects",
+            "To copy objects",
+            "To delete objects"
+          ],
+          "correct_index": 0,
+          "explanation": "A constructor is automatically called when an object is created to initialize it."
+        },
+        {
+          "question": "What is the name of a constructor?",
+          "options": [
+            "Same as the class name",
+            "Any valid identifier",
+            "Same as main",
+            "Same as destructor"
+          ],
+          "correct_index": 0,
+          "explanation": "A constructor has the same name as the class and no return type."
+        },
+        {
+          "question": "Does a constructor have a return type?",
+          "options": [
+            "Yes, void",
+            "Yes, int",
+            "No, it has no return type",
+            "Yes, char"
+          ],
+          "correct_index": 2,
+          "explanation": "Constructors do not have a return type, not even void."
+        },
+        {
+          "question": "What is a default constructor?",
+          "options": [
+            "A constructor that takes no arguments",
+            "A constructor that takes one argument",
+            "A constructor that takes two arguments",
+            "A constructor that is static"
+          ],
+          "correct_index": 0,
+          "explanation": "A default constructor takes no parameters and is called when no arguments are provided."
+        },
+        {
+          "question": "What is a parameterized constructor?",
+          "options": [
+            "A constructor that takes arguments to initialize the object",
+            "A constructor with no arguments",
+            "A constructor that is private",
+            "A constructor that is static"
+          ],
+          "correct_index": 0,
+          "explanation": "A parameterized constructor accepts arguments to initialize data members with specific values."
+        },
+        {
+          "question": "What is a copy constructor?",
+          "options": [
+            "A constructor that creates a new object as a copy of an existing object",
+            "A constructor with no arguments",
+            "A constructor that deletes an object",
+            "A constructor that is private"
+          ],
+          "correct_index": 0,
+          "explanation": "A copy constructor initializes a new object using an existing object of the same class."
+        },
+        {
+          "question": "What is the parameter of a copy constructor?",
+          "options": [
+            "A reference to an object of the same class",
+            "An integer",
+            "A pointer",
+            "A void"
+          ],
+          "correct_index": 0,
+          "explanation": "A copy constructor takes a reference to an object of the same class, e.g., Student(const Student &s)."
+        },
+        {
+          "question": "Can constructors be overloaded?",
+          "options": [
+            "Yes, with different parameter lists",
+            "No",
+            "Only in C",
+            "Only with static"
+          ],
+          "correct_index": 0,
+          "explanation": "Constructors can be overloaded based on the number or type of parameters."
+        },
+        {
+          "question": "When is a constructor called?",
+          "options": [
+            "Automatically when an object is created",
+            "When the program ends",
+            "When a function is called",
+            "When a variable is declared"
+          ],
+          "correct_index": 0,
+          "explanation": "A constructor is automatically invoked at the time of object creation."
+        },
+        {
+          "question": "Can a constructor be called explicitly?",
+          "options": [
+            "Yes, but only as a member function call",
+            "No",
+            "Only in C",
+            "Only with static"
+          ],
+          "correct_index": 0,
+          "explanation": "A constructor can be called explicitly, but it creates a temporary object; it cannot be called like a normal function."
+        },
+        {
+          "question": "What happens if no constructor is defined in a class?",
+          "options": [
+            "The compiler provides a default constructor",
+            "The program will not compile",
+            "The program will crash",
+            "No object can be created"
+          ],
+          "correct_index": 0,
+          "explanation": "If no constructor is defined, the compiler generates a default constructor automatically."
+        },
+        {
+          "question": "What is a destructor?",
+          "options": [
+            "A special member function that is called when an object goes out of scope",
+            "A function to create objects",
+            "A function to copy objects",
+            "A function to overload operators"
+          ],
+          "correct_index": 0,
+          "explanation": "A destructor is called automatically when an object is destroyed."
+        },
+        {
+          "question": "What is the correct syntax of a destructor for class MyClass?",
+          "options": [
+            "~MyClass()",
+            "delete MyClass()",
+            "destroy MyClass()",
+            "void ~MyClass()"
+          ],
+          "correct_index": 0,
+          "explanation": "A destructor is declared with a tilde (~) before the class name."
+        },
+        {
+          "question": "Can a destructor take arguments?",
+          "options": [
+            "No, it cannot take arguments",
+            "Yes, one argument",
+            "Yes, two arguments",
+            "Yes, any number"
+          ],
+          "correct_index": 0,
+          "explanation": "A destructor cannot take arguments and cannot be overloaded."
+        },
+        {
+          "question": "How many destructors can a class have?",
+          "options": [
+            "Only one",
+            "Two",
+            "Three",
+            "Any number"
+          ],
+          "correct_index": 0,
+          "explanation": "A class can have only one destructor."
+        },
+        {
+          "question": "What is the main use of 'this' pointer?",
+          "options": [
+            "It points to the current object",
+            "It points to the base class",
+            "It points to the global variable",
+            "It points to the function"
+          ],
+          "correct_index": 0,
+          "explanation": "The this pointer holds the address of the object that invokes a member function."
+        },
+        {
+          "question": "What is the type of 'this' pointer?",
+          "options": [
+            "ClassName* const",
+            "ClassName&",
+            "void*",
+            "int*"
+          ],
+          "correct_index": 0,
+          "explanation": "The this pointer is of type ClassName* const inside non-const member functions."
+        },
+        {
+          "question": "Can objects be passed as function arguments?",
+          "options": [
+            "Yes, by value or by reference",
+            "No",
+            "Only by value",
+            "Only by reference"
+          ],
+          "correct_index": 0,
+          "explanation": "Objects can be passed to functions either by value (copy) or by reference."
+        },
+        {
+          "question": "What is the difference between passing an object by value and by reference?",
+          "options": [
+            "By value makes a copy; by reference passes the original object",
+            "By value passes the original; by reference makes a copy",
+            "Both are same",
+            "By reference is not allowed"
+          ],
+          "correct_index": 0,
+          "explanation": "Passing by value copies the object; passing by reference passes the actual object."
+        },
+        {
+          "question": "What is the advantage of passing objects by reference?",
+          "options": [
+            "Avoids copying and improves performance",
+            "Makes the code longer",
+            "Increases memory usage",
+            "Deletes the object"
+          ],
+          "correct_index": 0,
+          "explanation": "Passing by reference avoids the overhead of copying large objects."
+        },
+        {
+          "question": "How do you pass an object by reference to a function?",
+          "options": [
+            "void func(ClassName &obj)",
+            "void func(ClassName obj)",
+            "void func(ClassName *obj)",
+            "void func(ClassName obj&)"
+          ],
+          "correct_index": 0,
+          "explanation": "A reference parameter is declared using & after the type, e.g., ClassName &obj."
+        },
+        {
+          "question": "Can a function return an object?",
+          "options": [
+            "Yes, by value or by reference",
+            "No",
+            "Only by value",
+            "Only by reference"
+          ],
+          "correct_index": 0,
+          "explanation": "A function can return an object either by value (a copy) or by reference."
+        },
+        {
+          "question": "What happens when a function returns an object by value?",
+          "options": [
+            "A copy of the object is returned",
+            "The original object is returned",
+            "The object is deleted",
+            "A pointer is returned"
+          ],
+          "correct_index": 0,
+          "explanation": "Returning by value creates a copy of the object to be returned."
+        },
+        {
+          "question": "What is a temporary object?",
+          "options": [
+            "An unnamed object created by the compiler",
+            "A static object",
+            "A global object",
+            "A pointer object"
+          ],
+          "correct_index": 0,
+          "explanation": "A temporary object is an unnamed object created by the compiler during expression evaluation."
+        },
+        {
+          "question": "What is the scope of a class member?",
+          "options": [
+            "The entire class",
+            "Only main()",
+            "Only the file",
+            "Only the function"
+          ],
+          "correct_index": 0,
+          "explanation": "Class members are accessible throughout the class, subject to access specifiers."
+        },
+        {
+          "question": "What is the use of access specifiers in a class?",
+          "options": [
+            "To control the accessibility of class members",
+            "To define data types",
+            "To create objects",
+            "To call functions"
+          ],
+          "correct_index": 0,
+          "explanation": "Access specifiers (public, private, protected) control how class members can be accessed."
+        },
+        {
+          "question": "Which access specifier allows members to be accessed from outside the class?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 0,
+          "explanation": "Public members are accessible from anywhere in the program."
+        },
+        {
+          "question": "Which access specifier restricts members to be accessed only within the class?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "global"
+          ],
+          "correct_index": 1,
+          "explanation": "Private members can only be accessed within the class."
+        },
+        {
+          "question": "What is a member function?",
+          "options": [
+            "A function defined inside a class",
+            "A function defined outside main",
+            "A global function",
+            "A static function"
+          ],
+          "correct_index": 0,
+          "explanation": "A member function is a function that is declared inside a class and operates on its objects."
+        },
+        {
+          "question": "How do you define a member function outside the class?",
+          "options": [
+            "return_type ClassName::functionName() { }",
+            "return_type functionName::ClassName() { }",
+            "return_type ClassName.functionName() { }",
+            "return_type functionName.ClassName() { }"
+          ],
+          "correct_index": 0,
+          "explanation": "The scope resolution operator (::) is used to define a member function outside the class."
+        },
+        {
+          "question": "What is the default access specifier for members of a struct?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 0,
+          "explanation": "In a struct, members are public by default."
+        }
+      ]
+    },
     {
       "id": "cpp-expert-001",
       "title": "C++ Expert Challenge>",
@@ -80,6 +1397,1356 @@
       ]
     },
     {
+      "id": "cpp-inheritance-007",
+      "title": "Inheritance - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is inheritance in C++?",
+          "options": [
+            "The process by which one class acquires the properties and behaviors of another class",
+            "The process of deleting a class",
+            "The process of copying a function",
+            "The process of creating multiple objects"
+          ],
+          "correct_index": 0,
+          "explanation": "Inheritance allows a new class (derived) to acquire properties and methods of an existing class (base)."
+        },
+        {
+          "question": "Which class is also known as the parent class?",
+          "options": [
+            "Derived class",
+            "Base class",
+            "Child class",
+            "Subclass"
+          ],
+          "correct_index": 1,
+          "explanation": "The base class is also called the parent or super class."
+        },
+        {
+          "question": "Which class is also known as the child class?",
+          "options": [
+            "Base class",
+            "Parent class",
+            "Derived class",
+            "Super class"
+          ],
+          "correct_index": 2,
+          "explanation": "The derived class is also called the child or subclass."
+        },
+        {
+          "question": "What is the correct syntax for inheriting class Derived from class Base?",
+          "options": [
+            "class Derived : public Base { };",
+            "class Derived inherits Base { };",
+            "class Derived extends Base { };",
+            "class Derived : Base inherits { };"
+          ],
+          "correct_index": 0,
+          "explanation": "The syntax is: class Derived : access_specifier Base { };"
+        },
+        {
+          "question": "What is the default access specifier for inheritance in a class?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 1,
+          "explanation": "When inheriting with the class keyword, the default access specifier is private."
+        },
+        {
+          "question": "What is the default access specifier for inheritance in a struct?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 0,
+          "explanation": "When inheriting with the struct keyword, the default access specifier is public."
+        },
+        {
+          "question": "In public inheritance, public members of the base class become:",
+          "options": [
+            "Public in the derived class",
+            "Private in the derived class",
+            "Protected in the derived class",
+            "Inaccessible"
+          ],
+          "correct_index": 0,
+          "explanation": "Public inheritance preserves the access levels of public members."
+        },
+        {
+          "question": "In public inheritance, protected members of the base class become:",
+          "options": [
+            "Public in the derived class",
+            "Private in the derived class",
+            "Protected in the derived class",
+            "Inaccessible"
+          ],
+          "correct_index": 2,
+          "explanation": "Protected members remain protected in the derived class under public inheritance."
+        },
+        {
+          "question": "In public inheritance, private members of the base class become:",
+          "options": [
+            "Public in the derived class",
+            "Private in the derived class",
+            "Protected in the derived class",
+            "Inaccessible directly"
+          ],
+          "correct_index": 3,
+          "explanation": "Private members of the base class are never directly accessible in the derived class."
+        },
+        {
+          "question": "In private inheritance, public members of the base class become:",
+          "options": [
+            "Public in the derived class",
+            "Private in the derived class",
+            "Protected in the derived class",
+            "Inaccessible"
+          ],
+          "correct_index": 1,
+          "explanation": "Private inheritance makes all public and protected members private in the derived class."
+        },
+        {
+          "question": "In protected inheritance, public members of the base class become:",
+          "options": [
+            "Public in the derived class",
+            "Private in the derived class",
+            "Protected in the derived class",
+            "Inaccessible"
+          ],
+          "correct_index": 2,
+          "explanation": "Protected inheritance makes public and protected members protected in the derived class."
+        },
+        {
+          "question": "Which members of the base class are NOT accessible in the derived class?",
+          "options": [
+            "public",
+            "protected",
+            "private",
+            "all"
+          ],
+          "correct_index": 2,
+          "explanation": "Private members of the base class are not directly accessible in the derived class."
+        },
+        {
+          "question": "Which inheritance type creates an 'is-a' relationship?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "virtual"
+          ],
+          "correct_index": 0,
+          "explanation": "Public inheritance represents an 'is-a' relationship, e.g., a Car is a Vehicle."
+        },
+        {
+          "question": "Which inheritance type creates a 'has-a' relationship?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "multiple"
+          ],
+          "correct_index": 1,
+          "explanation": "Private inheritance represents a 'has-a' or 'implemented-in-terms-of' relationship."
+        },
+        {
+          "question": "When is the base class constructor called in inheritance?",
+          "options": [
+            "Before the derived class constructor",
+            "After the derived class constructor",
+            "Along with the derived class constructor",
+            "Never"
+          ],
+          "correct_index": 0,
+          "explanation": "Base class constructors are called before derived class constructors."
+        },
+        {
+          "question": "When is the base class destructor called in inheritance?",
+          "options": [
+            "Before the derived class destructor",
+            "After the derived class destructor",
+            "Along with the derived class destructor",
+            "Never"
+          ],
+          "correct_index": 1,
+          "explanation": "Base class destructors are called after derived class destructors."
+        },
+        {
+          "question": "How do you call a parameterized base class constructor from a derived class?",
+          "options": [
+            "In the derived class constructor's initializer list",
+            "Inside the derived class constructor body",
+            "Before the derived class constructor",
+            "After the derived class constructor"
+          ],
+          "correct_index": 0,
+          "explanation": "Base class constructors with parameters are called using the initializer list, e.g., Derived() : Base(args)."
+        },
+        {
+          "question": "If a derived class constructor does not explicitly call a base class constructor, which one is called?",
+          "options": [
+            "The default constructor of the base class",
+            "The parameterized constructor",
+            "No constructor is called",
+            "Compilation error"
+          ],
+          "correct_index": 0,
+          "explanation": "If not specified, the compiler calls the default constructor of the base class."
+        },
+        {
+          "question": "What is function overriding?",
+          "options": [
+            "Redefining a base class function in the derived class with the same signature",
+            "Defining multiple functions with the same name",
+            "Calling a function multiple times",
+            "Deleting a function"
+          ],
+          "correct_index": 0,
+          "explanation": "Function overriding occurs when a derived class provides a new implementation for a base class function."
+        },
+        {
+          "question": "What is the main difference between function overloading and function overriding?",
+          "options": [
+            "Overloading is compile-time, overriding is runtime",
+            "Overloading is runtime, overriding is compile-time",
+            "Both are compile-time",
+            "Both are runtime"
+          ],
+          "correct_index": 0,
+          "explanation": "Overloading is resolved at compile time, while overriding is resolved at runtime using virtual functions."
+        },
+        {
+          "question": "Which keyword is used to enable runtime polymorphism in function overriding?",
+          "options": [
+            "override",
+            "virtual",
+            "friend",
+            "static"
+          ],
+          "correct_index": 1,
+          "explanation": "The virtual keyword in the base class enables runtime polymorphism."
+        },
+        {
+          "question": "What is a class hierarchy?",
+          "options": [
+            "A tree-like structure of classes related by inheritance",
+            "A list of functions",
+            "An array of objects",
+            "A group of unrelated classes"
+          ],
+          "correct_index": 0,
+          "explanation": "A class hierarchy organizes classes in a tree structure based on inheritance."
+        },
+        {
+          "question": "What is single inheritance?",
+          "options": [
+            "A derived class inheriting from one base class",
+            "A derived class inheriting from multiple base classes",
+            "A base class inheriting from derived class",
+            "No inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Single inheritance means a derived class has only one base class."
+        },
+        {
+          "question": "What is multiple inheritance?",
+          "options": [
+            "A derived class inheriting from multiple base classes",
+            "A derived class inheriting from one base class",
+            "A base class inheriting from derived class",
+            "No inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Multiple inheritance allows a derived class to inherit from more than one base class."
+        },
+        {
+          "question": "What is multilevel inheritance?",
+          "options": [
+            "A derived class inheriting from another derived class",
+            "A derived class inheriting from multiple base classes",
+            "A base class inheriting from derived class",
+            "No inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Multilevel inheritance forms a chain, e.g., A → B → C."
+        },
+        {
+          "question": "What is hierarchical inheritance?",
+          "options": [
+            "Multiple derived classes inheriting from a single base class",
+            "A derived class inheriting from multiple base classes",
+            "A derived class inheriting from another derived class",
+            "No inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "In hierarchical inheritance, one base class is inherited by multiple derived classes."
+        },
+        {
+          "question": "What is hybrid inheritance?",
+          "options": [
+            "A combination of two or more types of inheritance",
+            "Only multiple inheritance",
+            "Only multilevel inheritance",
+            "Only single inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Hybrid inheritance combines multiple and multilevel inheritance."
+        },
+        {
+          "question": "What is the diamond problem in multiple inheritance?",
+          "options": [
+            "Ambiguity when a class inherits from two classes that share a common base class",
+            "A syntax error in class definition",
+            "A problem with constructors",
+            "A problem with destructors"
+          ],
+          "correct_index": 0,
+          "explanation": "The diamond problem occurs when a derived class inherits from two classes with a common base, causing ambiguity."
+        },
+        {
+          "question": "How is the diamond problem resolved in C++?",
+          "options": [
+            "Using virtual inheritance",
+            "Using multiple constructors",
+            "Using private inheritance",
+            "Using static members"
+          ],
+          "correct_index": 0,
+          "explanation": "Virtual inheritance ensures only one copy of the common base class is inherited."
+        },
+        {
+          "question": "Which keyword is used for virtual inheritance?",
+          "options": [
+            "virtual",
+            "static",
+            "friend",
+            "public"
+          ],
+          "correct_index": 0,
+          "explanation": "Virtual inheritance is declared as class Derived : virtual public Base."
+        },
+        {
+          "question": "Which access specifier makes base class members accessible to derived class but not to outside code?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 2,
+          "explanation": "Protected members are accessible in derived classes but not from outside."
+        },
+        {
+          "question": "Can a derived class access private members of the base class directly?",
+          "options": [
+            "Yes",
+            "No",
+            "Only with friend",
+            "Only with virtual"
+          ],
+          "correct_index": 1,
+          "explanation": "Private members of the base class cannot be accessed directly by the derived class."
+        },
+        {
+          "question": "How can a derived class access private members of the base class?",
+          "options": [
+            "Through public or protected member functions of the base class",
+            "By using the scope resolution operator",
+            "By declaring them public",
+            "By using the friend keyword"
+          ],
+          "correct_index": 0,
+          "explanation": "The derived class can access private members through public or protected methods of the base class."
+        },
+        {
+          "question": "What happens if a derived class defines a function with the same name as a base class function but different parameters?",
+          "options": [
+            "The base class function is hidden",
+            "The base class function is overridden",
+            "Compilation error",
+            "Nothing happens"
+          ],
+          "correct_index": 0,
+          "explanation": "The base class function is hidden by the derived class function, not overridden."
+        },
+        {
+          "question": "How do you call a hidden base class function from a derived class?",
+          "options": [
+            "Base::functionName()",
+            "Derived::functionName()",
+            "this->functionName()",
+            "functionName()"
+          ],
+          "correct_index": 0,
+          "explanation": "Use the scope resolution operator: Base::functionName()."
+        },
+        {
+          "question": "Which of the following is NOT inherited by a derived class?",
+          "options": [
+            "Constructors",
+            "Public member functions",
+            "Protected data members",
+            "Public data members"
+          ],
+          "correct_index": 0,
+          "explanation": "Constructors and destructors are not inherited in C++."
+        },
+        {
+          "question": "Can a derived class have additional members not present in the base class?",
+          "options": [
+            "Yes",
+            "No",
+            "Only data members",
+            "Only functions"
+          ],
+          "correct_index": 0,
+          "explanation": "A derived class can add its own data members and member functions."
+        },
+        {
+          "question": "What is the size of a derived class object?",
+          "options": [
+            "At least the size of the base class plus derived class members",
+            "Exactly the size of the base class",
+            "Exactly the size of the derived class",
+            "Zero"
+          ],
+          "correct_index": 0,
+          "explanation": "A derived object includes base class members plus its own members."
+        },
+        {
+          "question": "Can a base class pointer point to a derived class object?",
+          "options": [
+            "Yes, this is called upcasting",
+            "No",
+            "Only with virtual functions",
+            "Only with private inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "A base class pointer can point to a derived class object, which is called upcasting."
+        },
+        {
+          "question": "Can a derived class pointer point to a base class object without explicit casting?",
+          "options": [
+            "No, it requires explicit casting (downcasting)",
+            "Yes, automatically",
+            "Only with virtual",
+            "Only with private inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Downcasting (base to derived) requires explicit casting."
+        }
+      ]
+    },
+    {
+      "id": "cpp-intro-oop-001",
+      "title": "Introduction to OOP - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is the main concept of OOP?",
+          "options": [
+            "Executing functions in a sequence",
+            "Binding data and functions into a single unit (object)",
+            "Storing only data",
+            "Writing machine code"
+          ],
+          "correct_index": 1,
+          "explanation": "OOP binds data and the functions that operate on it into a single unit called an object."
+        },
+        {
+          "question": "Which of the following is NOT a characteristic of OOP?",
+          "options": [
+            "Encapsulation",
+            "Inheritance",
+            "Polymorphism",
+            "Top-down execution only"
+          ],
+          "correct_index": 3,
+          "explanation": "OOP does not rely only on top-down execution. Its main characteristics are Encapsulation, Inheritance, Polymorphism, and Abstraction."
+        },
+        {
+          "question": "What is the main advantage of OOP over procedural programming?",
+          "options": [
+            "Data security and reusability",
+            "Only faster execution",
+            "No functions",
+            "Direct hardware control"
+          ],
+          "correct_index": 0,
+          "explanation": "OOP provides better data hiding (security) and code reuse through inheritance."
+        },
+        {
+          "question": "What is the relationship between a class and an object?",
+          "options": [
+            "Object is a blueprint, class is an instance",
+            "Class is a blueprint, object is an instance",
+            "Both are the same",
+            "No relationship"
+          ],
+          "correct_index": 1,
+          "explanation": "A class is a blueprint or template, and an object is a specific instance created from that class."
+        },
+        {
+          "question": "Which OOP feature increases code reusability?",
+          "options": [
+            "Inheritance",
+            "Loop",
+            "Array",
+            "Pointer"
+          ],
+          "correct_index": 0,
+          "explanation": "Inheritance allows a new class to reuse the properties and methods of an existing class."
+        },
+        {
+          "question": "What does encapsulation mean?",
+          "options": [
+            "Binding data and functions into a single unit",
+            "Creating only functions",
+            "Deleting a class",
+            "Running a loop"
+          ],
+          "correct_index": 0,
+          "explanation": "Encapsulation wraps data and the functions that manipulate it into a single unit (class)."
+        },
+        {
+          "question": "What is the main purpose of abstraction?",
+          "options": [
+            "Hiding implementation details and showing only essential features",
+            "Deleting data",
+            "Freeing memory",
+            "Breaking a loop"
+          ],
+          "correct_index": 0,
+          "explanation": "Abstraction shows only essential features to the user while hiding internal implementation."
+        },
+        {
+          "question": "What does polymorphism mean?",
+          "options": [
+            "One name, many forms",
+            "One form, one name",
+            "Data hiding",
+            "Memory allocation"
+          ],
+          "correct_index": 0,
+          "explanation": "Polymorphism means 'one name, many forms' — for example, function overloading and virtual functions."
+        },
+        {
+          "question": "Who is the creator of C++?",
+          "options": [
+            "Dennis Ritchie",
+            "Bjarne Stroustrup",
+            "James Gosling",
+            "Guido van Rossum"
+          ],
+          "correct_index": 1,
+          "explanation": "Bjarne Stroustrup created C++ at Bell Labs in 1979 as an extension of C with object-oriented features."
+        },
+        {
+          "question": "What is the relationship between C and C++?",
+          "options": [
+            "C++ is a superset of C",
+            "C is a superset of C++",
+            "Both are the same",
+            "No relationship"
+          ],
+          "correct_index": 0,
+          "explanation": "C++ is a superset of C — it includes all C features and adds object-oriented features."
+        },
+        {
+          "question": "Why was OOP needed?",
+          "options": [
+            "To overcome limitations of procedural programming",
+            "To make programs slower",
+            "To remove functions",
+            "To avoid data types"
+          ],
+          "correct_index": 0,
+          "explanation": "OOP was introduced to solve problems like data insecurity, poor reusability, and difficulty in managing large programs in procedural programming."
+        },
+        {
+          "question": "In procedural programming, what is the main focus?",
+          "options": [
+            "Functions and procedures",
+            "Objects and classes",
+            "Inheritance",
+            "Polymorphism"
+          ],
+          "correct_index": 0,
+          "explanation": "Procedural programming focuses on functions and step-by-step procedures, while OOP focuses on objects."
+        },
+        {
+          "question": "What is a project-oriented approach in OOP?",
+          "options": [
+            "Building software as a collection of interacting objects",
+            "Writing only one function",
+            "Avoiding classes",
+            "Using only loops"
+          ],
+          "correct_index": 0,
+          "explanation": "A project-oriented approach means designing software as a set of objects that interact with each other, making it modular and maintainable."
+        },
+        {
+          "question": "Which of the following is a benefit of reusability in OOP?",
+          "options": [
+            "Reduced development time",
+            "Increased code duplication",
+            "Slower execution",
+            "More memory usage"
+          ],
+          "correct_index": 0,
+          "explanation": "Reusability allows existing code to be used again, reducing development time and effort."
+        },
+        {
+          "question": "Encapsulation helps in:",
+          "options": [
+            "Data hiding",
+            "Data deletion",
+            "Data duplication",
+            "Data loss"
+          ],
+          "correct_index": 0,
+          "explanation": "Encapsulation hides internal data from outside interference, which is known as data hiding."
+        },
+        {
+          "question": "Which access specifier makes class members accessible only within the class?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "global"
+          ],
+          "correct_index": 1,
+          "explanation": "Private members are accessible only within the class, which is a key part of encapsulation."
+        },
+        {
+          "question": "What is inheritance in OOP?",
+          "options": [
+            "Deriving a new class from an existing class",
+            "Deleting a class",
+            "Copying a function",
+            "Running a loop"
+          ],
+          "correct_index": 0,
+          "explanation": "Inheritance allows a new class (derived) to acquire properties and methods of an existing class (base)."
+        },
+        {
+          "question": "What is the base class in inheritance?",
+          "options": [
+            "The class that inherits",
+            "The class that is inherited from",
+            "A function",
+            "An object"
+          ],
+          "correct_index": 1,
+          "explanation": "The base class is the existing class from which other classes inherit features."
+        },
+        {
+          "question": "What is the derived class in inheritance?",
+          "options": [
+            "The class that inherits from another class",
+            "The class that is inherited",
+            "A function",
+            "An object"
+          ],
+          "correct_index": 0,
+          "explanation": "The derived class is the new class that inherits properties and methods from the base class."
+        },
+        {
+          "question": "Compile-time polymorphism is achieved by:",
+          "options": [
+            "Function overloading",
+            "Virtual functions",
+            "Inheritance",
+            "Encapsulation"
+          ],
+          "correct_index": 0,
+          "explanation": "Function overloading and operator overloading are examples of compile-time polymorphism."
+        },
+        {
+          "question": "Runtime polymorphism is achieved by:",
+          "options": [
+            "Virtual functions",
+            "Function overloading",
+            "Operator overloading",
+            "Templates"
+          ],
+          "correct_index": 0,
+          "explanation": "Virtual functions enable runtime polymorphism, where the function call is resolved at runtime."
+        },
+        {
+          "question": "What is function overloading?",
+          "options": [
+            "Same function name with different parameters",
+            "Different function names with same parameters",
+            "Same function name with same parameters",
+            "No function"
+          ],
+          "correct_index": 0,
+          "explanation": "Function overloading allows multiple functions with the same name but different parameter lists."
+        },
+        {
+          "question": "What is operator overloading?",
+          "options": [
+            "Giving new meaning to an existing operator for user-defined types",
+            "Creating a new operator",
+            "Deleting an operator",
+            "Using only arithmetic operators"
+          ],
+          "correct_index": 0,
+          "explanation": "Operator overloading allows existing operators to work with user-defined data types."
+        },
+        {
+          "question": "Which of the following is NOT a benefit of OOP?",
+          "options": [
+            "Code reusability",
+            "Data security",
+            "Easier maintenance",
+            "Increased code complexity"
+          ],
+          "correct_index": 3,
+          "explanation": "OOP aims to reduce complexity, not increase it. It provides reusability, security, and easier maintenance."
+        },
+        {
+          "question": "In OOP, data and functions are combined into:",
+          "options": [
+            "Objects",
+            "Loops",
+            "Arrays",
+            "Pointers"
+          ],
+          "correct_index": 0,
+          "explanation": "In OOP, data and functions are encapsulated into objects."
+        },
+        {
+          "question": "Which language was C++ derived from?",
+          "options": [
+            "Java",
+            "C",
+            "Python",
+            "C#"
+          ],
+          "correct_index": 1,
+          "explanation": "C++ was derived from the C language, adding object-oriented features."
+        },
+        {
+          "question": "What is the original name of C++?",
+          "options": [
+            "C with Classes",
+            "C Plus",
+            "Super C",
+            "Objective C"
+          ],
+          "correct_index": 0,
+          "explanation": "C++ was originally called 'C with Classes' before being renamed to C++."
+        },
+        {
+          "question": "What does the '++' in C++ signify?",
+          "options": [
+            "Increment operator",
+            "Decrement operator",
+            "Addition",
+            "Multiplication"
+          ],
+          "correct_index": 0,
+          "explanation": "The '++' is the increment operator, symbolizing an enhanced version of C."
+        },
+        {
+          "question": "Which of the following is a procedural programming language?",
+          "options": [
+            "C",
+            "C++",
+            "Java",
+            "Python"
+          ],
+          "correct_index": 0,
+          "explanation": "C is a procedural programming language, while C++, Java, and Python support OOP."
+        },
+        {
+          "question": "In OOP, what is an object?",
+          "options": [
+            "An instance of a class",
+            "A function",
+            "A loop",
+            "A header file"
+          ],
+          "correct_index": 0,
+          "explanation": "An object is a runtime instance of a class."
+        },
+        {
+          "question": "What is a class in OOP?",
+          "options": [
+            "A blueprint for creating objects",
+            "A function",
+            "A variable",
+            "A loop"
+          ],
+          "correct_index": 0,
+          "explanation": "A class is a blueprint or template that defines the properties and behavior of objects."
+        },
+        {
+          "question": "Which of the following is an example of encapsulation?",
+          "options": [
+            "A class with private data members and public methods",
+            "A function with no parameters",
+            "A loop with no condition",
+            "An array with no size"
+          ],
+          "correct_index": 0,
+          "explanation": "Encapsulation is achieved by making data members private and providing public methods to access them."
+        },
+        {
+          "question": "What is data hiding in OOP?",
+          "options": [
+            "Restricting access to internal data of a class",
+            "Deleting data",
+            "Copying data",
+            "Displaying data"
+          ],
+          "correct_index": 0,
+          "explanation": "Data hiding restricts direct access to internal data, usually achieved using private access specifier."
+        },
+        {
+          "question": "Which of the following is a characteristic of OOP?",
+          "options": [
+            "Encapsulation",
+            "Top-down execution",
+            "Global variables only",
+            "No functions"
+          ],
+          "correct_index": 0,
+          "explanation": "Encapsulation is one of the main characteristics of OOP."
+        },
+        {
+          "question": "What is the main disadvantage of procedural programming?",
+          "options": [
+            "Poor data security and reusability",
+            "Too many classes",
+            "Too many objects",
+            "Too much inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Procedural programming has poor data security and limited code reusability compared to OOP."
+        },
+        {
+          "question": "Which of the following supports multiple inheritance in C++?",
+          "options": [
+            "Classes",
+            "Functions",
+            "Loops",
+            "Arrays"
+          ],
+          "correct_index": 0,
+          "explanation": "C++ supports multiple inheritance through classes, where a derived class can inherit from multiple base classes."
+        },
+        {
+          "question": "What is the purpose of the 'class' keyword in C++?",
+          "options": [
+            "To define a class",
+            "To define a function",
+            "To define a loop",
+            "To define an array"
+          ],
+          "correct_index": 0,
+          "explanation": "The 'class' keyword is used to define a class in C++."
+        },
+        {
+          "question": "Which of the following is true about OOP?",
+          "options": [
+            "It makes programs more modular and maintainable",
+            "It makes programs slower",
+            "It removes the need for functions",
+            "It only works with small programs"
+          ],
+          "correct_index": 0,
+          "explanation": "OOP makes programs more modular, maintainable, and reusable."
+        },
+        {
+          "question": "What is the main goal of OOP?",
+          "options": [
+            "To model real-world entities as objects",
+            "To avoid functions",
+            "To use only loops",
+            "To remove data types"
+          ],
+          "correct_index": 0,
+          "explanation": "OOP aims to model real-world entities as objects, making software design more intuitive."
+        },
+        {
+          "question": "Which of the following is NOT an OOP language?",
+          "options": [
+            "C",
+            "C++",
+            "Java",
+            "Python"
+          ],
+          "correct_index": 0,
+          "explanation": "C is a procedural language, while C++, Java, and Python support OOP."
+        }
+      ]
+    },
+    {
+      "id": "cpp-operator-overloading-006",
+      "title": "Operator Overloading - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is operator overloading in C++?",
+          "options": [
+            "Giving new meaning to an existing operator for user-defined types",
+            "Creating a new operator",
+            "Deleting an existing operator",
+            "Changing the precedence of an operator"
+          ],
+          "correct_index": 0,
+          "explanation": "Operator overloading allows existing operators to work with user-defined data types."
+        },
+        {
+          "question": "Which of the following operators cannot be overloaded in C++?",
+          "options": [
+            "+",
+            "-",
+            "::",
+            "*"
+          ],
+          "correct_index": 2,
+          "explanation": "The scope resolution operator :: cannot be overloaded."
+        },
+        {
+          "question": "Can operator overloading change the precedence of an operator?",
+          "options": [
+            "Yes",
+            "No",
+            "Only for some operators",
+            "Only with friend functions"
+          ],
+          "correct_index": 1,
+          "explanation": "Operator overloading cannot change the precedence or associativity of an operator."
+        },
+        {
+          "question": "Can operator overloading change the number of operands an operator takes?",
+          "options": [
+            "Yes",
+            "No",
+            "Only for unary operators",
+            "Only for binary operators"
+          ],
+          "correct_index": 1,
+          "explanation": "The arity (number of operands) of an operator cannot be changed."
+        },
+        {
+          "question": "How many operands does a unary operator take?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "A unary operator takes one operand, e.g., ++, --, -."
+        },
+        {
+          "question": "How many operands does a binary operator take?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "A binary operator takes two operands, e.g., +, -, *, /."
+        },
+        {
+          "question": "Which operator must be overloaded as a member function?",
+          "options": [
+            "+",
+            "-",
+            "=",
+            "*"
+          ],
+          "correct_index": 2,
+          "explanation": "The assignment operator = must be overloaded as a non-static member function."
+        },
+        {
+          "question": "Which of the following operators cannot be overloaded as a friend function?",
+          "options": [
+            "+",
+            "-",
+            "=",
+            "*"
+          ],
+          "correct_index": 2,
+          "explanation": "Operators =, [], (), and -> must be overloaded as member functions, not as friend functions."
+        },
+        {
+          "question": "What is the correct syntax for overloading the + operator as a member function?",
+          "options": [
+            "ClassName operator+(const ClassName&);",
+            "friend ClassName operator+(const ClassName&, const ClassName&);",
+            "ClassName operator+(const ClassName&, const ClassName&);",
+            "operator+(ClassName);"
+          ],
+          "correct_index": 0,
+          "explanation": "A member function version takes one explicit parameter (the right operand)."
+        },
+        {
+          "question": "What is the correct syntax for overloading the + operator as a friend function?",
+          "options": [
+            "ClassName operator+(const ClassName&);",
+            "friend ClassName operator+(const ClassName&, const ClassName&);",
+            "ClassName operator+(const ClassName&, const ClassName&);",
+            "friend operator+(ClassName);"
+          ],
+          "correct_index": 1,
+          "explanation": "A friend function takes two parameters, one for each operand."
+        },
+        {
+          "question": "What is the typical return type of a binary arithmetic operator like +?",
+          "options": [
+            "ClassName&",
+            "ClassName",
+            "void",
+            "int"
+          ],
+          "correct_index": 1,
+          "explanation": "Binary arithmetic operators usually return a new object by value."
+        },
+        {
+          "question": "Why is a binary arithmetic operator usually returned by value?",
+          "options": [
+            "To allow chaining and avoid dangling references",
+            "To save memory",
+            "To make it faster",
+            "To prevent copying"
+          ],
+          "correct_index": 0,
+          "explanation": "Returning by value creates a new object that can be used in further expressions without referring to a local temporary."
+        },
+        {
+          "question": "What is a temporary object in C++?",
+          "options": [
+            "An unnamed object created by the compiler",
+            "A static object",
+            "A global object",
+            "A pointer object"
+          ],
+          "correct_index": 0,
+          "explanation": "A temporary object is an unnamed object created during expression evaluation."
+        },
+        {
+          "question": "When is a temporary object typically created?",
+          "options": [
+            "When returning by value or during type conversions",
+            "When declaring a global variable",
+            "When using a static variable",
+            "When using a pointer"
+          ],
+          "correct_index": 0,
+          "explanation": "Temporary objects are often created when functions return by value or when implicit conversions occur."
+        },
+        {
+          "question": "What is the main issue when overloading the increment operator?",
+          "options": [
+            "Prefix and postfix versions have the same name",
+            "It cannot be overloaded",
+            "It takes no arguments",
+            "It must be a friend function"
+          ],
+          "correct_index": 0,
+          "explanation": "Both prefix and postfix increment use operator++, so a dummy parameter is used to distinguish them."
+        },
+        {
+          "question": "How do you distinguish prefix and postfix increment in operator overloading?",
+          "options": [
+            "Prefix takes no argument, postfix takes a dummy int",
+            "Prefix takes an int, postfix takes no argument",
+            "Both take no arguments",
+            "Both take an int"
+          ],
+          "correct_index": 0,
+          "explanation": "Prefix: operator++(); Postfix: operator++(int)."
+        },
+        {
+          "question": "What is the correct syntax for overloading the prefix increment operator?",
+          "options": [
+            "ClassName& operator++();",
+            "ClassName operator++(int);",
+            "ClassName operator++();",
+            "void operator++();"
+          ],
+          "correct_index": 0,
+          "explanation": "Prefix increment is declared as ClassName& operator++();"
+        },
+        {
+          "question": "What is the correct syntax for overloading the postfix increment operator?",
+          "options": [
+            "ClassName& operator++();",
+            "ClassName operator++(int);",
+            "ClassName operator++();",
+            "void operator++(int);"
+          ],
+          "correct_index": 1,
+          "explanation": "Postfix increment is declared as ClassName operator++(int);"
+        },
+        {
+          "question": "What is the typical return type of the prefix increment operator?",
+          "options": [
+            "ClassName&",
+            "ClassName",
+            "void",
+            "int"
+          ],
+          "correct_index": 0,
+          "explanation": "Prefix increment usually returns a reference to the incremented object."
+        },
+        {
+          "question": "What is the typical return type of the postfix increment operator?",
+          "options": [
+            "ClassName&",
+            "ClassName",
+            "void",
+            "int"
+          ],
+          "correct_index": 1,
+          "explanation": "Postfix increment usually returns a copy of the object before incrementing."
+        },
+        {
+          "question": "What is data conversion in the context of operator overloading?",
+          "options": [
+            "Converting one user-defined type to another or to a built-in type",
+            "Converting an operator to a function",
+            "Converting a class to a struct",
+            "Converting a pointer to an integer"
+          ],
+          "correct_index": 0,
+          "explanation": "Data conversion allows objects of one type to be converted to another type."
+        },
+        {
+          "question": "How do you define a conversion operator to convert a class object to int?",
+          "options": [
+            "operator int() { }",
+            "int operator() { }",
+            "operator int(int) { }",
+            "int operator int() { }"
+          ],
+          "correct_index": 0,
+          "explanation": "A conversion operator is declared as operator type() { }."
+        },
+        {
+          "question": "Can a conversion operator take arguments?",
+          "options": [
+            "No, it takes no arguments",
+            "Yes, one argument",
+            "Yes, two arguments",
+            "Yes, any number"
+          ],
+          "correct_index": 0,
+          "explanation": "A conversion operator takes no arguments and returns the target type."
+        },
+        {
+          "question": "Which of the following is a pitfall of operator overloading?",
+          "options": [
+            "It can make code confusing if misused",
+            "It always makes code faster",
+            "It reduces code readability",
+            "It cannot be used with classes"
+          ],
+          "correct_index": 0,
+          "explanation": "Overusing or misusing operator overloading can lead to confusing and error-prone code."
+        },
+        {
+          "question": "What is a major pitfall of overloading the && and || operators?",
+          "options": [
+            "Loss of short-circuit evaluation",
+            "They cannot be overloaded",
+            "They become faster",
+            "They change precedence"
+          ],
+          "correct_index": 0,
+          "explanation": "Overloading && and || removes the short-circuit behavior, which can lead to unexpected side effects."
+        },
+        {
+          "question": "What is a pitfall of overloading the comma operator?",
+          "options": [
+            "It can lead to unexpected behavior",
+            "It cannot be overloaded",
+            "It makes code faster",
+            "It changes precedence"
+          ],
+          "correct_index": 0,
+          "explanation": "Overloading the comma operator is rarely needed and can cause confusing behavior."
+        },
+        {
+          "question": "What is a pitfall of overloading the -> operator?",
+          "options": [
+            "It must return a pointer or an object that supports ->",
+            "It cannot be overloaded",
+            "It must return an int",
+            "It must be a friend function"
+          ],
+          "correct_index": 0,
+          "explanation": "The -> operator must ultimately return a pointer or another object that overloads ->."
+        },
+        {
+          "question": "What is a pitfall of overloading new and delete?",
+          "options": [
+            "It complicates memory management",
+            "It is not allowed",
+            "It makes programs slower",
+            "It changes the size of objects"
+          ],
+          "correct_index": 0,
+          "explanation": "Overloading new and delete requires careful memory management and can introduce bugs."
+        },
+        {
+          "question": "What is the main advantage of operator overloading?",
+          "options": [
+            "It makes user-defined types behave like built-in types",
+            "It makes programs run faster",
+            "It reduces memory usage",
+            "It eliminates the need for functions"
+          ],
+          "correct_index": 0,
+          "explanation": "Operator overloading allows user-defined types to be used with operators in a natural way."
+        },
+        {
+          "question": "Can operator overloading create new operators?",
+          "options": [
+            "No, only existing operators can be overloaded",
+            "Yes, any operator can be created",
+            "Yes, with friend functions",
+            "Yes, with static functions"
+          ],
+          "correct_index": 0,
+          "explanation": "C++ does not allow creating new operators; only existing ones can be overloaded."
+        },
+        {
+          "question": "Which of the following operators can be overloaded?",
+          "options": [
+            "+",
+            "::",
+            ".*",
+            "?:"
+          ],
+          "correct_index": 0,
+          "explanation": "+ can be overloaded; ::, .*, ., ?:, and sizeof cannot be overloaded."
+        },
+        {
+          "question": "Which of the following operators cannot be overloaded?",
+          "options": [
+            "+",
+            "-",
+            ".*",
+            "*"
+          ],
+          "correct_index": 2,
+          "explanation": "The pointer-to-member operator .* cannot be overloaded."
+        },
+        {
+          "question": "What is the correct way to overload the unary minus operator as a member function?",
+          "options": [
+            "ClassName operator-();",
+            "ClassName operator-(const ClassName&);",
+            "friend ClassName operator-();",
+            "ClassName operator-(int);"
+          ],
+          "correct_index": 0,
+          "explanation": "Unary minus as a member takes no arguments."
+        },
+        {
+          "question": "What is the correct way to overload the binary minus operator as a member function?",
+          "options": [
+            "ClassName operator-();",
+            "ClassName operator-(const ClassName&);",
+            "friend ClassName operator-(const ClassName&);",
+            "ClassName operator-(int);"
+          ],
+          "correct_index": 1,
+          "explanation": "Binary minus as a member takes one explicit parameter."
+        },
+        {
+          "question": "What is the correct way to overload the binary minus operator as a friend function?",
+          "options": [
+            "ClassName operator-();",
+            "ClassName operator-(const ClassName&);",
+            "friend ClassName operator-(const ClassName&, const ClassName&);",
+            "friend ClassName operator-(const ClassName&);"
+          ],
+          "correct_index": 2,
+          "explanation": "Binary minus as a friend takes two parameters, one for each operand."
+        },
+        {
+          "question": "Which operator is commonly overloaded to allow input from cin?",
+          "options": [
+            ">>",
+            "<<",
+            "=",
+            "[]"
+          ],
+          "correct_index": 0,
+          "explanation": "The extraction operator >> is overloaded for input."
+        },
+        {
+          "question": "Which operator is commonly overloaded to allow output to cout?",
+          "options": [
+            ">>",
+            "<<",
+            "=",
+            "[]"
+          ],
+          "correct_index": 1,
+          "explanation": "The insertion operator << is overloaded for output."
+        },
+        {
+          "question": "When overloading << for output, what should it return?",
+          "options": [
+            "ostream&",
+            "istream&",
+            "void",
+            "ClassName"
+          ],
+          "correct_index": 0,
+          "explanation": "It should return ostream& to allow chaining like cout << a << b."
+        },
+        {
+          "question": "When overloading >> for input, what should it return?",
+          "options": [
+            "ostream&",
+            "istream&",
+            "void",
+            "ClassName"
+          ],
+          "correct_index": 1,
+          "explanation": "It should return istream& to allow chaining like cin >> a >> b."
+        },
+        {
+          "question": "Which operator must be overloaded as a non-static member function?",
+          "options": [
+            "+",
+            "[]",
+            "-",
+            "*"
+          ],
+          "correct_index": 1,
+          "explanation": "The subscript operator [] must be a non-static member function."
+        }
+      ]
+    },
+    {
       "id": "cpp-polymorphism-001",
       "title": "C++ Polymorphism",
       "category": "Programming",
@@ -97,6 +2764,456 @@
           ],
           "correct_index": 1,
           "explanation": "Polymorphism allows using a single interface for different data types."
+        }
+      ]
+    },
+    {
+      "id": "cpp-polymorphism-008",
+      "title": "Polymorphism - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What does polymorphism mean in C++?",
+          "options": [
+            "One name, many forms",
+            "Many names, one form",
+            "Data hiding",
+            "Memory allocation"
+          ],
+          "correct_index": 0,
+          "explanation": "Polymorphism allows the same name to be used for different purposes, i.e., one name, many forms."
+        },
+        {
+          "question": "Which of the following is a type of polymorphism in C++?",
+          "options": [
+            "Compile-time polymorphism",
+            "Runtime polymorphism",
+            "Both A and B",
+            "None of the above"
+          ],
+          "correct_index": 2,
+          "explanation": "C++ supports both compile-time (static) and runtime (dynamic) polymorphism."
+        },
+        {
+          "question": "Compile-time polymorphism is also known as:",
+          "options": [
+            "Static polymorphism",
+            "Dynamic polymorphism",
+            "Runtime polymorphism",
+            "Late binding"
+          ],
+          "correct_index": 0,
+          "explanation": "Compile-time polymorphism is also called static or early binding."
+        },
+        {
+          "question": "Runtime polymorphism is also known as:",
+          "options": [
+            "Static polymorphism",
+            "Dynamic polymorphism",
+            "Early binding",
+            "Compile-time polymorphism"
+          ],
+          "correct_index": 1,
+          "explanation": "Runtime polymorphism is also called dynamic polymorphism or late binding."
+        },
+        {
+          "question": "Which of the following is an example of compile-time polymorphism?",
+          "options": [
+            "Function overloading",
+            "Virtual functions",
+            "Function overriding",
+            "Runtime binding"
+          ],
+          "correct_index": 0,
+          "explanation": "Function overloading is resolved at compile time."
+        },
+        {
+          "question": "Which of the following is an example of runtime polymorphism?",
+          "options": [
+            "Function overloading",
+            "Operator overloading",
+            "Virtual functions",
+            "Templates"
+          ],
+          "correct_index": 2,
+          "explanation": "Virtual functions enable runtime polymorphism."
+        },
+        {
+          "question": "Function overloading is resolved at:",
+          "options": [
+            "Compile time",
+            "Runtime",
+            "Link time",
+            "Load time"
+          ],
+          "correct_index": 0,
+          "explanation": "The compiler decides which overloaded function to call based on arguments."
+        },
+        {
+          "question": "Virtual functions are resolved at:",
+          "options": [
+            "Compile time",
+            "Runtime",
+            "Link time",
+            "Load time"
+          ],
+          "correct_index": 1,
+          "explanation": "Virtual function calls are resolved at runtime using the vtable."
+        },
+        {
+          "question": "Which keyword is used to declare a virtual function?",
+          "options": [
+            "virtual",
+            "static",
+            "friend",
+            "inline"
+          ],
+          "correct_index": 0,
+          "explanation": "The virtual keyword is used in the base class to enable runtime polymorphism."
+        },
+        {
+          "question": "What is function overriding?",
+          "options": [
+            "Redefining a base class function in the derived class with the same signature",
+            "Defining multiple functions with the same name",
+            "Calling a function multiple times",
+            "Deleting a function"
+          ],
+          "correct_index": 0,
+          "explanation": "Function overriding provides a new implementation for a base class virtual function in the derived class."
+        },
+        {
+          "question": "Which of the following is necessary for runtime polymorphism?",
+          "options": [
+            "Inheritance and virtual functions",
+            "Only inheritance",
+            "Only virtual functions",
+            "Templates"
+          ],
+          "correct_index": 0,
+          "explanation": "Runtime polymorphism requires inheritance and virtual functions."
+        },
+        {
+          "question": "What is a pure virtual function?",
+          "options": [
+            "A virtual function with no definition, declared as = 0",
+            "A virtual function with a definition",
+            "A static function",
+            "A friend function"
+          ],
+          "correct_index": 0,
+          "explanation": "A pure virtual function is declared with = 0 and makes the class abstract."
+        },
+        {
+          "question": "What is an abstract class?",
+          "options": [
+            "A class that contains at least one pure virtual function",
+            "A class with only static members",
+            "A class with no members",
+            "A class that cannot be inherited"
+          ],
+          "correct_index": 0,
+          "explanation": "An abstract class has at least one pure virtual function and cannot be instantiated."
+        },
+        {
+          "question": "Can an abstract class be instantiated?",
+          "options": [
+            "No",
+            "Yes",
+            "Only with virtual",
+            "Only with static"
+          ],
+          "correct_index": 0,
+          "explanation": "Abstract classes cannot be instantiated directly."
+        },
+        {
+          "question": "What is a virtual destructor?",
+          "options": [
+            "A destructor declared with the virtual keyword",
+            "A destructor that deletes virtual functions",
+            "A destructor that is pure virtual",
+            "A destructor that cannot be overloaded"
+          ],
+          "correct_index": 0,
+          "explanation": "A virtual destructor ensures that the correct destructor is called when deleting a derived object via a base pointer."
+        },
+        {
+          "question": "Why is a virtual destructor needed?",
+          "options": [
+            "To properly destroy derived class objects through base class pointers",
+            "To make the class abstract",
+            "To enable function overloading",
+            "To speed up destruction"
+          ],
+          "correct_index": 0,
+          "explanation": "Without a virtual destructor, deleting a derived object via a base pointer may cause undefined behavior."
+        },
+        {
+          "question": "What is the output of the following code?\n\nclass Base { public: virtual void show() { cout << \"Base\"; } };\nclass Derived : public Base { public: void show() { cout << \"Derived\"; } };\nint main() { Base *b = new Derived(); b->show(); }",
+          "options": [
+            "Base",
+            "Derived",
+            "Compilation error",
+            "Undefined behavior"
+          ],
+          "correct_index": 1,
+          "explanation": "Due to virtual function, the derived class version is called, so output is Derived."
+        },
+        {
+          "question": "What is the output if the virtual keyword is removed from the base class show()?",
+          "options": [
+            "Base",
+            "Derived",
+            "Compilation error",
+            "Undefined behavior"
+          ],
+          "correct_index": 0,
+          "explanation": "Without virtual, the function call is resolved at compile time based on the pointer type, so Base is called."
+        },
+        {
+          "question": "Which of the following is NOT a type of polymorphism?",
+          "options": [
+            "Compile-time",
+            "Runtime",
+            "Static",
+            "Sequential"
+          ],
+          "correct_index": 3,
+          "explanation": "Sequential is not a type of polymorphism."
+        },
+        {
+          "question": "Operator overloading is an example of:",
+          "options": [
+            "Compile-time polymorphism",
+            "Runtime polymorphism",
+            "Dynamic polymorphism",
+            "Late binding"
+          ],
+          "correct_index": 0,
+          "explanation": "Operator overloading is resolved at compile time."
+        },
+        {
+          "question": "Function overriding is an example of:",
+          "options": [
+            "Compile-time polymorphism",
+            "Runtime polymorphism",
+            "Static polymorphism",
+            "Early binding"
+          ],
+          "correct_index": 1,
+          "explanation": "Function overriding with virtual functions is runtime polymorphism."
+        },
+        {
+          "question": "What is the vtable in C++?",
+          "options": [
+            "A table of virtual function pointers",
+            "A table of variables",
+            "A table of constructors",
+            "A table of destructors"
+          ],
+          "correct_index": 0,
+          "explanation": "The vtable is used to resolve virtual function calls at runtime."
+        },
+        {
+          "question": "Which of the following can be virtual?",
+          "options": [
+            "Member functions",
+            "Constructors",
+            "Static functions",
+            "Friend functions"
+          ],
+          "correct_index": 0,
+          "explanation": "Only member functions can be virtual. Constructors cannot be virtual."
+        },
+        {
+          "question": "Can a constructor be virtual?",
+          "options": [
+            "No",
+            "Yes",
+            "Only in C++11",
+            "Only in abstract classes"
+          ],
+          "correct_index": 0,
+          "explanation": "Constructors cannot be virtual because the object's type is not fully determined until construction is complete."
+        },
+        {
+          "question": "Can a destructor be virtual?",
+          "options": [
+            "Yes",
+            "No",
+            "Only in abstract classes",
+            "Only in C++11"
+          ],
+          "correct_index": 0,
+          "explanation": "Destructors can and should be virtual in base classes with virtual functions."
+        },
+        {
+          "question": "Which of the following is true about pure virtual functions?",
+          "options": [
+            "They have no body and are declared with = 0",
+            "They must have a body",
+            "They cannot be overridden",
+            "They are static"
+          ],
+          "correct_index": 0,
+          "explanation": "Pure virtual functions have no implementation in the base class and are declared with = 0."
+        },
+        {
+          "question": "What happens if a derived class does not override a pure virtual function?",
+          "options": [
+            "The derived class also becomes abstract",
+            "The program will not compile",
+            "The base class function is called",
+            "The derived class can be instantiated"
+          ],
+          "correct_index": 0,
+          "explanation": "If a derived class does not implement all pure virtual functions, it remains abstract."
+        },
+        {
+          "question": "What is the main advantage of polymorphism?",
+          "options": [
+            "It allows code to be written generically and reused",
+            "It makes programs slower",
+            "It increases code size",
+            "It removes the need for inheritance"
+          ],
+          "correct_index": 0,
+          "explanation": "Polymorphism allows writing generic code that can work with objects of different types."
+        },
+        {
+          "question": "Which of the following demonstrates polymorphism?",
+          "options": [
+            "A base class pointer pointing to derived class objects",
+            "A function with no parameters",
+            "A global variable",
+            "A static function"
+          ],
+          "correct_index": 0,
+          "explanation": "Using a base class pointer to call virtual functions on derived objects is a classic example."
+        },
+        {
+          "question": "What is the output of the following code?\n\nclass A { public: void show() { cout << \"A\"; } };\nclass B : public A { public: void show() { cout << \"B\"; } };\nint main() { A *a = new B(); a->show(); }",
+          "options": [
+            "A",
+            "B",
+            "Compilation error",
+            "Undefined behavior"
+          ],
+          "correct_index": 0,
+          "explanation": "Without virtual, the function is called based on the pointer type, so A is printed."
+        },
+        {
+          "question": "What is the output if show() is virtual in the above code?",
+          "options": [
+            "A",
+            "B",
+            "Compilation error",
+            "Undefined behavior"
+          ],
+          "correct_index": 1,
+          "explanation": "With virtual, the derived class version is called, so B is printed."
+        },
+        {
+          "question": "Which of the following is true about virtual functions?",
+          "options": [
+            "They enable runtime polymorphism",
+            "They enable compile-time polymorphism",
+            "They cannot be overridden",
+            "They must be static"
+          ],
+          "correct_index": 0,
+          "explanation": "Virtual functions are the mechanism for runtime polymorphism."
+        },
+        {
+          "question": "What is late binding?",
+          "options": [
+            "Function call resolved at runtime",
+            "Function call resolved at compile time",
+            "Function call resolved at link time",
+            "Function call resolved at load time"
+          ],
+          "correct_index": 0,
+          "explanation": "Late binding means the function call is resolved at runtime, which is done via virtual functions."
+        },
+        {
+          "question": "What is early binding?",
+          "options": [
+            "Function call resolved at compile time",
+            "Function call resolved at runtime",
+            "Function call resolved at link time",
+            "Function call resolved at load time"
+          ],
+          "correct_index": 0,
+          "explanation": "Early binding means the function call is resolved at compile time, as in function overloading."
+        },
+        {
+          "question": "Which of the following is NOT a valid use of polymorphism?",
+          "options": [
+            "Using a base class pointer to call derived class methods",
+            "Using function overloading",
+            "Using operator overloading",
+            "Using global variables"
+          ],
+          "correct_index": 3,
+          "explanation": "Global variables are not related to polymorphism."
+        },
+        {
+          "question": "Which of the following is a compile-time polymorphism technique?",
+          "options": [
+            "Templates",
+            "Virtual functions",
+            "Function overriding",
+            "Dynamic binding"
+          ],
+          "correct_index": 0,
+          "explanation": "Templates are resolved at compile time, so they are compile-time polymorphism."
+        },
+        {
+          "question": "What is the output of the following code?\n\nclass Base { public: virtual void print() { cout << \"Base\"; } };\nclass Derived : public Base { public: void print() { cout << \"Derived\"; } };\nint main() { Base b; Derived d; Base *ptr = &d; ptr->print(); }",
+          "options": [
+            "Base",
+            "Derived",
+            "BaseDerived",
+            "Compilation error"
+          ],
+          "correct_index": 1,
+          "explanation": "ptr points to a Derived object and print() is virtual, so Derived is printed."
+        },
+        {
+          "question": "Which of the following is true about virtual functions and constructors?",
+          "options": [
+            "Constructors cannot be virtual, but destructors can be",
+            "Both can be virtual",
+            "Neither can be virtual",
+            "Only constructors can be virtual"
+          ],
+          "correct_index": 0,
+          "explanation": "Constructors cannot be virtual; destructors can and often should be virtual."
+        },
+        {
+          "question": "What is the main difference between function overloading and function overriding?",
+          "options": [
+            "Overloading is compile-time, overriding is runtime",
+            "Overloading is runtime, overriding is compile-time",
+            "Both are compile-time",
+            "Both are runtime"
+          ],
+          "correct_index": 0,
+          "explanation": "Overloading is resolved at compile time; overriding is resolved at runtime with virtual functions."
+        },
+        {
+          "question": "Which of the following allows a class to be polymorphic?",
+          "options": [
+            "Virtual functions",
+            "Static functions",
+            "Friend functions",
+            "Inline functions"
+          ],
+          "correct_index": 0,
+          "explanation": "Virtual functions make a class polymorphic by enabling runtime binding."
         }
       ]
     },
@@ -217,6 +3334,456 @@
           ],
           "correct_index": 1,
           "explanation": "The :: operator is the scope resolution operator. It is used to access global variables, class members, or namespace members, e.g., std::cout."
+        }
+      ]
+    },
+    {
+      "id": "cpp-structures-functions-003",
+      "title": "Structures & Functions - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "created_at": "2026-09-30T00:00:00Z",
+      "questions": [
+        {
+          "question": "What is a structure in C++?",
+          "options": [
+            "A collection of variables of different data types under a single name",
+            "A collection of functions",
+            "A single variable",
+            "A loop"
+          ],
+          "correct_index": 0,
+          "explanation": "A structure groups variables of different data types into a single unit."
+        },
+        {
+          "question": "Which keyword is used to define a structure in C++?",
+          "options": [
+            "class",
+            "struct",
+            "union",
+            "enum"
+          ],
+          "correct_index": 1,
+          "explanation": "The struct keyword is used to define a structure."
+        },
+        {
+          "question": "By default, members of a structure are:",
+          "options": [
+            "private",
+            "protected",
+            "public",
+            "static"
+          ],
+          "correct_index": 2,
+          "explanation": "In C++, struct members are public by default."
+        },
+        {
+          "question": "Can a structure in C++ contain functions?",
+          "options": [
+            "Yes",
+            "No",
+            "Only constructors",
+            "Only static functions"
+          ],
+          "correct_index": 0,
+          "explanation": "In C++, structures can have member functions, constructors, and destructors."
+        },
+        {
+          "question": "How do you access members of a structure variable?",
+          "options": [
+            ". operator",
+            "-> operator",
+            ":: operator",
+            "* operator"
+          ],
+          "correct_index": 0,
+          "explanation": "The dot (.) operator is used to access members of a structure variable."
+        },
+        {
+          "question": "How do you access members of a pointer to a structure?",
+          "options": [
+            ". operator",
+            "-> operator",
+            ":: operator",
+            "& operator"
+          ],
+          "correct_index": 1,
+          "explanation": "The arrow (->) operator is used to access members through a pointer to a structure."
+        },
+        {
+          "question": "What is a nested structure?",
+          "options": [
+            "A structure defined inside another structure",
+            "A structure with no members",
+            "A structure with only functions",
+            "A structure with only pointers"
+          ],
+          "correct_index": 0,
+          "explanation": "A nested structure is a structure defined within another structure."
+        },
+        {
+          "question": "How do you define a nested structure?",
+          "options": [
+            "struct Outer { struct Inner { int x; } in; };",
+            "struct Outer { int x; } struct Inner;",
+            "struct Outer, Inner;",
+            "nested struct Outer { int x; };"
+          ],
+          "correct_index": 0,
+          "explanation": "A structure can be defined inside another structure, and its variable can be declared as a member."
+        },
+        {
+          "question": "What is an enumerated data type?",
+          "options": [
+            "A user-defined data type with named integer constants",
+            "A primitive data type",
+            "A type of array",
+            "A type of function"
+          ],
+          "correct_index": 0,
+          "explanation": "enum is a user-defined data type that consists of named integer constants."
+        },
+        {
+          "question": "Which keyword is used to define an enumeration?",
+          "options": [
+            "enum",
+            "enumerate",
+            "list",
+            "define"
+          ],
+          "correct_index": 0,
+          "explanation": "The enum keyword is used to define an enumeration."
+        },
+        {
+          "question": "What is the default value of the first enumerator?",
+          "options": [
+            "0",
+            "1",
+            "-1",
+            "Random"
+          ],
+          "correct_index": 0,
+          "explanation": "By default, the first enumerator has value 0, and each subsequent one increments by 1."
+        },
+        {
+          "question": "What is enum class in C++?",
+          "options": [
+            "A scoped enumeration with type safety",
+            "A class with enum members",
+            "An enum with no values",
+            "A global enum"
+          ],
+          "correct_index": 0,
+          "explanation": "enum class provides scoped enumerations that are type-safe and do not implicitly convert to integers."
+        },
+        {
+          "question": "What is the main advantage of enum class over plain enum?",
+          "options": [
+            "Type safety and scoped names",
+            "Faster execution",
+            "Less memory",
+            "Automatic conversion to int"
+          ],
+          "correct_index": 0,
+          "explanation": "enum class prevents implicit conversions and keeps enumerators scoped within the enum name."
+        },
+        {
+          "question": "What is a function prototype?",
+          "options": [
+            "A declaration that tells the compiler about the function's name, return type, and parameters",
+            "The body of a function",
+            "A call to a function",
+            "A variable"
+          ],
+          "correct_index": 0,
+          "explanation": "A function prototype declares the function before its use, specifying its signature."
+        },
+        {
+          "question": "What is the correct syntax for a function declaration?",
+          "options": [
+            "return_type function_name(parameters);",
+            "function_name(return_type parameters);",
+            "return_type function_name parameters;",
+            "function_name return_type(parameters);"
+          ],
+          "correct_index": 0,
+          "explanation": "A function declaration includes the return type, name, and parameter list, ending with a semicolon."
+        },
+        {
+          "question": "What is a function definition?",
+          "options": [
+            "The actual implementation of the function with a body",
+            "The declaration of the function",
+            "A call to the function",
+            "A comment"
+          ],
+          "correct_index": 0,
+          "explanation": "A function definition includes the function body with statements."
+        },
+        {
+          "question": "What is the difference between call by value and call by reference?",
+          "options": [
+            "Call by value passes a copy, call by reference passes the actual variable",
+            "Call by value passes the actual variable, call by reference passes a copy",
+            "Both are same",
+            "Call by reference is not allowed in C++"
+          ],
+          "correct_index": 0,
+          "explanation": "Call by value copies the argument, while call by reference passes the address (alias) of the argument."
+        },
+        {
+          "question": "What is a reference argument?",
+          "options": [
+            "A parameter that is an alias for the argument",
+            "A pointer to the argument",
+            "A copy of the argument",
+            "A constant argument"
+          ],
+          "correct_index": 0,
+          "explanation": "A reference parameter acts as an alias for the actual argument, allowing modification."
+        },
+        {
+          "question": "How do you declare a reference parameter in C++?",
+          "options": [
+            "int &x",
+            "int *x",
+            "int x&",
+            "ref int x"
+          ],
+          "correct_index": 0,
+          "explanation": "The & symbol after the type declares a reference parameter, e.g., int &x."
+        },
+        {
+          "question": "What is function overloading?",
+          "options": [
+            "Defining multiple functions with the same name but different parameters",
+            "Defining multiple functions with different names",
+            "Defining a function inside another function",
+            "Calling a function multiple times"
+          ],
+          "correct_index": 0,
+          "explanation": "Function overloading allows multiple functions with the same name but different parameter lists."
+        },
+        {
+          "question": "Can functions be overloaded based on return type only?",
+          "options": [
+            "Yes",
+            "No",
+            "Only in C++",
+            "Only with virtual"
+          ],
+          "correct_index": 1,
+          "explanation": "Overloading requires a difference in the parameter list; return type alone is not sufficient."
+        },
+        {
+          "question": "What is a default argument in a function?",
+          "options": [
+            "An argument that has a default value if not provided",
+            "An argument that is always required",
+            "An argument that is a constant",
+            "An argument that is a reference"
+          ],
+          "correct_index": 0,
+          "explanation": "Default arguments provide a value automatically if the caller omits that argument."
+        },
+        {
+          "question": "Where are default arguments specified?",
+          "options": [
+            "In the function declaration (prototype)",
+            "In the function definition only",
+            "In the function call",
+            "In the main function"
+          ],
+          "correct_index": 0,
+          "explanation": "Default arguments are specified in the function declaration, not in the definition or call."
+        },
+        {
+          "question": "What is a storage class in C++?",
+          "options": [
+            "It defines the scope, lifetime, and visibility of a variable",
+            "It defines the data type of a variable",
+            "It defines the size of a variable",
+            "It defines the value of a variable"
+          ],
+          "correct_index": 0,
+          "explanation": "Storage classes specify the scope, lifetime, and linkage of variables and functions."
+        },
+        {
+          "question": "Which storage class is the default for local variables?",
+          "options": [
+            "auto",
+            "static",
+            "extern",
+            "register"
+          ],
+          "correct_index": 0,
+          "explanation": "Local variables are auto by default, meaning they are created when the block is entered and destroyed when it exits."
+        },
+        {
+          "question": "What is the lifetime of a static local variable?",
+          "options": [
+            "Entire program execution",
+            "Until the function returns",
+            "Until the block ends",
+            "Until the program starts"
+          ],
+          "correct_index": 0,
+          "explanation": "A static local variable retains its value between function calls and exists for the entire program."
+        },
+        {
+          "question": "What does the extern storage class do?",
+          "options": [
+            "Declares a variable that is defined in another file",
+            "Defines a local variable",
+            "Makes a variable static",
+            "Registers a variable"
+          ],
+          "correct_index": 0,
+          "explanation": "extern declares a variable or function that is defined in another translation unit."
+        },
+        {
+          "question": "What is the register storage class used for?",
+          "options": [
+            "To suggest storing the variable in a CPU register for faster access",
+            "To store the variable in hard disk",
+            "To make the variable global",
+            "To make the variable constant"
+          ],
+          "correct_index": 0,
+          "explanation": "register is a hint to the compiler to store the variable in a CPU register."
+        },
+        {
+          "question": "What is the scope of a static global variable?",
+          "options": [
+            "The file in which it is declared",
+            "The entire program",
+            "The function in which it is declared",
+            "The block in which it is declared"
+          ],
+          "correct_index": 0,
+          "explanation": "A static global variable is visible only within the file where it is declared."
+        },
+        {
+          "question": "What is the difference between auto and register?",
+          "options": [
+            "auto is default, register is a hint for CPU register",
+            "auto is for global, register is for local",
+            "auto is static, register is extern",
+            "No difference"
+          ],
+          "correct_index": 0,
+          "explanation": "auto is the default storage for local variables, while register suggests faster access via CPU register."
+        },
+        {
+          "question": "What is the purpose of the static keyword for a global variable?",
+          "options": [
+            "To restrict its scope to the file",
+            "To make it global",
+            "To make it constant",
+            "To make it volatile"
+          ],
+          "correct_index": 0,
+          "explanation": "A static global variable has internal linkage, meaning it can only be used within the same file."
+        },
+        {
+          "question": "What is the return type of a function that returns nothing?",
+          "options": [
+            "void",
+            "int",
+            "null",
+            "empty"
+          ],
+          "correct_index": 0,
+          "explanation": "void indicates that the function does not return a value."
+        },
+        {
+          "question": "What is the correct way to pass an array to a function?",
+          "options": [
+            "void func(int arr[])",
+            "void func(int arr)",
+            "void func(int &arr)",
+            "void func(array arr)"
+          ],
+          "correct_index": 0,
+          "explanation": "Arrays are passed as pointers, so int arr[] or int *arr is used."
+        },
+        {
+          "question": "What is the default access specifier for struct members?",
+          "options": [
+            "public",
+            "private",
+            "protected",
+            "static"
+          ],
+          "correct_index": 0,
+          "explanation": "In a struct, members are public by default."
+        },
+        {
+          "question": "What is the default access specifier for class members?",
+          "options": [
+            "private",
+            "public",
+            "protected",
+            "static"
+          ],
+          "correct_index": 0,
+          "explanation": "In a class, members are private by default."
+        },
+        {
+          "question": "How do you initialize a structure variable?",
+          "options": [
+            "struct Point p = {10, 20};",
+            "struct Point p = (10, 20);",
+            "struct Point p = [10, 20];",
+            "struct Point p = {10; 20};"
+          ],
+          "correct_index": 0,
+          "explanation": "Structure variables can be initialized using braces with values in order."
+        },
+        {
+          "question": "What is an array of structures?",
+          "options": [
+            "An array where each element is a structure",
+            "A structure containing an array",
+            "A pointer to a structure",
+            "A function returning a structure"
+          ],
+          "correct_index": 0,
+          "explanation": "An array of structures stores multiple structure variables in contiguous memory."
+        },
+        {
+          "question": "Can a structure contain a pointer to itself?",
+          "options": [
+            "Yes, for linked lists and trees",
+            "No",
+            "Only in C",
+            "Only with typedef"
+          ],
+          "correct_index": 0,
+          "explanation": "A structure can contain a pointer to its own type, which is useful for self-referential data structures."
+        },
+        {
+          "question": "What is the size of an empty structure in C++?",
+          "options": [
+            "1 byte",
+            "0 bytes",
+            "4 bytes",
+            "8 bytes"
+          ],
+          "correct_index": 0,
+          "explanation": "An empty structure has a size of 1 byte in C++ to ensure unique addresses."
+        },
+        {
+          "question": "What is the output of enum { RED, GREEN = 5, BLUE };?",
+          "options": [
+            "RED=0, GREEN=5, BLUE=6",
+            "RED=1, GREEN=5, BLUE=6",
+            "RED=0, GREEN=5, BLUE=7",
+            "RED=0, GREEN=4, BLUE=5"
+          ],
+          "correct_index": 0,
+          "explanation": "RED is 0 by default, GREEN is explicitly 5, and BLUE increments to 6."
         }
       ]
     },

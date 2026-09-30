@@ -1,9 +1,39 @@
 {
   "schema_version": 2,
   "key_id": "kvizo-pub-2026-09",
-  "issued_at": "2026-09-30T15:26:24Z",
-  "count": 8,
+  "issued_at": "2026-09-30T15:35:11Z",
+  "count": 16,
   "quizzes": [
+    {
+      "id": "cpp-arrays-strings-005",
+      "title": "Arrays & Strings - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 38,
+      "file": "quizzes/c++-programming/cpp-arrays-strings-005.json",
+      "sha256": "4076a6df430d8f1eefcd5f40a8a41dd427722d0c797170ae78ff96dc338fb15c"
+    },
+    {
+      "id": "cpp-basics-002",
+      "title": "C++ Programming Basics",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 40,
+      "file": "quizzes/c++-programming/cpp-basics-002.json",
+      "sha256": "19a3a8c0ba7f73bb451d4788a405defdd8e940bd7bce9a2ac72ee6d2f5ef18b1"
+    },
+    {
+      "id": "cpp-classes-objects-004",
+      "title": "Classes & Objects - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 39,
+      "file": "quizzes/c++-programming/cpp-classes-objects-004.json",
+      "sha256": "de407b6938240678145db7c18538b326c8115d9eceab6883754c29dc0911d293"
+    },
     {
       "id": "cpp-expert-001",
       "title": "C++ Expert Challenge>",
@@ -13,6 +43,36 @@
       "questions_count": 6,
       "file": "quizzes/programming/cpp-expert-001.json",
       "sha256": "fa2706441bb81c47802834cf14a5e2dc34c392cf9caa4c987a96f2b0f5371eb0"
+    },
+    {
+      "id": "cpp-inheritance-007",
+      "title": "Inheritance - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 40,
+      "file": "quizzes/c++-programming/cpp-inheritance-007.json",
+      "sha256": "90ada5882fa551099868871caf9c8692fbf4990c4b715971ae0f42abce080e20"
+    },
+    {
+      "id": "cpp-intro-oop-001",
+      "title": "Introduction to OOP - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 40,
+      "file": "quizzes/c++-programming/cpp-intro-oop-001.json",
+      "sha256": "2355c28af19afcc254346cc1caa4525da8f908b26a30316f49d6d300533aa8d8"
+    },
+    {
+      "id": "cpp-operator-overloading-006",
+      "title": "Operator Overloading - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 40,
+      "file": "quizzes/c++-programming/cpp-operator-overloading-006.json",
+      "sha256": "07590d9e21869f60ca0a2e6605ff49eec5f0b654e4062f385e0fc7f1ecc69191"
     },
     {
       "id": "cpp-polymorphism-001",
@@ -25,6 +85,16 @@
       "sha256": "d216f4c0ede1c03ecc79999bd43dc72844f593243982209280a1199eeffa6b31"
     },
     {
+      "id": "cpp-polymorphism-008",
+      "title": "Polymorphism - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 40,
+      "file": "quizzes/c++-programming/cpp-polymorphism-008.json",
+      "sha256": "271325f868f55d45b613d5bf94189fc58a1eb6d72793c338444f213db26651db"
+    },
+    {
       "id": "cpp-programming-001",
       "title": "C++ Programming Challenge",
       "category": "C++ Programming",
@@ -33,6 +103,16 @@
       "questions_count": 10,
       "file": "quizzes/c++-programming/cpp-programming-001.json",
       "sha256": "1141889e20dc8d3e8659d83b8ca944801bc83a7f14c74322d1b86b138890f0ca"
+    },
+    {
+      "id": "cpp-structures-functions-003",
+      "title": "Structures & Functions - C++",
+      "category": "C++ Programming",
+      "difficulty": "Medium",
+      "author": "kvizo-community",
+      "questions_count": 40,
+      "file": "quizzes/c++-programming/cpp-structures-functions-003.json",
+      "sha256": "924f12c03f6f2cc899f1da6bf64772b6f65d52903abc6b4d1d0f9ef73555a567"
     },
     {
       "id": "geography-asia-005",
