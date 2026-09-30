@@ -1,0 +1,428 @@
+{
+  "id": "cpp-arrays-strings-005",
+  "title": "Arrays & Strings - C++",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-30T00:00:00Z",
+  "questions": [
+    {
+      "question": "What is an array in C++?",
+      "options": [
+        "A collection of elements of the same data type stored in contiguous memory",
+        "A collection of elements of different data types",
+        "A single variable",
+        "A function"
+      ],
+      "correct_index": 0,
+      "explanation": "An array is a collection of elements of the same type stored in contiguous memory locations."
+    },
+    {
+      "question": "What is the correct way to declare a 1D array of 5 integers?",
+      "options": [
+        "int arr[5];",
+        "array int arr[5];",
+        "int arr(5);",
+        "int arr = new int[5];"
+      ],
+      "correct_index": 0,
+      "explanation": "The syntax for a 1D array is: data_type array_name[size];"
+    },
+    {
+      "question": "What is the index of the first element of an array?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Depends on compiler"
+      ],
+      "correct_index": 0,
+      "explanation": "In C++, array indexing starts at 0."
+    },
+    {
+      "question": "If an array has 10 elements, what is the valid index range?",
+      "options": [
+        "0 to 9",
+        "1 to 10",
+        "0 to 10",
+        "1 to 9"
+      ],
+      "correct_index": 0,
+      "explanation": "Valid indices are from 0 to size-1."
+    },
+    {
+      "question": "How do you access the third element of an array arr?",
+      "options": [
+        "arr[2]",
+        "arr[3]",
+        "arr(3)",
+        "arr.3"
+      ],
+      "correct_index": 0,
+      "explanation": "The third element is at index 2 (0-based indexing)."
+    },
+    {
+      "question": "What is the correct way to initialize an array with values?",
+      "options": [
+        "int arr[3] = {1, 2, 3};",
+        "int arr[3] = (1, 2, 3);",
+        "int arr[3] = [1, 2, 3];",
+        "int arr[3] = {1; 2; 3};"
+      ],
+      "correct_index": 0,
+      "explanation": "Arrays are initialized using braces with comma-separated values."
+    },
+    {
+      "question": "What happens if you partially initialize an array?",
+      "options": [
+        "Remaining elements are set to 0",
+        "Remaining elements are garbage",
+        "Compilation error",
+        "Array size increases"
+      ],
+      "correct_index": 0,
+      "explanation": "In C++, if you initialize fewer elements, the rest are automatically set to 0."
+    },
+    {
+      "question": "What is a multidimensional array?",
+      "options": [
+        "An array with more than one dimension",
+        "An array with one dimension",
+        "An array of functions",
+        "An array of pointers"
+      ],
+      "correct_index": 0,
+      "explanation": "A multidimensional array has more than one index, such as a 2D array."
+    },
+    {
+      "question": "What is the correct declaration of a 2D array of 3 rows and 4 columns?",
+      "options": [
+        "int arr[3][4];",
+        "int arr[4][3];",
+        "int arr[3,4];",
+        "int arr(3,4);"
+      ],
+      "correct_index": 0,
+      "explanation": "The syntax is: data_type array_name[rows][columns];"
+    },
+    {
+      "question": "How do you access the element in the second row and third column of a 2D array?",
+      "options": [
+        "arr[1][2]",
+        "arr[2][3]",
+        "arr[1,2]",
+        "arr(1,2)"
+      ],
+      "correct_index": 0,
+      "explanation": "Indices are 0-based: second row is index 1, third column is index 2."
+    },
+    {
+      "question": "How are elements of a 2D array stored in memory?",
+      "options": [
+        "Row by row (row-major order)",
+        "Column by column (column-major order)",
+        "Randomly",
+        "In linked list"
+      ],
+      "correct_index": 0,
+      "explanation": "C++ stores 2D arrays in row-major order."
+    },
+    {
+      "question": "How do you pass a 1D array to a function?",
+      "options": [
+        "void func(int arr[])",
+        "void func(int arr)",
+        "void func(int &arr)",
+        "void func(array arr)"
+      ],
+      "correct_index": 0,
+      "explanation": "Arrays are passed as pointers, so int arr[] or int *arr is used."
+    },
+    {
+      "question": "When you pass an array to a function, what is actually passed?",
+      "options": [
+        "The address of the first element",
+        "A copy of the entire array",
+        "The size of the array",
+        "The last element"
+      ],
+      "correct_index": 0,
+      "explanation": "Arrays decay to pointers, so the address of the first element is passed."
+    },
+    {
+      "question": "Can you return an array from a function directly?",
+      "options": [
+        "No, you must return a pointer or use a reference",
+        "Yes, by value",
+        "Yes, using return arr;",
+        "Yes, with array keyword"
+      ],
+      "correct_index": 0,
+      "explanation": "Arrays cannot be returned by value; you can return a pointer to a dynamically allocated array or use std::array/vector."
+    },
+    {
+      "question": "What is an array of objects?",
+      "options": [
+        "An array where each element is an object of a class",
+        "An array of integers",
+        "An array of pointers",
+        "An array of functions"
+      ],
+      "correct_index": 0,
+      "explanation": "An array of objects stores multiple objects of the same class."
+    },
+    {
+      "question": "How do you create an array of 5 objects of class Student?",
+      "options": [
+        "Student arr[5];",
+        "array Student arr[5];",
+        "Student arr(5);",
+        "Student arr = new Student[5];"
+      ],
+      "correct_index": 0,
+      "explanation": "The syntax is: ClassName arrayName[size];"
+    },
+    {
+      "question": "When an array of objects is created, which constructor is called?",
+      "options": [
+        "Default constructor for each object",
+        "Parameterized constructor",
+        "Copy constructor",
+        "Destructor"
+      ],
+      "correct_index": 0,
+      "explanation": "If no initializer is provided, the default constructor is called for each object."
+    },
+    {
+      "question": "What is a string in C++?",
+      "options": [
+        "A sequence of characters",
+        "A sequence of integers",
+        "A single character",
+        "A function"
+      ],
+      "correct_index": 0,
+      "explanation": "A string is a sequence of characters."
+    },
+    {
+      "question": "Which header file is required to use std::string?",
+      "options": [
+        "<string>",
+        "<cstring>",
+        "<iostream>",
+        "<string.h>"
+      ],
+      "correct_index": 0,
+      "explanation": "The <string> header provides the std::string class."
+    },
+    {
+      "question": "How do you declare a C-style string?",
+      "options": [
+        "char str[] = \"Hello\";",
+        "string str = \"Hello\";",
+        "char str = \"Hello\";",
+        "String str = \"Hello\";"
+      ],
+      "correct_index": 0,
+      "explanation": "A C-style string is an array of characters ending with a null character."
+    },
+    {
+      "question": "What is the null character in a C-style string?",
+      "options": [
+        "'\\0'",
+        "'0'",
+        "0",
+        "NULL"
+      ],
+      "correct_index": 0,
+      "explanation": "C-style strings are terminated by the null character '\\0'."
+    },
+    {
+      "question": "How do you declare a string object in C++?",
+      "options": [
+        "std::string str;",
+        "string str;",
+        "char str;",
+        "String str;"
+      ],
+      "correct_index": 0,
+      "explanation": "std::string is the standard string class; you can also use string if using namespace std is declared."
+    },
+    {
+      "question": "What is the difference between a string variable and a string constant?",
+      "options": [
+        "String variable can be modified; string constant cannot",
+        "String constant can be modified; string variable cannot",
+        "Both can be modified",
+        "Both cannot be modified"
+      ],
+      "correct_index": 0,
+      "explanation": "A string constant (e.g., const char*) is read-only, while a string variable can be changed."
+    },
+    {
+      "question": "How do you find the length of a std::string?",
+      "options": [
+        "str.length()",
+        "str.size()",
+        "Both length() and size()",
+        "str.len()"
+      ],
+      "correct_index": 2,
+      "explanation": "Both length() and size() return the number of characters in a std::string."
+    },
+    {
+      "question": "How do you concatenate two std::string objects?",
+      "options": [
+        "Using + operator",
+        "Using & operator",
+        "Using concat()",
+        "Using append()"
+      ],
+      "correct_index": 0,
+      "explanation": "The + operator concatenates two std::string objects."
+    },
+    {
+      "question": "What is an array of strings?",
+      "options": [
+        "An array where each element is a string",
+        "An array of characters",
+        "A single string",
+        "A string with multiple lines"
+      ],
+      "correct_index": 0,
+      "explanation": "An array of strings can be an array of std::string objects or a 2D char array."
+    },
+    {
+      "question": "How do you declare an array of 3 std::string objects?",
+      "options": [
+        "std::string arr[3];",
+        "string arr[3];",
+        "char arr[3][20];",
+        "Both A and B"
+      ],
+      "correct_index": 3,
+      "explanation": "You can use std::string arr[3]; or string arr[3]; if using namespace std."
+    },
+    {
+      "question": "How do you declare a 2D character array to store 3 strings of max length 20?",
+      "options": [
+        "char arr[3][20];",
+        "char arr[20][3];",
+        "string arr[3];",
+        "char arr[3,20];"
+      ],
+      "correct_index": 0,
+      "explanation": "A 2D char array with rows for strings and columns for characters."
+    },
+    {
+      "question": "Can a class have a string as a data member?",
+      "options": [
+        "Yes, using std::string",
+        "No",
+        "Only char arrays",
+        "Only pointers"
+      ],
+      "correct_index": 0,
+      "explanation": "A class can have std::string as a data member."
+    },
+    {
+      "question": "What happens when you assign a string literal to a char array?",
+      "options": [
+        "The string is copied into the array with a null terminator",
+        "The array points to the string literal",
+        "Compilation error",
+        "The string is modified"
+      ],
+      "correct_index": 0,
+      "explanation": "char arr[] = \"Hello\"; copies the characters and adds '\\0'."
+    },
+    {
+      "question": "What is the output of: char str[] = \"Hello\"; cout << str[1];",
+      "options": [
+        "H",
+        "e",
+        "l",
+        "o"
+      ],
+      "correct_index": 1,
+      "explanation": "Index 1 corresponds to the second character, 'e'."
+    },
+    {
+      "question": "What is the output of: std::string s = \"Hello\"; cout << s.size();",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "The string \"Hello\" has 5 characters."
+    },
+    {
+      "question": "How do you access the first character of a std::string?",
+      "options": [
+        "s[0]",
+        "s[1]",
+        "s.first()",
+        "s.at(1)"
+      ],
+      "correct_index": 0,
+      "explanation": "Indexing starts at 0, so s[0] is the first character."
+    },
+    {
+      "question": "What is the correct way to compare two std::string objects?",
+      "options": [
+        "Using == operator",
+        "Using = operator",
+        "Using compare() only",
+        "Using strcmp()"
+      ],
+      "correct_index": 0,
+      "explanation": "std::string supports == for comparison."
+    },
+    {
+      "question": "What is the difference between char[] and std::string?",
+      "options": [
+        "char[] is a fixed-size array; std::string is a dynamic class",
+        "char[] is dynamic; std::string is fixed",
+        "Both are same",
+        "char[] is a class; std::string is an array"
+      ],
+      "correct_index": 0,
+      "explanation": "char[] has fixed size and manual memory management; std::string manages memory automatically."
+    },
+    {
+      "question": "What is the size of an empty std::string?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Depends on compiler"
+      ],
+      "correct_index": 0,
+      "explanation": "An empty std::string has size 0."
+    },
+    {
+      "question": "How do you read a string with spaces using cin?",
+      "options": [
+        "getline(cin, str)",
+        "cin >> str",
+        "cin.get(str)",
+        "cin.read(str)"
+      ],
+      "correct_index": 0,
+      "explanation": "getline(cin, str) reads a whole line including spaces."
+    },
+    {
+      "question": "What does the following code do? int arr[5] = {1,2};",
+      "options": [
+        "Initializes first two elements to 1,2 and rest to 0",
+        "Initializes all elements to 1,2",
+        "Compilation error",
+        "Initializes array with garbage"
+      ],
+      "correct_index": 0,
+      "explanation": "Partial initialization fills the remaining elements with 0."
+    }
+  ]
+}
