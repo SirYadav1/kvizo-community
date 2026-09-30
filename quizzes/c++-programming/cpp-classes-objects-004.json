@@ -1,0 +1,439 @@
+{
+  "id": "cpp-classes-objects-004",
+  "title": "Classes & Objects - C++",
+  "category": "C++ Programming",
+  "difficulty": "Medium",
+  "author": "kvizo-community",
+  "created_at": "2026-09-30T00:00:00Z",
+  "questions": [
+    {
+      "question": "What is a class in C++?",
+      "options": [
+        "A user-defined data type that binds data and functions together",
+        "A primitive data type",
+        "A loop",
+        "A header file"
+      ],
+      "correct_index": 0,
+      "explanation": "A class is a user-defined data type that encapsulates data members and member functions."
+    },
+    {
+      "question": "Which keyword is used to define a class in C++?",
+      "options": [
+        "struct",
+        "object",
+        "class",
+        "type"
+      ],
+      "correct_index": 2,
+      "explanation": "The class keyword is used to define a class in C++."
+    },
+    {
+      "question": "By default, members of a class are:",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static"
+      ],
+      "correct_index": 1,
+      "explanation": "In a class, members are private by default."
+    },
+    {
+      "question": "What is an object in C++?",
+      "options": [
+        "An instance of a class",
+        "A function",
+        "A loop",
+        "A header file"
+      ],
+      "correct_index": 0,
+      "explanation": "An object is a runtime instance of a class."
+    },
+    {
+      "question": "What is class specification?",
+      "options": [
+        "The declaration of a class including its data members and member functions",
+        "The definition of main()",
+        "The call to a function",
+        "The output of a program"
+      ],
+      "correct_index": 0,
+      "explanation": "Class specification declares the class, its data members, and member functions."
+    },
+    {
+      "question": "What is the correct way to create an object of class Student?",
+      "options": [
+        "Student s;",
+        "s Student;",
+        "object Student s;",
+        "create Student s;"
+      ],
+      "correct_index": 0,
+      "explanation": "Objects are created using the syntax: ClassName objectName;"
+    },
+    {
+      "question": "How do you access a member of an object?",
+      "options": [
+        "Using dot operator (.)",
+        "Using scope resolution (::)",
+        "Using arrow (->)",
+        "Using asterisk (*)"
+      ],
+      "correct_index": 0,
+      "explanation": "The dot (.) operator is used to access members of an object."
+    },
+    {
+      "question": "How do you access members through a pointer to an object?",
+      "options": [
+        "Using dot operator (.)",
+        "Using arrow operator (->)",
+        "Using scope resolution (::)",
+        "Using asterisk (*)"
+      ],
+      "correct_index": 1,
+      "explanation": "The arrow (->) operator is used to access members through a pointer to an object."
+    },
+    {
+      "question": "What is the purpose of a constructor?",
+      "options": [
+        "To initialize objects of a class",
+        "To destroy objects",
+        "To copy objects",
+        "To delete objects"
+      ],
+      "correct_index": 0,
+      "explanation": "A constructor is automatically called when an object is created to initialize it."
+    },
+    {
+      "question": "What is the name of a constructor?",
+      "options": [
+        "Same as the class name",
+        "Any valid identifier",
+        "Same as main",
+        "Same as destructor"
+      ],
+      "correct_index": 0,
+      "explanation": "A constructor has the same name as the class and no return type."
+    },
+    {
+      "question": "Does a constructor have a return type?",
+      "options": [
+        "Yes, void",
+        "Yes, int",
+        "No, it has no return type",
+        "Yes, char"
+      ],
+      "correct_index": 2,
+      "explanation": "Constructors do not have a return type, not even void."
+    },
+    {
+      "question": "What is a default constructor?",
+      "options": [
+        "A constructor that takes no arguments",
+        "A constructor that takes one argument",
+        "A constructor that takes two arguments",
+        "A constructor that is static"
+      ],
+      "correct_index": 0,
+      "explanation": "A default constructor takes no parameters and is called when no arguments are provided."
+    },
+    {
+      "question": "What is a parameterized constructor?",
+      "options": [
+        "A constructor that takes arguments to initialize the object",
+        "A constructor with no arguments",
+        "A constructor that is private",
+        "A constructor that is static"
+      ],
+      "correct_index": 0,
+      "explanation": "A parameterized constructor accepts arguments to initialize data members with specific values."
+    },
+    {
+      "question": "What is a copy constructor?",
+      "options": [
+        "A constructor that creates a new object as a copy of an existing object",
+        "A constructor with no arguments",
+        "A constructor that deletes an object",
+        "A constructor that is private"
+      ],
+      "correct_index": 0,
+      "explanation": "A copy constructor initializes a new object using an existing object of the same class."
+    },
+    {
+      "question": "What is the parameter of a copy constructor?",
+      "options": [
+        "A reference to an object of the same class",
+        "An integer",
+        "A pointer",
+        "A void"
+      ],
+      "correct_index": 0,
+      "explanation": "A copy constructor takes a reference to an object of the same class, e.g., Student(const Student &s)."
+    },
+    {
+      "question": "Can constructors be overloaded?",
+      "options": [
+        "Yes, with different parameter lists",
+        "No",
+        "Only in C",
+        "Only with static"
+      ],
+      "correct_index": 0,
+      "explanation": "Constructors can be overloaded based on the number or type of parameters."
+    },
+    {
+      "question": "When is a constructor called?",
+      "options": [
+        "Automatically when an object is created",
+        "When the program ends",
+        "When a function is called",
+        "When a variable is declared"
+      ],
+      "correct_index": 0,
+      "explanation": "A constructor is automatically invoked at the time of object creation."
+    },
+    {
+      "question": "Can a constructor be called explicitly?",
+      "options": [
+        "Yes, but only as a member function call",
+        "No",
+        "Only in C",
+        "Only with static"
+      ],
+      "correct_index": 0,
+      "explanation": "A constructor can be called explicitly, but it creates a temporary object; it cannot be called like a normal function."
+    },
+    {
+      "question": "What happens if no constructor is defined in a class?",
+      "options": [
+        "The compiler provides a default constructor",
+        "The program will not compile",
+        "The program will crash",
+        "No object can be created"
+      ],
+      "correct_index": 0,
+      "explanation": "If no constructor is defined, the compiler generates a default constructor automatically."
+    },
+    {
+      "question": "What is a destructor?",
+      "options": [
+        "A special member function that is called when an object goes out of scope",
+        "A function to create objects",
+        "A function to copy objects",
+        "A function to overload operators"
+      ],
+      "correct_index": 0,
+      "explanation": "A destructor is called automatically when an object is destroyed."
+    },
+    {
+      "question": "What is the correct syntax of a destructor for class MyClass?",
+      "options": [
+        "~MyClass()",
+        "delete MyClass()",
+        "destroy MyClass()",
+        "void ~MyClass()"
+      ],
+      "correct_index": 0,
+      "explanation": "A destructor is declared with a tilde (~) before the class name."
+    },
+    {
+      "question": "Can a destructor take arguments?",
+      "options": [
+        "No, it cannot take arguments",
+        "Yes, one argument",
+        "Yes, two arguments",
+        "Yes, any number"
+      ],
+      "correct_index": 0,
+      "explanation": "A destructor cannot take arguments and cannot be overloaded."
+    },
+    {
+      "question": "How many destructors can a class have?",
+      "options": [
+        "Only one",
+        "Two",
+        "Three",
+        "Any number"
+      ],
+      "correct_index": 0,
+      "explanation": "A class can have only one destructor."
+    },
+    {
+      "question": "What is the main use of 'this' pointer?",
+      "options": [
+        "It points to the current object",
+        "It points to the base class",
+        "It points to the global variable",
+        "It points to the function"
+      ],
+      "correct_index": 0,
+      "explanation": "The this pointer holds the address of the object that invokes a member function."
+    },
+    {
+      "question": "What is the type of 'this' pointer?",
+      "options": [
+        "ClassName* const",
+        "ClassName&",
+        "void*",
+        "int*"
+      ],
+      "correct_index": 0,
+      "explanation": "The this pointer is of type ClassName* const inside non-const member functions."
+    },
+    {
+      "question": "Can objects be passed as function arguments?",
+      "options": [
+        "Yes, by value or by reference",
+        "No",
+        "Only by value",
+        "Only by reference"
+      ],
+      "correct_index": 0,
+      "explanation": "Objects can be passed to functions either by value (copy) or by reference."
+    },
+    {
+      "question": "What is the difference between passing an object by value and by reference?",
+      "options": [
+        "By value makes a copy; by reference passes the original object",
+        "By value passes the original; by reference makes a copy",
+        "Both are same",
+        "By reference is not allowed"
+      ],
+      "correct_index": 0,
+      "explanation": "Passing by value copies the object; passing by reference passes the actual object."
+    },
+    {
+      "question": "What is the advantage of passing objects by reference?",
+      "options": [
+        "Avoids copying and improves performance",
+        "Makes the code longer",
+        "Increases memory usage",
+        "Deletes the object"
+      ],
+      "correct_index": 0,
+      "explanation": "Passing by reference avoids the overhead of copying large objects."
+    },
+    {
+      "question": "How do you pass an object by reference to a function?",
+      "options": [
+        "void func(ClassName &obj)",
+        "void func(ClassName obj)",
+        "void func(ClassName *obj)",
+        "void func(ClassName obj&)"
+      ],
+      "correct_index": 0,
+      "explanation": "A reference parameter is declared using & after the type, e.g., ClassName &obj."
+    },
+    {
+      "question": "Can a function return an object?",
+      "options": [
+        "Yes, by value or by reference",
+        "No",
+        "Only by value",
+        "Only by reference"
+      ],
+      "correct_index": 0,
+      "explanation": "A function can return an object either by value (a copy) or by reference."
+    },
+    {
+      "question": "What happens when a function returns an object by value?",
+      "options": [
+        "A copy of the object is returned",
+        "The original object is returned",
+        "The object is deleted",
+        "A pointer is returned"
+      ],
+      "correct_index": 0,
+      "explanation": "Returning by value creates a copy of the object to be returned."
+    },
+    {
+      "question": "What is a temporary object?",
+      "options": [
+        "An unnamed object created by the compiler",
+        "A static object",
+        "A global object",
+        "A pointer object"
+      ],
+      "correct_index": 0,
+      "explanation": "A temporary object is an unnamed object created by the compiler during expression evaluation."
+    },
+    {
+      "question": "What is the scope of a class member?",
+      "options": [
+        "The entire class",
+        "Only main()",
+        "Only the file",
+        "Only the function"
+      ],
+      "correct_index": 0,
+      "explanation": "Class members are accessible throughout the class, subject to access specifiers."
+    },
+    {
+      "question": "What is the use of access specifiers in a class?",
+      "options": [
+        "To control the accessibility of class members",
+        "To define data types",
+        "To create objects",
+        "To call functions"
+      ],
+      "correct_index": 0,
+      "explanation": "Access specifiers (public, private, protected) control how class members can be accessed."
+    },
+    {
+      "question": "Which access specifier allows members to be accessed from outside the class?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static"
+      ],
+      "correct_index": 0,
+      "explanation": "Public members are accessible from anywhere in the program."
+    },
+    {
+      "question": "Which access specifier restricts members to be accessed only within the class?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "global"
+      ],
+      "correct_index": 1,
+      "explanation": "Private members can only be accessed within the class."
+    },
+    {
+      "question": "What is a member function?",
+      "options": [
+        "A function defined inside a class",
+        "A function defined outside main",
+        "A global function",
+        "A static function"
+      ],
+      "correct_index": 0,
+      "explanation": "A member function is a function that is declared inside a class and operates on its objects."
+    },
+    {
+      "question": "How do you define a member function outside the class?",
+      "options": [
+        "return_type ClassName::functionName() { }",
+        "return_type functionName::ClassName() { }",
+        "return_type ClassName.functionName() { }",
+        "return_type functionName.ClassName() { }"
+      ],
+      "correct_index": 0,
+      "explanation": "The scope resolution operator (::) is used to define a member function outside the class."
+    },
+    {
+      "question": "What is the default access specifier for members of a struct?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static"
+      ],
+      "correct_index": 0,
+      "explanation": "In a struct, members are public by default."
+    }
+  ]
+}
