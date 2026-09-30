@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "key_id": "kvizo-pub-2026-09",
-  "issued_at": "2026-09-16T17:24:37Z",
+  "issued_at": "2026-09-30T12:40:02Z",
   "quizzes": [
     {
       "id": "cpp-expert-001",
-      "title": "C++ Expert Challenge",
+      "title": "C++ Expert Challenge>",
       "category": "Programming",
       "difficulty": "Expert",
       "author": "kvizo-community",

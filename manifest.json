@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
   "key_id": "kvizo-pub-2026-09",
-  "issued_at": "2026-09-16T17:24:37Z",
+  "issued_at": "2026-09-30T12:40:02Z",
   "count": 8,
   "quizzes": [
     {
       "id": "cpp-expert-001",
-      "title": "C++ Expert Challenge",
+      "title": "C++ Expert Challenge>",
       "category": "Programming",
       "difficulty": "Expert",
       "author": "kvizo-community",
       "questions_count": 6,
       "file": "quizzes/programming/cpp-expert-001.json",
-      "sha256": "99b0562684ef425278fdcee28bc62a51bb48baadf0b73b72848aeea55267ad44"
+      "sha256": "fa2706441bb81c47802834cf14a5e2dc34c392cf9caa4c987a96f2b0f5371eb0"
     },
     {
       "id": "cpp-polymorphism-001",
