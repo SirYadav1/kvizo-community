@@ -9,441 +9,441 @@
     {
       "question": "What is a structure in C++?",
       "options": [
-        "A collection of variables of different data types under a single name",
-        "A collection of functions",
         "A single variable",
+        "A collection of functions",
+        "A collection of variables of different data types under a single name",
         "A loop"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A structure groups variables of different data types into a single unit."
     },
     {
       "question": "Which keyword is used to define a structure in C++?",
       "options": [
-        "class",
         "struct",
+        "class",
         "union",
         "enum"
       ],
-      "correct_index": 1,
+      "correct_index": 0,
       "explanation": "The struct keyword is used to define a structure."
     },
     {
       "question": "By default, members of a structure are:",
       "options": [
-        "private",
-        "protected",
         "public",
+        "protected",
+        "private",
         "static"
       ],
-      "correct_index": 2,
+      "correct_index": 0,
       "explanation": "In C++, struct members are public by default."
     },
     {
       "question": "Can a structure in C++ contain functions?",
       "options": [
-        "Yes",
         "No",
+        "Yes",
         "Only constructors",
         "Only static functions"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "In C++, structures can have member functions, constructors, and destructors."
     },
     {
       "question": "How do you access members of a structure variable?",
       "options": [
-        ". operator",
+        "* operator",
         "-> operator",
         ":: operator",
-        "* operator"
+        ". operator"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "The dot (.) operator is used to access members of a structure variable."
     },
     {
       "question": "How do you access members of a pointer to a structure?",
       "options": [
         ". operator",
-        "-> operator",
         ":: operator",
+        "-> operator",
         "& operator"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "The arrow (->) operator is used to access members through a pointer to a structure."
     },
     {
       "question": "What is a nested structure?",
       "options": [
-        "A structure defined inside another structure",
-        "A structure with no members",
         "A structure with only functions",
+        "A structure with no members",
+        "A structure defined inside another structure",
         "A structure with only pointers"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A nested structure is a structure defined within another structure."
     },
     {
       "question": "How do you define a nested structure?",
       "options": [
-        "struct Outer { struct Inner { int x; } in; };",
-        "struct Outer { int x; } struct Inner;",
         "struct Outer, Inner;",
+        "struct Outer { int x; } struct Inner;",
+        "struct Outer { struct Inner { int x; } in; };",
         "nested struct Outer { int x; };"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A structure can be defined inside another structure, and its variable can be declared as a member."
     },
     {
       "question": "What is an enumerated data type?",
       "options": [
-        "A user-defined data type with named integer constants",
-        "A primitive data type",
         "A type of array",
+        "A primitive data type",
+        "A user-defined data type with named integer constants",
         "A type of function"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "enum is a user-defined data type that consists of named integer constants."
     },
     {
       "question": "Which keyword is used to define an enumeration?",
       "options": [
-        "enum",
+        "define",
         "enumerate",
         "list",
-        "define"
+        "enum"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "The enum keyword is used to define an enumeration."
     },
     {
       "question": "What is the default value of the first enumerator?",
       "options": [
-        "0",
-        "1",
         "-1",
+        "1",
+        "0",
         "Random"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "By default, the first enumerator has value 0, and each subsequent one increments by 1."
     },
     {
       "question": "What is enum class in C++?",
       "options": [
-        "A scoped enumeration with type safety",
         "A class with enum members",
+        "A scoped enumeration with type safety",
         "An enum with no values",
         "A global enum"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "enum class provides scoped enumerations that are type-safe and do not implicitly convert to integers."
     },
     {
       "question": "What is the main advantage of enum class over plain enum?",
       "options": [
-        "Type safety and scoped names",
-        "Faster execution",
         "Less memory",
+        "Faster execution",
+        "Type safety and scoped names",
         "Automatic conversion to int"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "enum class prevents implicit conversions and keeps enumerators scoped within the enum name."
     },
     {
       "question": "What is a function prototype?",
       "options": [
-        "A declaration that tells the compiler about the function's name, return type, and parameters",
         "The body of a function",
+        "A declaration that tells the compiler about the function's name, return type, and parameters",
         "A call to a function",
         "A variable"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "A function prototype declares the function before its use, specifying its signature."
     },
     {
       "question": "What is the correct syntax for a function declaration?",
       "options": [
-        "return_type function_name(parameters);",
-        "function_name(return_type parameters);",
         "return_type function_name parameters;",
+        "function_name(return_type parameters);",
+        "return_type function_name(parameters);",
         "function_name return_type(parameters);"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A function declaration includes the return type, name, and parameter list, ending with a semicolon."
     },
     {
       "question": "What is a function definition?",
       "options": [
-        "The actual implementation of the function with a body",
         "The declaration of the function",
+        "The actual implementation of the function with a body",
         "A call to the function",
         "A comment"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "A function definition includes the function body with statements."
     },
     {
       "question": "What is the difference between call by value and call by reference?",
       "options": [
-        "Call by value passes a copy, call by reference passes the actual variable",
+        "Call by reference is not allowed in C++",
         "Call by value passes the actual variable, call by reference passes a copy",
         "Both are same",
-        "Call by reference is not allowed in C++"
+        "Call by value passes a copy, call by reference passes the actual variable"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "Call by value copies the argument, while call by reference passes the address (alias) of the argument."
     },
     {
       "question": "What is a reference argument?",
       "options": [
-        "A parameter that is an alias for the argument",
-        "A pointer to the argument",
         "A copy of the argument",
+        "A pointer to the argument",
+        "A parameter that is an alias for the argument",
         "A constant argument"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A reference parameter acts as an alias for the actual argument, allowing modification."
     },
     {
       "question": "How do you declare a reference parameter in C++?",
       "options": [
-        "int &x",
-        "int *x",
         "int x&",
+        "int *x",
+        "int &x",
         "ref int x"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "The & symbol after the type declares a reference parameter, e.g., int &x."
     },
     {
       "question": "What is function overloading?",
       "options": [
-        "Defining multiple functions with the same name but different parameters",
+        "Calling a function multiple times",
         "Defining multiple functions with different names",
         "Defining a function inside another function",
-        "Calling a function multiple times"
+        "Defining multiple functions with the same name but different parameters"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "Function overloading allows multiple functions with the same name but different parameter lists."
     },
     {
       "question": "Can functions be overloaded based on return type only?",
       "options": [
-        "Yes",
         "No",
+        "Yes",
         "Only in C++",
         "Only with virtual"
       ],
-      "correct_index": 1,
+      "correct_index": 0,
       "explanation": "Overloading requires a difference in the parameter list; return type alone is not sufficient."
     },
     {
       "question": "What is a default argument in a function?",
       "options": [
-        "An argument that has a default value if not provided",
+        "An argument that is a reference",
         "An argument that is always required",
         "An argument that is a constant",
-        "An argument that is a reference"
+        "An argument that has a default value if not provided"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "Default arguments provide a value automatically if the caller omits that argument."
     },
     {
       "question": "Where are default arguments specified?",
       "options": [
-        "In the function declaration (prototype)",
         "In the function definition only",
+        "In the function declaration (prototype)",
         "In the function call",
         "In the main function"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "Default arguments are specified in the function declaration, not in the definition or call."
     },
     {
       "question": "What is a storage class in C++?",
       "options": [
-        "It defines the scope, lifetime, and visibility of a variable",
-        "It defines the data type of a variable",
         "It defines the size of a variable",
+        "It defines the data type of a variable",
+        "It defines the scope, lifetime, and visibility of a variable",
         "It defines the value of a variable"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "Storage classes specify the scope, lifetime, and linkage of variables and functions."
     },
     {
       "question": "Which storage class is the default for local variables?",
       "options": [
-        "auto",
+        "register",
         "static",
         "extern",
-        "register"
+        "auto"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "Local variables are auto by default, meaning they are created when the block is entered and destroyed when it exits."
     },
     {
       "question": "What is the lifetime of a static local variable?",
       "options": [
-        "Entire program execution",
+        "Until the program starts",
         "Until the function returns",
         "Until the block ends",
-        "Until the program starts"
+        "Entire program execution"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "A static local variable retains its value between function calls and exists for the entire program."
     },
     {
       "question": "What does the extern storage class do?",
       "options": [
-        "Declares a variable that is defined in another file",
+        "Registers a variable",
         "Defines a local variable",
         "Makes a variable static",
-        "Registers a variable"
+        "Declares a variable that is defined in another file"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "extern declares a variable or function that is defined in another translation unit."
     },
     {
       "question": "What is the register storage class used for?",
       "options": [
-        "To suggest storing the variable in a CPU register for faster access",
         "To store the variable in hard disk",
+        "To suggest storing the variable in a CPU register for faster access",
         "To make the variable global",
         "To make the variable constant"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "register is a hint to the compiler to store the variable in a CPU register."
     },
     {
       "question": "What is the scope of a static global variable?",
       "options": [
-        "The file in which it is declared",
-        "The entire program",
         "The function in which it is declared",
+        "The entire program",
+        "The file in which it is declared",
         "The block in which it is declared"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A static global variable is visible only within the file where it is declared."
     },
     {
       "question": "What is the difference between auto and register?",
       "options": [
-        "auto is default, register is a hint for CPU register",
+        "No difference",
         "auto is for global, register is for local",
         "auto is static, register is extern",
-        "No difference"
+        "auto is default, register is a hint for CPU register"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "auto is the default storage for local variables, while register suggests faster access via CPU register."
     },
     {
       "question": "What is the purpose of the static keyword for a global variable?",
       "options": [
-        "To restrict its scope to the file",
+        "To make it volatile",
         "To make it global",
         "To make it constant",
-        "To make it volatile"
+        "To restrict its scope to the file"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "A static global variable has internal linkage, meaning it can only be used within the same file."
     },
     {
       "question": "What is the return type of a function that returns nothing?",
       "options": [
-        "void",
-        "int",
         "null",
+        "int",
+        "void",
         "empty"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "void indicates that the function does not return a value."
     },
     {
       "question": "What is the correct way to pass an array to a function?",
       "options": [
-        "void func(int arr[])",
-        "void func(int arr)",
         "void func(int &arr)",
+        "void func(int arr)",
+        "void func(int arr[])",
         "void func(array arr)"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "Arrays are passed as pointers, so int arr[] or int *arr is used."
     },
     {
       "question": "What is the default access specifier for struct members?",
       "options": [
-        "public",
+        "static",
         "private",
         "protected",
-        "static"
+        "public"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "In a struct, members are public by default."
     },
     {
       "question": "What is the default access specifier for class members?",
       "options": [
-        "private",
-        "public",
         "protected",
+        "public",
+        "private",
         "static"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "In a class, members are private by default."
     },
     {
       "question": "How do you initialize a structure variable?",
       "options": [
-        "struct Point p = {10, 20};",
-        "struct Point p = (10, 20);",
         "struct Point p = [10, 20];",
+        "struct Point p = (10, 20);",
+        "struct Point p = {10, 20};",
         "struct Point p = {10; 20};"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "Structure variables can be initialized using braces with values in order."
     },
     {
       "question": "What is an array of structures?",
       "options": [
-        "An array where each element is a structure",
+        "A function returning a structure",
         "A structure containing an array",
         "A pointer to a structure",
-        "A function returning a structure"
+        "An array where each element is a structure"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "An array of structures stores multiple structure variables in contiguous memory."
     },
     {
       "question": "Can a structure contain a pointer to itself?",
       "options": [
-        "Yes, for linked lists and trees",
-        "No",
         "Only in C",
+        "No",
+        "Yes, for linked lists and trees",
         "Only with typedef"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "A structure can contain a pointer to its own type, which is useful for self-referential data structures."
     },
     {
       "question": "What is the size of an empty structure in C++?",
       "options": [
-        "1 byte",
+        "8 bytes",
         "0 bytes",
         "4 bytes",
-        "8 bytes"
+        "1 byte"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "An empty structure has a size of 1 byte in C++ to ensure unique addresses."
     },
     {
       "question": "What is the output of enum { RED, GREEN = 5, BLUE };?",
       "options": [
-        "RED=0, GREEN=5, BLUE=6",
-        "RED=1, GREEN=5, BLUE=6",
         "RED=0, GREEN=5, BLUE=7",
+        "RED=1, GREEN=5, BLUE=6",
+        "RED=0, GREEN=5, BLUE=6",
         "RED=0, GREEN=4, BLUE=5"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "RED is 0 by default, GREEN is explicitly 5, and BLUE increments to 6."
     }
   ]
