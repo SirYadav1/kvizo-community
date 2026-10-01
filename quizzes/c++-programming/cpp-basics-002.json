@@ -10,110 +10,110 @@
       "question": "What is the correct entry point of a C++ program?",
       "options": [
         "start()",
-        "main()",
         "begin()",
+        "main()",
         "program()"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "Execution of a C++ program begins from the main() function."
     },
     {
       "question": "What is the correct basic structure of a C++ program?",
       "options": [
-        "#include directives, main() function, statements",
         "main() function, #include directives, statements",
+        "#include directives, main() function, statements",
         "statements, main(), #include directives",
         "#include directives, statements, main()"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "A C++ program typically starts with #include directives, followed by the main() function containing statements."
     },
     {
       "question": "Which header file is required to use cout and cin?",
       "options": [
-        "<stdio.h>",
-        "<stdlib.h>",
         "<iostream>",
+        "<stdlib.h>",
+        "<stdio.h>",
         "<fstream>"
       ],
-      "correct_index": 2,
+      "correct_index": 0,
       "explanation": "<iostream> is the standard header for input/output streams like cout and cin."
     },
     {
       "question": "What is the correct way to include a header file in C++?",
       "options": [
-        "#include <iostream>",
+        "using <iostream>",
         "include <iostream>",
         "#import <iostream>",
-        "using <iostream>"
+        "#include <iostream>"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "Preprocessor directives start with #, and #include is used to include header files."
     },
     {
       "question": "What does the #include directive do?",
       "options": [
-        "Includes the contents of another file before compilation",
-        "Compiles the program",
         "Links the program",
+        "Compiles the program",
+        "Includes the contents of another file before compilation",
         "Executes the program"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "#include is a preprocessor directive that inserts the contents of the specified file into the source code before compilation."
     },
     {
       "question": "Which preprocessor directive is used to define a constant or macro?",
       "options": [
         "#include",
-        "#define",
+        "#pragma",
         "#ifdef",
-        "#pragma"
+        "#define"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "#define is used to define macros or symbolic constants."
     },
     {
       "question": "Which symbol is used for a single-line comment in C++?",
       "options": [
         "/* */",
-        "//",
         "--",
+        "//",
         "#"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "// is used for single-line comments, while /* */ is used for multi-line comments."
     },
     {
       "question": "Which of the following is a multi-line comment in C++?",
       "options": [
         "// comment",
-        "/* comment */",
         "# comment",
+        "/* comment */",
         "-- comment"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "/* ... */ is used for multi-line comments in C++."
     },
     {
       "question": "What is the purpose of using namespace std;?",
       "options": [
-        "To avoid writing std:: before standard library names",
-        "To define a new class",
         "To include a header file",
+        "To define a new class",
+        "To avoid writing std:: before standard library names",
         "To compile the program"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "using namespace std; allows you to use standard library names (like cout, cin) without prefixing them with std::."
     },
     {
       "question": "Which data type is used to store a single character?",
       "options": [
         "int",
-        "float",
         "char",
+        "float",
         "double"
       ],
-      "correct_index": 2,
+      "correct_index": 1,
       "explanation": "char stores a single character, e.g., 'A'."
     },
     {
@@ -121,65 +121,65 @@
       "options": [
         "float",
         "double",
-        "int",
-        "char"
+        "char",
+        "int"
       ],
-      "correct_index": 2,
+      "correct_index": 3,
       "explanation": "int is used to store integer (whole) numbers."
     },
     {
       "question": "Which data type is used to store decimal numbers with single precision?",
       "options": [
-        "int",
         "float",
+        "int",
         "char",
         "bool"
       ],
-      "correct_index": 1,
+      "correct_index": 0,
       "explanation": "float stores single-precision floating-point (decimal) numbers."
     },
     {
       "question": "Which of the following is NOT a primitive data type in C++?",
       "options": [
         "int",
-        "float",
+        "string",
         "char",
-        "string"
+        "float"
       ],
-      "correct_index": 3,
+      "correct_index": 1,
       "explanation": "string is a class in the standard library, not a primitive data type."
     },
     {
       "question": "What is the size of an int typically in C++?",
       "options": [
         "1 byte",
-        "2 bytes",
         "4 bytes",
+        "2 bytes",
         "8 bytes"
       ],
-      "correct_index": 2,
+      "correct_index": 1,
       "explanation": "On most modern systems, int is 4 bytes, though it is platform-dependent."
     },
     {
       "question": "Which of the following is a valid variable declaration?",
       "options": [
-        "int x;",
         "x int;",
+        "int x;",
         "int = x;",
         "declare int x;"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "The correct syntax is: data_type variable_name; e.g., int x;"
     },
     {
       "question": "Which of the following is a valid variable name?",
       "options": [
         "2var",
-        "int",
+        "_value",
         "my-var",
-        "_value"
+        "int"
       ],
-      "correct_index": 3,
+      "correct_index": 1,
       "explanation": "Variable names can start with an underscore or letter, but not with a digit or hyphen, and cannot be keywords."
     },
     {
@@ -187,153 +187,153 @@
       "options": [
         "0",
         "1",
-        "Garbage (undefined)",
-        "null"
+        "null",
+        "Garbage (undefined)"
       ],
-      "correct_index": 2,
+      "correct_index": 3,
       "explanation": "Local variables are not automatically initialized; they contain garbage values."
     },
     {
       "question": "What is implicit type conversion also known as?",
       "options": [
         "Type casting",
-        "Automatic conversion",
+        "Forced conversion",
         "Explicit conversion",
-        "Forced conversion"
+        "Automatic conversion"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "Implicit conversion is done automatically by the compiler."
     },
     {
       "question": "What is explicit type conversion also known as?",
       "options": [
         "Automatic conversion",
-        "Type casting",
         "Implicit conversion",
+        "Type casting",
         "Natural conversion"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "Explicit conversion is also called type casting, where the programmer specifies the conversion."
     },
     {
       "question": "Which C++ operator is used for explicit type conversion?",
       "options": [
-        "static_cast",
+        "All of the above",
         "dynamic_cast",
         "reinterpret_cast",
-        "All of the above"
+        "static_cast"
       ],
-      "correct_index": 3,
+      "correct_index": 0,
       "explanation": "C++ provides static_cast, dynamic_cast, const_cast, and reinterpret_cast for explicit conversions."
     },
     {
       "question": "Which type conversion may cause data loss?",
       "options": [
-        "Widening conversion",
         "Narrowing conversion",
+        "Widening conversion",
         "Implicit conversion",
         "Promotion"
       ],
-      "correct_index": 1,
+      "correct_index": 0,
       "explanation": "Narrowing conversion (e.g., float to int) may lose data such as the fractional part."
     },
     {
       "question": "What is the result of 5 / 2 in C++ (integer division)?",
       "options": [
         "2.5",
-        "2",
         "3",
+        "2",
         "2.0"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "Integer division truncates the decimal part, so 5/2 gives 2."
     },
     {
       "question": "Which operator is used to find the remainder of division?",
       "options": [
         "/",
-        "%",
+        "//",
         "*",
-        "//"
+        "%"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "% is the modulus operator, used to find the remainder."
     },
     {
       "question": "What is the output of 10 % 3?",
       "options": [
         "3",
-        "1",
         "0",
+        "1",
         "2"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "10 divided by 3 gives remainder 1."
     },
     {
       "question": "What is the output of 5 + 3 * 2?",
       "options": [
-        "16",
         "11",
+        "16",
         "13",
         "10"
       ],
-      "correct_index": 1,
+      "correct_index": 0,
       "explanation": "Multiplication (*) has higher precedence than addition (+), so 3*2=6, then 5+6=11."
     },
     {
       "question": "What does a relational operator return?",
       "options": [
         "int",
-        "float",
         "bool (true/false)",
+        "float",
         "char"
       ],
-      "correct_index": 2,
+      "correct_index": 1,
       "explanation": "Relational operators return a boolean value: true or false."
     },
     {
       "question": "Which operator represents logical AND?",
       "options": [
         "&",
-        "&&",
         "||",
+        "&&",
         "!"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "&& is the logical AND operator."
     },
     {
       "question": "Which operator represents logical OR?",
       "options": [
         "|",
-        "||",
+        "!",
         "&&",
-        "!"
+        "||"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "|| is the logical OR operator."
     },
     {
       "question": "Which operator represents logical NOT?",
       "options": [
         "~",
-        "!",
+        "|",
         "&",
-        "|"
+        "!"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "! is the logical NOT operator."
     },
     {
       "question": "What is the output of (5 > 3) ? \"Yes\" : \"No\"?",
       "options": [
-        "Yes",
+        "3",
         "No",
         "5",
-        "3"
+        "Yes"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation": "The condition 5 > 3 is true, so the ternary operator returns \"Yes\"."
     },
     {
@@ -341,109 +341,109 @@
       "options": [
         "if",
         "if-else",
-        "switch",
-        "for"
+        "for",
+        "switch"
       ],
-      "correct_index": 2,
+      "correct_index": 3,
       "explanation": "switch is used when there are multiple possible branches based on a single expression."
     },
     {
       "question": "What is the correct syntax for an if statement?",
       "options": [
-        "if (condition) { }",
         "if condition { }",
+        "if (condition) { }",
         "if (condition) then { }",
         "if condition then { }"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "The condition must be enclosed in parentheses, followed by braces for the block."
     },
     {
       "question": "What is the purpose of break in a switch statement?",
       "options": [
-        "To exit the switch block",
-        "To exit the program",
         "To skip an iteration",
+        "To exit the program",
+        "To exit the switch block",
         "To continue to the next case"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "break is used to terminate the switch block and prevent fall-through to the next case."
     },
     {
       "question": "Which loop is guaranteed to execute at least once?",
       "options": [
         "for",
-        "while",
         "do-while",
+        "while",
         "None"
       ],
-      "correct_index": 2,
+      "correct_index": 1,
       "explanation": "do-while checks the condition after executing the loop body, so it runs at least once."
     },
     {
       "question": "Which loop checks the condition before executing the body?",
       "options": [
         "do-while",
-        "for and while",
+        "only while",
         "only for",
-        "only while"
+        "for and while"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "Both for and while loops check the condition before each iteration."
     },
     {
       "question": "What is the correct syntax of a for loop?",
       "options": [
-        "for (init; condition; update)",
-        "for (init, condition, update)",
         "for (init; update; condition)",
+        "for (init, condition, update)",
+        "for (init; condition; update)",
         "for (condition; init; update)"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation": "The for loop uses semicolons to separate initialization, condition, and update."
     },
     {
       "question": "How many times does the loop for(int i=0;i<5;i++) execute?",
       "options": [
         "4",
-        "5",
+        "0",
         "6",
-        "0"
+        "5"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "It runs for i = 0, 1, 2, 3, 4 — a total of 5 times."
     },
     {
       "question": "Which keyword is used to exit a loop immediately?",
       "options": [
         "continue",
-        "break",
+        "return",
         "exit",
-        "return"
+        "break"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "break terminates the loop immediately and transfers control to the statement after the loop."
     },
     {
       "question": "Which keyword is used to skip the current iteration and continue with the next?",
       "options": [
         "break",
-        "continue",
         "skip",
+        "continue",
         "pass"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "continue skips the remaining statements in the current iteration and proceeds to the next iteration."
     },
     {
       "question": "Which keyword is used for an unconditional jump in C++?",
       "options": [
-        "goto",
         "jump",
+        "goto",
         "break",
         "continue"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "goto transfers control unconditionally to a labeled statement."
     }
   ]
