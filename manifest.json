@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "key_id": "kvizo-pub-2026-09",
-  "issued_at": "2026-09-30T15:35:11Z",
+  "issued_at": "2026-10-01T10:03:26Z",
   "count": 16,
   "quizzes": [
     {
@@ -12,7 +12,7 @@
       "author": "kvizo-community",
       "questions_count": 38,
       "file": "quizzes/c++-programming/cpp-arrays-strings-005.json",
-      "sha256": "4076a6df430d8f1eefcd5f40a8a41dd427722d0c797170ae78ff96dc338fb15c"
+      "sha256": "1a60e3ddb1e1a05d7ff6f466212414892e2aa816b4ba46d2973981db6fac32fe"
     },
     {
       "id": "cpp-basics-002",
@@ -22,7 +22,7 @@
       "author": "kvizo-community",
       "questions_count": 40,
       "file": "quizzes/c++-programming/cpp-basics-002.json",
-      "sha256": "19a3a8c0ba7f73bb451d4788a405defdd8e940bd7bce9a2ac72ee6d2f5ef18b1"
+      "sha256": "8a1b7a1aa6919d2f47d92e096e7122c6b4887f18eff8fce683d6344839b513e6"
     },
     {
       "id": "cpp-classes-objects-004",
@@ -32,7 +32,7 @@
       "author": "kvizo-community",
       "questions_count": 39,
       "file": "quizzes/c++-programming/cpp-classes-objects-004.json",
-      "sha256": "de407b6938240678145db7c18538b326c8115d9eceab6883754c29dc0911d293"
+      "sha256": "f7910ea6b2de406ea0b634b065e91207aea024f56b50db97225b0bb2d8c140f2"
     },
     {
       "id": "cpp-expert-001",
@@ -52,7 +52,7 @@
       "author": "kvizo-community",
       "questions_count": 40,
       "file": "quizzes/c++-programming/cpp-inheritance-007.json",
-      "sha256": "90ada5882fa551099868871caf9c8692fbf4990c4b715971ae0f42abce080e20"
+      "sha256": "d20e418824e45bd0806481f9ff4b0ca3bcbd102faed3ead0186f8eebc3c51679"
     },
     {
       "id": "cpp-intro-oop-001",
@@ -62,7 +62,7 @@
       "author": "kvizo-community",
       "questions_count": 40,
       "file": "quizzes/c++-programming/cpp-intro-oop-001.json",
-      "sha256": "2355c28af19afcc254346cc1caa4525da8f908b26a30316f49d6d300533aa8d8"
+      "sha256": "e6afa0649f956109bdf3fd1aabd0236d001f004ccbf7b40382c4087612a8e60a"
     },
     {
       "id": "cpp-operator-overloading-006",
@@ -72,7 +72,7 @@
       "author": "kvizo-community",
       "questions_count": 40,
       "file": "quizzes/c++-programming/cpp-operator-overloading-006.json",
-      "sha256": "07590d9e21869f60ca0a2e6605ff49eec5f0b654e4062f385e0fc7f1ecc69191"
+      "sha256": "98ab294ba258351820c23fabb8fdfc597d7ad7685fae26ec6d350cd231414c09"
     },
     {
       "id": "cpp-polymorphism-001",
@@ -92,7 +92,7 @@
       "author": "kvizo-community",
       "questions_count": 40,
       "file": "quizzes/c++-programming/cpp-polymorphism-008.json",
-      "sha256": "271325f868f55d45b613d5bf94189fc58a1eb6d72793c338444f213db26651db"
+      "sha256": "84bea05e480e6537ff3066fdd434fdc8effc8cc121064b79ebcc45c79cb1460f"
     },
     {
       "id": "cpp-programming-001",
@@ -102,7 +102,7 @@
       "author": "kvizo-community",
       "questions_count": 10,
       "file": "quizzes/c++-programming/cpp-programming-001.json",
-      "sha256": "1141889e20dc8d3e8659d83b8ca944801bc83a7f14c74322d1b86b138890f0ca"
+      "sha256": "c94c0f493dc3ae3ec4c7f61323bc0eaf5d76870397d2a216114dfca80aeeffec"
     },
     {
       "id": "cpp-structures-functions-003",
@@ -112,7 +112,7 @@
       "author": "kvizo-community",
       "questions_count": 40,
       "file": "quizzes/c++-programming/cpp-structures-functions-003.json",
-      "sha256": "924f12c03f6f2cc899f1da6bf64772b6f65d52903abc6b4d1d0f9ef73555a567"
+      "sha256": "1be8fc09609c982b56150cc7cf88e95e7cf574180a3db551da82988d68ac5ee9"
     },
     {
       "id": "geography-asia-005",
