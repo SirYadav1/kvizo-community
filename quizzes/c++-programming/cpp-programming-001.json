@@ -10,55 +10,55 @@
       "question": "Who is the creator of the C++ programming language?",
       "options": [
         "Dennis Ritchie",
-        "Bjarne Stroustrup",
         "James Gosling",
+        "Bjarne Stroustrup",
         "Guido van Rossum"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "Bjarne Stroustrup created C++ at Bell Labs in 1979 as an extension of the C language with object-oriented features."
     },
     {
       "question": "Which operator is used to access members of a pointer to an object in C++?",
       "options": [
         ".",
-        "::",
         "->",
+        "::",
         "*"
       ],
-      "correct_index": 2,
+      "correct_index": 1,
       "explanation": "The -> (arrow) operator is used to access members of an object through a pointer, e.g., ptr->member."
     },
     {
       "question": "Which header file is required to use cout and cin in C++?",
       "options": [
-        "<stdio.h>",
-        "<stdlib.h>",
         "<iostream>",
+        "<stdlib.h>",
+        "<stdio.h>",
         "<fstream>"
       ],
-      "correct_index": 2,
+      "correct_index": 0,
       "explanation": "<iostream> is the standard C++ header that provides cout, cin, cerr, and clog for input/output operations."
     },
     {
       "question": "What is the correct way to declare a reference to an integer in C++?",
       "options": [
         "int *ref;",
-        "int &ref = x;",
+        "int ref = &x;",
         "ref int x;",
-        "int ref = &x;"
+        "int &ref = x;"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "int &ref = x; declares a reference ref that acts as an alias for the variable x. References must be initialized when declared."
     },
     {
       "question": "Which keyword is used to define a class in C++?",
       "options": [
-        "struct",
-        "object",
         "class",
+        "object",
+        "struct",
         "type"
       ],
-      "correct_index": 2,
+      "correct_index": 0,
       "explanation": "The class keyword is used to define a class in C++. Its members are private by default, unlike struct where they are public."
     },
     {
@@ -66,54 +66,54 @@
       "options": [
         "Declares a new variable",
         "Creates a new function",
-        "Allocates memory dynamically on the heap",
-        "Defines a new class"
+        "Defines a new class",
+        "Allocates memory dynamically on the heap"
       ],
-      "correct_index": 2,
+      "correct_index": 3,
       "explanation": "The new operator dynamically allocates memory on the heap and returns a pointer to it. It replaces malloc() in C++."
     },
     {
       "question": "Which of the following is used for runtime polymorphism in C++?",
       "options": [
         "Function overloading",
-        "Templates",
         "Virtual functions",
+        "Templates",
         "Operator overloading"
       ],
-      "correct_index": 2,
+      "correct_index": 1,
       "explanation": "Virtual functions enable runtime polymorphism. They allow a derived class to override a base class method, resolved at runtime via vtable."
     },
     {
       "question": "What is the correct destructor syntax for a class named 'MyClass' in C++?",
       "options": [
-        "~MyClass()",
         "delete MyClass()",
+        "~MyClass()",
         "destroy MyClass()",
         "void ~MyClass()"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation": "A destructor is declared with a tilde (~) before the class name, e.g., ~MyClass(). It is called automatically when an object goes out of scope."
     },
     {
       "question": "Which concept allows the same function name to be used with different parameters in C++?",
       "options": [
         "Encapsulation",
-        "Function overloading",
+        "Abstraction",
         "Inheritance",
-        "Abstraction"
+        "Function overloading"
       ],
-      "correct_index": 1,
+      "correct_index": 3,
       "explanation": "Function overloading allows multiple functions with the same name but different parameter lists, resolved at compile time."
     },
     {
       "question": "What does the '::' operator do in C++?",
       "options": [
         "Pointer dereference",
-        "Scope resolution",
         "Member access",
+        "Scope resolution",
         "Type casting"
       ],
-      "correct_index": 1,
+      "correct_index": 2,
       "explanation": "The :: operator is the scope resolution operator. It is used to access global variables, class members, or namespace members, e.g., std::cout."
     }
   ]
